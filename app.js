@@ -1,8 +1,8 @@
 const   express = require('express'),
         app = express(),
-        util = require('./src/util'),
+        util = require('./bin/util'),
         fs = require('fs'),
-        covid19 = require('./src/tracker/covid19');
+        covid19 = require('./lib/cli');
 
 // set port
 const port = process.env.port || 7070;
@@ -20,6 +20,6 @@ app.get('/', async (req, res, next) => {
     return next();
 });
 
-app.get('*', (req, res) => res.send(`COVID-19 Tracker v${pkg.version}\n\nTry adding /covid19 for global tracking\nI'm still working on country specific data...`));
+app.get('*', (req, res) => res.send(`Something went wrong? Contact the developer!\n`));
 
 app.listen(port, () => console.log(`COVID-19 Tracker v${pkg.version} is listening on port ${port}!`));
