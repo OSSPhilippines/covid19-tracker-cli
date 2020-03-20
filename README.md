@@ -4,7 +4,7 @@
 [![Github Star](https://img.shields.io/github/stars/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli)
 [![Github Fork](https://img.shields.io/github/forks/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli)
 [![License](https://img.shields.io/github/license/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli)
-[![Powered By](https://img.shields.io/badge/Powered%20By-NodeJS-green.svg?style=for-the-badge)](https://gulpjs.com)
+[![Powered By](https://img.shields.io/badge/Powered%20By-NodeJS-green.svg?style=for-the-badge)](https://nodejs.org)
 
 **COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. [Visit Wiki](https://github.com/warengonzaga/covid19-tracker-cli/wiki)
 
@@ -36,13 +36,13 @@ To track COVID-19 cases on CLI globally, all you need to do is to use CURL or WG
 curl https://covid19tracker.xyz
 ```
 
-or 
+or
 
 ```bash
 wget -i https://covid19tracker.xyz && cat index.html
 ```
 
-_Note: At the moment the country specific data feature is currently under development.
+_Note: At the moment the country specific data feature is currently under development._
 
 ## Screenshots
 
