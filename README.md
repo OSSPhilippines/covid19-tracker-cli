@@ -26,6 +26,7 @@ This simple application offers you the following features...
 * Optimized application.
 * Fast response time (~< 100ms).
 * Simple layout and easy to understand.
+* By country query (```/country```).
 
 _More features coming soon..._
 
@@ -43,7 +44,17 @@ or
 wget -i https://covid19tracker.xyz && cat index.html
 ```
 
-_Note: At the moment the country specific data feature is currently under development._
+To track COVID-19 cases on CLI by country, all you need to do is to add country name or code after ```/```.
+
+```bash
+curl https://covid19tracker.xyz/philippines
+```
+
+or
+
+```bash
+curl https://covid19tracker.xyz/ph
+```
 
 ## Screenshots
 
