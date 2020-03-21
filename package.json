@@ -1,6 +1,6 @@
 {
   "name": "covid19-tracker-cli",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Track COVID-19 cases from command line interface",
   "main": "app.js",
   "scripts": {
@@ -10,9 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "ansi-styles": "^4.2.1",
+    "axios": "^0.19.2",
     "cli-table3": "^0.5.1",
-    "express": "^4.17.1",
-    "request": "^2.88.2"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
