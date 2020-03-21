@@ -24,6 +24,7 @@ This simple application offers you the following features...
 
 * Real-Time udpates.
 * Optimized application.
+* Fast response time (~< 100ms).
 * Simple layout and easy to understand.
 
 _More features coming soon..._
@@ -54,6 +55,15 @@ Here's the screeshot of the tracker on CLI...
 
 Working on it...
 
+## Regional Trackers
+
+* [Philippines](https://ncovtracker.doh.gov.ph)
+* [Italy](https://opendatadpc.maps.arcgis.com/apps/opsdashboard/index.html#/b0c68bce2cce478eaac82fe38d4138b1)
+* [India](https://www.covid19india.org)
+* [USA](https://www.npr.org/sections/health-shots/2020/03/16/816707182/map-tracking-the-spread-of-the-coronavirus-in-the-u-s)
+* [France](https://veille-coronavirus.fr)
+* [Japan](https://covid19japan.com)
+
 ## Contributing
 
 Contributions are welcome, create a pull request to this repo and I will review your code.
@@ -68,6 +78,7 @@ If you're facing a problem in using COVID-19 Tracker CLI please let me know by c
 * By Country Query
 * CI (CircleCI)
 * Local Version
+* Add HTTP Headers (currently F)
 * Code Refactor (I don't know what I'm doing)
 * More... (have suggestions? let me know!)
 
@@ -119,7 +130,7 @@ COVID-19 Tracker CLI is licensed under MIT - <https://opensource.org/licenses/MI
 * [CDC Confirms Person-to-Person Spread of New Coronavirus in the United States](https://www.cdc.gov/media/releases/2020/p0130-coronavirus-spread.html) - CDC Press Release, Jan. 30, 2020
 * [CMO confirms cases of coronavirus in England](https://www.gov.uk/government/news/cmo-confirms-cases-of-coronavirus-in-england) - CMO, UK, Jan. 31, 2020
 * [Coronavirus in France: what you need to know](https://www.thelocal.fr/20200131/coronavirus-in-france-what-you-need-to-know) - The Local France, Jan. 31, 2020
- * [First two persons infected with coronavirus identified in Russia](https://tass.com/society/1115101) - Tass, Jan. 31, 2020
+* [First two persons infected with coronavirus identified in Russia](https://tass.com/society/1115101) - Tass, Jan. 31, 2020
 * [Updated understanding of the outbreak of 2019 novel coronavirus (2019nCoV) in Wuhan, China](https://onlinelibrary.wiley.com/doi/abs/10.1002/jmv.25689?af=R) - Journal of Medical Virology, Jan. 29, 2020
 * [Estimating the effective reproduction number of the 2019-nCoV in China](https://www.medrxiv.org/content/10.1101/2020.01.27.20018952v1.full.pdf) - Zhidong Cao et al., Jan. 29, 2020
 * [Preliminary estimation of the basic reproduction number of novel coronavirus (2019-nCoV) in China, from 2019 to 2020: A data-driven analysis in the early phase of the outbreak](https://www.sciencedirect.com/science/article/pii/S1201971220300539) - Jan. 30, 2020
