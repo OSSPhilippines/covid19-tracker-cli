@@ -138,6 +138,15 @@ COVID-19 Tracker CLI is licensed under MIT - <https://opensource.org/licenses/MI
 * [Clinical Characteristics of 138 Hospitalized Patients With 2019 Novel Coronavirus–Infected Pneumonia in Wuhan, China](https://jamanetwork.com/journals/jama/fullarticle/2761044?guestAccessKey=f61bd430-07d8-4b86-a749-bec05bfffb65) - Wang et. al, JAMA, Feb. 7, 2020
 * NovelCOVID API based on top of [WorldMeter](https://www.worldometers.info/coronavirus)
 
+## Related Projects
+
+* <https://github.com/sagarkarira/coronavirus-tracker-cli>
+* <https://github.com/ahmadawais/corona-cli>
+
+## Resources
+
+* <https://github.com/soroushchehresa/awesome-coronavirus>
+
 ## Author
 
 COVID-19 Tracker CLI is Developed and Maintained by **Waren Gonzaga**
