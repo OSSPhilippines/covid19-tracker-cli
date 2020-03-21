@@ -1,6 +1,6 @@
 # COVID-19 Tracker CLI [![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficial)
 
-<!--[![Github Release](https://img.shields.io/github/release/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli/releases)-->
+[![Github Release](https://img.shields.io/github/release/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli/releases)
 [![Github Star](https://img.shields.io/github/stars/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli)
 [![Github Fork](https://img.shields.io/github/forks/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli)
 [![License](https://img.shields.io/github/license/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli)
@@ -75,9 +75,11 @@ If you're facing a problem in using COVID-19 Tracker CLI please let me know by c
 ## To Do
 
 * Improve CLI
-* By Country Query
 * CI (CircleCI)
 * Local Version
+* Add Static Version
+* Official Logo
+* Sample Usage (gif)
 * Add HTTP Headers (currently F)
 * Code Refactor (I don't know what I'm doing)
 * More... (have suggestions? let me know!)
