@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/github/license/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli)
 [![Powered By](https://img.shields.io/badge/Powered%20By-NodeJS-green.svg?style=for-the-badge)](https://nodejs.org)
 
+![Github Banner](./lib/img/covid19-tracker-cli-github-banner.jpg)
+
 **COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. [Visit Wiki](https://github.com/warengonzaga/covid19-tracker-cli/wiki)
 
 ## Featured By
@@ -85,14 +87,13 @@ If you're facing a problem in using COVID-19 Tracker CLI please let me know by c
 
 ## To Do
 
-* Improve CLI
 * CI (CircleCI)
 * Local Version
 * Add Static Version
 * Official Logo
 * Sample Usage (gif)
 * Add HTTP Headers (currently F)
-* Code Refactor (I don't know what I'm doing)
+* More Code Refactor! (I guess I know what I'm doing now... for sure)
 * More... (have suggestions? let me know!)
 
 ## Community
