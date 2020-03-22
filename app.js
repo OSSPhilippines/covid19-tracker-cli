@@ -1,10 +1,10 @@
 // node modules
-const   express = require('express'),
-        app = express(),
-        util = require('./bin/util'),
-        fs = require('fs'),
-        axios = require('axios'),
-        covid19 = require('./lib/cli');
+const express   = require('express'),
+      app       = express(),
+      util      = require('./bin/util'),
+      fs        = require('fs'),
+      axios     = require('axios'),
+      covid19   = require('./lib/cli');
 
 // set port
 const port = process.env.port || 7070;
