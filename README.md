@@ -28,7 +28,12 @@ This simple application offers you the following features...
 * Optimized application.
 * Fast response time (~< 100ms).
 * Simple layout and easy to understand.
-* By country query (```/country```).
+* By country query.
+  * e.g. (```/country```).
+* Windows CMD support.
+  * e.g. (```/cmd``` or ```/cmd/country```).
+* Plain or Basic version.
+  * e.g. (```/plain``` or ```/plain/country```) or (```/basic```, ```/basic/country```).
 
 _More features coming soon..._
 
@@ -87,10 +92,8 @@ If you're facing a problem in using COVID-19 Tracker CLI please let me know by c
 
 ## To Do
 
-* CI (CircleCI)
 * Local Version
 * Add Static Version
-* Official Logo
 * Sample Usage (gif)
 * Add HTTP Headers (currently F)
 * More Code Refactor! (I guess I know what I'm doing now... for sure)
@@ -155,7 +158,6 @@ COVID-19 Tracker CLI is licensed under MIT - <https://opensource.org/licenses/MI
 ## Related Projects
 
 * <https://github.com/sagarkarira/coronavirus-tracker-cli>
-* <https://github.com/ahmadawais/corona-cli>
 
 ## Resources
 
