@@ -30,6 +30,21 @@ app.get('/', async (req, res, next) => {
     return next();
 });
 
+// for cmd and powershell
+app.get(['/plain','/cmd','/basic'], async (req, res, next) => {
+  const userAgent = req.headers['user-agent'],
+          api = await axios.get(`${apiBaseURL}/all`),
+          data = api.data;
+    if (util.isCommandline(userAgent)) {
+      await res.send(covid19.plainglobaltracker(
+        data.cases, data.deaths,
+        data.recovered, data.updated
+      ));
+      return null;
+    }
+    return next();
+});
+
 // by country route for covid19 tracker
 app.get('/:country', async (req, res, next) => {
   const userAgent = req.headers['user-agent'],
@@ -40,6 +55,26 @@ app.get('/:country', async (req, res, next) => {
         d = api.data;
   if (util.isCommandline(userAgent)) {
     await res.send(covid19.covid19countrytracker(
+      d.country, d.cases, d.todayCases, 
+      d.deaths, d.todayDeaths, d.recovered, 
+      d.active, d.critical, d.casesPerOneMillion,
+      u.updated
+    ));
+    return null;
+  }
+  return next();
+});
+
+// by country route for covid19 tracker
+app.get(['/plain/:country','/cmd/:country','/basic/:country'], async (req, res, next) => {
+  const userAgent = req.headers['user-agent'],
+        countryData = req.params.country,
+        api = await axios.get(`${apiBaseURL}/countries/${countryData}`),
+        all = await axios.get(`${apiBaseURL}/all`),
+        u = all.data,
+        d = api.data;
+  if (util.isCommandline(userAgent)) {
+    await res.send(covid19.plaincountrytracker(
       d.country, d.cases, d.todayCases, 
       d.deaths, d.todayDeaths, d.recovered, 
       d.active, d.critical, d.casesPerOneMillion,
