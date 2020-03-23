@@ -45,6 +45,16 @@ app.get(['/plain','/cmd','/basic'], async (req, res, next) => {
     return next();
 });
 
+// help options
+app.get(['/help','/manual'], async (req, res, next) => {
+  const userAgent = req.headers['user-agent'];
+    if (util.isCommandline(userAgent)) {
+      await res.send(covid19.help());
+      return null;
+    }
+    return next();
+});
+
 // by country route for covid19 tracker
 app.get('/:country', async (req, res, next) => {
   const userAgent = req.headers['user-agent'],
