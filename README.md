@@ -34,6 +34,7 @@ This simple application offers you the following features...
   * e.g. (```/cmd``` or ```/cmd/country```).
 * Plain or Basic version.
   * e.g. (```/plain``` or ```/plain/country```) or (```/basic```, ```/basic/country```).
+* Random health saying on footer.
 
 _More features coming soon..._
 
