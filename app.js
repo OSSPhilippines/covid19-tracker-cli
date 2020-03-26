@@ -96,9 +96,8 @@ app.get(['/plain/:country','/cmd/:country','/basic/:country'], async (req, res, 
 });
 
 app.get('*', (req, res) => res.send(`
-Sorry, CLI version is only available at the moment...
-\n
-Try curl https://covid19tracker.xyz
+Welcome to COVID-19 Tracker CLI by Waren Gonzaga
+Please visit: https://warengonza.ga/covid19-tracker-cli
 \n`));
 
 app.listen(port, () => console.log(`COVID-19 Tracker v${pkg.version} is listening on port ${port}!`));
