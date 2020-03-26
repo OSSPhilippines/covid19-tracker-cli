@@ -63,6 +63,10 @@ or
 curl https://covid19tracker.xyz/ph
 ```
 
+## Official Blog
+
+Many people asking me how to properly use my tracker. Here's the blog on [How to Track Coronavirus on Command Line](https://warengonza.ga/covid19-tracker-cli).
+
 ## Screenshots
 
 Here's the screeshot of the tracker on CLI...
