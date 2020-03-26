@@ -38,27 +38,35 @@ This simple application offers you the following features...
 
 _More features coming soon..._
 
-## Usage
+## Basic Usage
+
+### Global Tracking
 
 To track COVID-19 cases on CLI globally, all you need to do is to use CURL or WGET command.
+
+#### CURL
 
 ```bash
 curl https://covid19tracker.xyz
 ```
 
-or
+#### WGET
 
 ```bash
 wget -i https://covid19tracker.xyz && cat index.html
 ```
 
-To track COVID-19 cases on CLI by country, all you need to do is to add country name or code after ```/```.
+### Country Tracking
+
+To track COVID-19 cases on CLI by country, all you need to do is to append the URL with the country name or country [ISO 3166-1](https://warengonza.ga/iso-3166-1-codes) code.
+
+#### Country Name
 
 ```bash
 curl https://covid19tracker.xyz/philippines
 ```
 
-or
+#### Country ISO 3166-1 Code
 
 ```bash
 curl https://covid19tracker.xyz/ph
