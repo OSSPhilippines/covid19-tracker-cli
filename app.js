@@ -46,7 +46,7 @@ app.get(['/plain','/cmd','/basic'], async (req, res, next) => {
 });
 
 // help options
-app.get(['/help','/manual'], async (req, res, next) => {
+app.get(['/help','/manual','/cmd/help','/plain/help','/basic/help'], async (req, res, next) => {
   const userAgent = req.headers['user-agent'];
     if (util.isCommandline(userAgent)) {
       await res.send(covid19.help());
