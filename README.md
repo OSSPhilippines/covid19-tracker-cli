@@ -150,6 +150,7 @@ COVID-19 Tracker CLI is licensed under MIT - <https://opensource.org/licenses/MI
 ## Resources
 
 * <https://github.com/soroushchehresa/awesome-coronavirus>
+* <https://github.com/fight-covid19/community>
 
 ## Author
 
