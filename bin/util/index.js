@@ -1,7 +1,7 @@
 const { Readable } = require('stream');
 
 const isCommandline = (userAgent) => {
-  return (userAgent.search(/curl|wget/i) !== -1);
+  return (userAgent.search(/curl|wget|httpie/i) !== -1);
 };
 
 const getStream = (req, res) => {
