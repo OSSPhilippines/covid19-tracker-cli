@@ -141,7 +141,7 @@ COVID-19 Tracker CLI is licensed under MIT - <https://opensource.org/licenses/MI
 
 ## Sources
 
-* [NovelCOVID API](https://github.com/NovelCOVID/API) based on top of [WorldMeter](https://www.worldometers.info/coronavirus)
+* API from [NovelCOVID API](https://github.com/NovelCOVID/API) which based on [WorldMeter](https://www.worldometers.info/coronavirus)
 
 ## Related Projects
 
