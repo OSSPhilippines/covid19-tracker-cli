@@ -127,7 +127,7 @@ If you love this project please consider to support the development by means of 
 
 ## Supporters and Backers
 
-* J. Archer
+* J. Archer, Gonzalo Montes
 
 Wanna see your name here? [Just buy me a coffee](https://www.buymeacoffee.com/warengonzaga)!
 
