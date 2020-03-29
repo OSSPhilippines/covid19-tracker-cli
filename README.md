@@ -58,6 +58,13 @@ curl https://covid19tracker.xyz
 wget -i https://covid19tracker.xyz && cat index.html
 ```
 
+#### HTTPie
+
+```bash
+# visit httpie.org
+http http://covid19tracker.xyz
+```
+
 ### Country Tracking
 
 To track COVID-19 cases on CLI by country, all you need to do is to append the URL with the country name or country [ISO 3166-1](https://warengonza.ga/iso-3166-1-codes) code.
@@ -65,34 +72,61 @@ To track COVID-19 cases on CLI by country, all you need to do is to append the U
 #### Country Name
 
 ```bash
+# example usage
 curl https://covid19tracker.xyz/philippines
 ```
 
 #### Country ISO 3166-1 Code
 
 ```bash
+# /ph or /phl is ISO 3166 code of the Philippines
 curl https://covid19tracker.xyz/ph
 ```
 
 #### Country with History Chart
-   ```/history/<country>/``` or append with ```<cases or deaths>```
-
 
 ```bash
+# shows result with history chart
 curl https://covid19tracker.xyz/history/ph
 ```
 
 ```bash
+# shows by default a history chart
 curl https://covid19tracker.xyz/history/ph/cases
 ```
 
 ```bash
+# shows result with history chart
 curl https://covid19tracker.xyz/history/ph/deaths
+```
+
+## Advance Usage
+
+### Check Update Automagically
+
+```bash
+# check update every 10 seconds (where -n 10 is the interval)
+watch -n 10 curl https://covid19tracker.xyz
+```
+
+### Create a Shortcut Command
+
+```bash
+# set a desired alias for the command (replace endcov with your desired alias)
+# this will give you a global update
+# alias <your alias>="curl https://covid19tracker.xyz"
+
+alias endcov="curl https://covid19tracker.xyz"
+
+# if you want to track a specific country
+# alias <your alias><your coutry alias>="curl https://covid19tracker.xyz/<country name, ISO2, ISO3 here>"
+
+alias endcovPH="curl https://covid19tracker.xyz/philippines"
 ```
 
 ## Official Blog
 
-Many people asking me how to properly use my tracker. Here's the blog on [How to Track Coronavirus on Command Line](https://warengonza.ga/covid19-tracker-cli).
+Many people asking me how to properly use my tracker. Here's the blog on [How to Track Coronavirus on Command Line](https://warengonza.ga/covid19-tracker-cli). If you have comments or suggestions please leave it on the comment section of the blog.
 
 ## Screenshots
 
@@ -115,7 +149,7 @@ Working on it...
 
 ## Contributing
 
-Contributions are welcome, create a pull request to this repo and I will review your code.
+Contributions are welcome, create a pull request to this repo and I will review your code. Please consider to submit your pull request to the ```dev``` branch. Thank you!
 
 ## Issues
 
@@ -161,9 +195,17 @@ COVID-19 Tracker CLI is licensed under MIT - <https://opensource.org/licenses/MI
 
 * API from [NovelCOVID API](https://github.com/NovelCOVID/API) which based on [WorldMeter](https://www.worldometers.info/coronavirus)
 
+* Data from [CSSE at Johns Hopkins University](https://github.com/CSSEGISandData)
+
 ## Related Projects
 
 * <https://github.com/sagarkarira/coronavirus-tracker-cli>
+
+## Other Projects
+
+* [WiFi Passview](https://github.com/warengonzaga/wifi-passview) is an open-source batch script-based program that can recover your WiFi Password easily in seconds.
+
+* [WRN Cleaner](https://github.com/warengonzaga/wrn-cleaner) is an all in one batch script based native PC maintenance and cleaner for Windows.
 
 ## Resources
 
@@ -181,4 +223,4 @@ COVID-19 Tracker CLI is Developed and Maintained by **Waren Gonzaga** and **Ian 
 
 ---
 
-**</>** with **<3** by **Waren Gonzaga**
+**</your>** with **<3** by **Waren Gonzaga**
