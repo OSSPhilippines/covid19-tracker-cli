@@ -154,7 +154,7 @@ COVID-19 Tracker CLI is licensed under MIT - <https://opensource.org/licenses/MI
 
 ## Author
 
-COVID-19 Tracker CLI is Developed and Maintained by **Waren Gonzaga**
+COVID-19 Tracker CLI is Developed and Maintained by **Waren Gonzaga** and **Ian Vizarra**
 
 * **Facebook:** <https://facebook.com/warengonzagaofficial>
 * **Twitter:** <https://twitter.com/warengonzaga>
