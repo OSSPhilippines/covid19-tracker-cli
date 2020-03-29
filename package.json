@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "ansi-styles": "^4.2.1",
+    "asciichart": "^1.5.15",
     "axios": "^0.19.2",
     "cli-table3": "^0.5.1",
     "express": "^4.17.1"

@@ -95,6 +95,33 @@ app.get(['/plain/:country','/cmd/:country','/basic/:country'], async (req, res, 
   return next();
 });
 
+// by historical chart by country
+app.get('/history/:country/:chartType(cases|deaths)?', async (req, res, next) => {
+  const userAgent = req.headers['user-agent'],
+        countryData = req.params.country,
+        chartType = req.params.chartType || 'cases',
+        
+        summary = await axios.get(`${apiBaseURL}/countries/${countryData}`),
+        history = await axios.get(`${apiBaseURL}/v2/historical/${summary.data.country}`),
+        all = await axios.get(`${apiBaseURL}/all`),
+        s = summary.data,
+        h = history.data;
+        u = all.data;
+
+  if (util.isCommandline(userAgent)) {
+    await res.send(
+      covid19.historyCountryTracker(
+        s.country, s.cases, s.todayCases, 
+        s.deaths, s.todayDeaths, s.recovered, 
+        s.active, s.critical, s.casesPerOneMillion,
+        u.updated, h, chartType
+      )
+    );
+    return null;
+  }
+  return next();
+});
+
 app.get('*', (req, res) => res.send(`
 Welcome to COVID-19 Tracker CLI by Waren Gonzaga
 Please visit: https://warengonza.ga/covid19-tracker-cli
