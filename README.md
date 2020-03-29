@@ -30,6 +30,8 @@ This simple application offers you the following features...
 * Simple layout and easy to understand.
 * By country query.
   * e.g. (```/country```).
+* By country with History Chart
+  * e.g. (```/history/<country>/``` or append with ```<cases or deaths>```)
 * Windows CMD support.
   * e.g. (```/cmd``` or ```/cmd/country```).
 * Plain or Basic version.
@@ -70,6 +72,22 @@ curl https://covid19tracker.xyz/philippines
 
 ```bash
 curl https://covid19tracker.xyz/ph
+```
+
+#### Country with History Chart
+   ```/history/<country>/``` or append with ```<cases or deaths>```
+
+
+```bash
+curl https://covid19tracker.xyz/history/ph
+```
+
+```bash
+curl https://covid19tracker.xyz/history/ph/cases
+```
+
+```bash
+curl https://covid19tracker.xyz/history/ph/deaths
 ```
 
 ## Official Blog
