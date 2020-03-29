@@ -1,6 +1,6 @@
 {
   "name": "covid19-tracker-cli",
-  "version": "2.8.2",
+  "version": "2.9.5",
   "description": "Track COVID-19 cases from command line interface",
   "main": "app.js",
   "scripts": {
