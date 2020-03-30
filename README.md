@@ -49,20 +49,20 @@ To track COVID-19 cases on CLI globally, all you need to do is to use CURL or WG
 #### CURL
 
 ```bash
-curl https://covid19tracker.xyz
+curl https://trackercli.com
 ```
 
 #### WGET
 
 ```bash
-wget -i https://covid19tracker.xyz && cat index.html
+wget -i https://trackercli.com && cat index.html
 ```
 
 #### HTTPie
 
 ```bash
 # visit httpie.org
-http http://covid19tracker.xyz
+http http://trackercli.com
 ```
 
 ### Country Tracking
@@ -73,31 +73,31 @@ To track COVID-19 cases on CLI by country, all you need to do is to append the U
 
 ```bash
 # example usage
-curl https://covid19tracker.xyz/philippines
+curl https://trackercli.com/philippines
 ```
 
 #### Country ISO 3166-1 Code
 
 ```bash
 # /ph or /phl is ISO 3166 code of the Philippines
-curl https://covid19tracker.xyz/ph
+curl https://trackercli.com/ph
 ```
 
 #### Country with History Chart
 
 ```bash
 # shows result with history chart
-curl https://covid19tracker.xyz/history/ph
+curl https://trackercli.com/history/ph
 ```
 
 ```bash
 # shows by default a history chart
-curl https://covid19tracker.xyz/history/ph/cases
+curl https://trackercli.com/history/ph/cases
 ```
 
 ```bash
 # shows result with history chart
-curl https://covid19tracker.xyz/history/ph/deaths
+curl https://trackercli.com/history/ph/deaths
 ```
 
 ## Advance Usage
@@ -106,7 +106,7 @@ curl https://covid19tracker.xyz/history/ph/deaths
 
 ```bash
 # check update every 10 seconds (where -n 10 is the interval)
-watch -n 10 curl https://covid19tracker.xyz
+watch -n 10 curl https://trackercli.com
 ```
 
 ### Create a Shortcut Command
@@ -114,14 +114,14 @@ watch -n 10 curl https://covid19tracker.xyz
 ```bash
 # set a desired alias for the command (replace endcov with your desired alias)
 # this will give you a global update
-# alias <your alias>="curl https://covid19tracker.xyz"
+# alias <your alias>="curl https://trackercli.com"
 
-alias endcov="curl https://covid19tracker.xyz"
+alias endcov="curl https://trackercli.com"
 
 # if you want to track a specific country
-# alias <your alias>< coutry alias>="curl https://covid19tracker.xyz/<country name, ISO2, ISO3 here>"
+# alias <your alias>< coutry alias>="curl https://trackercli.com/<country name, ISO2, ISO3 here>"
 
-alias endcovPH="curl https://covid19tracker.xyz/philippines"
+alias endcovPH="curl https://trackercli.com/philippines"
 ```
 
 ## Official Blog
