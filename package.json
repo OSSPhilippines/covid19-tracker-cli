@@ -2,6 +2,22 @@
   "name": "covid19-tracker-cli",
   "version": "2.9.5",
   "description": "Track COVID-19 cases from command line interface",
+  "keywords": [
+    "coronavirus-cli",
+    "corona-cli",
+    "covid-cli",
+    "covid-tracker",
+    "covid-cli-tracker",
+		"coronavirus",
+		"corona",
+		"covid-19",
+		"covid-19",
+    "covid19",
+    "covid",
+		"virus",
+		"Ian Vizarra",
+		"Warren Gonzaga"
+	],
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
