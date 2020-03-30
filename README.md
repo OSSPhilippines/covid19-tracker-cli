@@ -62,7 +62,7 @@ wget -i https://trackercli.com && cat index.html
 
 ```bash
 # visit httpie.org
-http http://covid19tracker.xyz
+http http://trackercli.com
 ```
 
 ### Country Tracking
@@ -179,7 +179,7 @@ If you love this project please consider to support the development by means of 
 
 ## Supporters and Backers
 
-* J. Archer, Gonzalo Montes
+* J. Archer, Gonzalo Montes, Keynell, Scullum, TX_Atheist
 
 Wanna see your name here? [Just buy me a coffee](https://www.buymeacoffee.com/warengonzaga)!
 
