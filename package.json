@@ -8,15 +8,15 @@
     "covid-cli",
     "covid-tracker",
     "covid-cli-tracker",
-		"coronavirus",
-		"corona",
-		"covid-19",
-		"covid-19",
+    "coronavirus",
+    "corona",
+    "covid-19",
     "covid19",
     "covid",
-		"virus",
-		"Ian Vizarra",
-		"Warren Gonzaga"
+    "virus",
+    "bat-soup",
+    "Ian Vizarra",
+    "Warren Gonzaga"
 	],
   "main": "app.js",
   "scripts": {
