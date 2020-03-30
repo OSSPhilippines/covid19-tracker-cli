@@ -2,18 +2,40 @@
   "name": "covid19-tracker-cli",
   "version": "2.9.5",
   "description": "Track COVID-19 cases from command line interface",
+  "keywords": [
+    "coronavirus-cli",
+    "corona-cli",
+    "covid-cli",
+    "covid-tracker",
+    "covid-cli-tracker",
+    "coronavirus",
+    "corona",
+    "covid-19",
+    "covid19",
+    "covid",
+    "virus",
+    "bat-soup",
+    "Ian Vizarra",
+    "Warren Gonzaga"
+	],
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Waren Gonzaga",
   "license": "MIT",
+  "bin": {
+    "covid": "./cli.js"
+  },
   "dependencies": {
     "ansi-styles": "^4.2.1",
     "asciichart": "^1.5.15",
     "axios": "^0.19.2",
+    "clear": "^0.1.0",
     "cli-table3": "^0.5.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "ora": "^4.0.3",
+    "yargs": "^15.3.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
