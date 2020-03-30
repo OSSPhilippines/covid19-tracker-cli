@@ -17,7 +17,7 @@
     "bat-soup",
     "Ian Vizarra",
     "Warren Gonzaga"
-	],
+  ],
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
