@@ -96,7 +96,7 @@ app.get(['/plain/:country','/cmd/:country','/basic/:country'], async (req, res, 
 });
 
 // by historical chart by country
-app.get('/history/:country/:chartType(cases|deaths)?', async (req, res, next) => {
+app.get('/covid19/history/:country/:chartType(cases|deaths)?', async (req, res, next) => {
   const userAgent = req.headers['user-agent'],
         countryData = req.params.country,
         chartType = req.params.chartType || 'cases',
