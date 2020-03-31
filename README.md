@@ -171,7 +171,8 @@ curl localhost:7070/ph
 ```
 
 ```bash
-# run this if you want to develop the program without restarting the server manually, everytime you save the file it will restart the server automagically
+# run this if you want to develop the program without restarting the server manually,
+# everytime you save the file it will restart the server automagically
 npm run dev
 ```
 
@@ -195,6 +196,7 @@ If you're facing a problem in using COVID-19 Tracker CLI please let me know by c
 ## To Do
 
 * Add Static Version
+* Update URL in the banner
 * Sample Usage (gif)
 * Add HTTP Headers (currently F)
 * More Code Refactor! (I guess I know what I'm doing now... for sure)
