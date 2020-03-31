@@ -136,7 +136,44 @@ Here's the screeshot of the tracker on CLI...
 
 ## White Label / Personalize / Custom / Development
 
-Working on it...
+### White Label / Personalize / Custom Build
+
+> We are still working on this part...
+
+### Development
+
+Wanna improve the project? Follow our guidelines!
+
+```bash
+# clone the repo
+git clone https://github.com/warengonzaga/covid19-tracker-cli.git
+```
+
+```bash
+# go to the project folder
+cd covid19-tracker-cli
+```
+
+```bash
+# run npm
+npm install
+```
+
+```bash
+# start the program by default it runs on port 7070
+npm run start
+
+# curl to your local this is equivalent to https://trackercli.com
+curl localhost:7070
+
+# if you want to curl https://trackercli.com/ph then append /ph to the local host
+curl localhost:7070/ph
+```
+
+```bash
+# run this if you want to develop the program without restarting the server manually, everytime you save the file it will restart the server automagically
+npm run dev
+```
 
 ## Regional Trackers
 
@@ -157,7 +194,6 @@ If you're facing a problem in using COVID-19 Tracker CLI please let me know by c
 
 ## To Do
 
-* Local Version
 * Add Static Version
 * Sample Usage (gif)
 * Add HTTP Headers (currently F)
