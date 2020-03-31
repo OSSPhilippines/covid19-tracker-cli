@@ -4,16 +4,10 @@ const express   = require('express'),
       util      = require('./bin/util'),
       fs        = require('fs'),
       axios     = require('axios'),
-      covid19   = require('./lib/cli');
-
-// set port
-const port = process.env.port || 7070;
-
-// package.json info
-const pkg = JSON.parse(fs.readFileSync('package.json'));
-
-// api base url
-const apiBaseURL = "https://corona.lmao.ninja";
+      covid19   = require('./lib/cli'),
+      pkg       = require('./package.json'), // package.json info
+      apiBaseURL= "https://corona.lmao.ninja", // api base url
+      port      = process.env.port || 7070 // set port
 
 // global route for covid19 tracker
 app.get('/', async (req, res, next) => {
