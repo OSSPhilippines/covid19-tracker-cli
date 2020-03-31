@@ -2,7 +2,6 @@
 const express   = require('express'),
       app       = express(),
       util      = require('./bin/util'),
-      fs        = require('fs'),
       axios     = require('axios'),
       covid19   = require('./lib/cli'),
       pkg       = require('./package.json'), // package.json info
