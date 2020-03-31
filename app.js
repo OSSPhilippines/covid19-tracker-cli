@@ -1,12 +1,12 @@
 // node modules
-const express   = require('express'),
-      app       = express(),
-      util      = require('./bin/util'),
-      axios     = require('axios'),
-      covid19   = require('./lib/cli'),
-      pkg       = require('./package.json'), // package.json info
-      apiBaseURL= "https://corona.lmao.ninja", // api base url
-      port      = process.env.port || 7070 // set port
+const express     = require('express'),
+      app         = express(),
+      util        = require('./bin/util'),
+      axios       = require('axios'),
+      covid19     = require('./lib/cli'),
+      pkg         = require('./package.json'),    // package.json info
+      apiBaseURL  = "https://corona.lmao.ninja",  // NovelCOVID API
+      port        = process.env.port || 7070;     // set port
 
 // global route for covid19 tracker
 app.get('/', async (req, res, next) => {
@@ -116,7 +116,7 @@ app.get('/history/:country/:chartType(cases|deaths)?', async (req, res, next) =>
 });
 
 app.get('*', (req, res) => res.send(`
-Welcome to COVID-19 Tracker CLI by Waren Gonzaga
+Welcome to COVID-19 Tracker CLI v${pkg.version} by Waren Gonzaga\n
 Please visit: https://warengonza.ga/covid19-tracker-cli
 \n`));
 
