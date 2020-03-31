@@ -204,6 +204,10 @@ If you're facing a problem in using COVID-19 Tracker CLI please let me know by c
 
 ## Community
 
+Get the latest updates about the development!
+
+[![Community](https://discordapp.com/api/guilds/694612151444439081/widget.png?style=banner3)](https://discord.gg/6Gzxwtt)
+
 Wanna see other projects I made? Join today!
 
 [![Community](https://discordapp.com/api/guilds/659684980137656340/widget.png?style=banner2)](https://bmc.xyz/l/wgofficialds)
