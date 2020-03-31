@@ -1,6 +1,6 @@
 {
   "name": "covid19-tracker-cli",
-  "version": "2.9.5",
+  "version": "3.0.0",
   "description": "Track COVID-19 cases from command line interface",
   "keywords": [
     "coronavirus-cli",
