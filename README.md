@@ -245,7 +245,6 @@ If you're facing a problem in using COVID-19 Tracker CLI please let me know by c
 ## To Do
 
 * Add Static Version
-* Sample Usage (gif)
 * Add HTTP Headers (currently F)
 * More Code Refactor! (I guess I know what I'm doing now... for sure)
 * More... (have suggestions? let me know!)
@@ -262,14 +261,14 @@ Wanna see other projects I made? Join today!
 
 ## Donate or Support
 
-If you love this project please consider to support the development by means of coffee. I spend and waste my time just to save your time! Be a sponsor or backer of this project. Just a cup of coffee!
+If you love this project please consider to support the development and help me to support the API provider of this command line tracker by means of coffee. Be a sponsor or backer of this project. Just a cup of coffee!
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge)](https://paypal.me/warengonzagaofficial)
 [![Support](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange.svg?style=for-the-badge)](https://www.buymeacoffee.com/warengonzaga)
 
 ## Supporters and Backers
 
-* [J. Archer](https://www.buymeacoffee.com/WarenGonzaga/c/151732), [Gonzalo Montes](https://www.buymeacoffee.com/WarenGonzaga/c/155002), [Keynell](https://www.buymeacoffee.com/WarenGonzaga/c/156960), [Scullum](https://www.buymeacoffee.com/WarenGonzaga), [TX_Atheist](https://www.buymeacoffee.com/WarenGonzaga/c/157561), [Jade Cole](https://www.buymeacoffee.com/WarenGonzaga/c/159563)
+* [J. Archer](https://www.buymeacoffee.com/WarenGonzaga/c/151732), [Gonzalo Montes](https://www.buymeacoffee.com/WarenGonzaga/c/155002), [Keynell](https://www.buymeacoffee.com/WarenGonzaga/c/156960), [Scullum](https://www.buymeacoffee.com/WarenGonzaga), [TX_Atheist](https://www.buymeacoffee.com/WarenGonzaga/c/157561), [Jade Cole](https://www.buymeacoffee.com/WarenGonzaga/c/159563), [@crypt0r3x](https://www.buymeacoffee.com/WarenGonzaga/c/160968)
 
 Wanna see your name here? [Just buy me a coffee](https://www.buymeacoffee.com/warengonzaga)!
 
