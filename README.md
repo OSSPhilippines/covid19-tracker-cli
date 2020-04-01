@@ -138,7 +138,7 @@ watch -n 10 curl https://covid19.trackercli.com
 alias endcov="curl https://covid19.trackercli.com"
 
 # if you want to track a specific country
-# alias <your alias>< coutry alias>="curl https://covid19.trackercli.com/<country name, ISO2, ISO3 here>"
+# alias <your alias>< coutry alias>="curl https://covid19.trackercli.com/< name, ISO2, ISO3 here>"
 
 alias endcovPH="curl https://covid19.trackercli.com/philippines"
 ```
@@ -306,4 +306,4 @@ COVID-19 Tracker CLI is Developed and Maintained by **Waren Gonzaga** and **Ian 
 
 ---
 
-**</country>** with **<3** by **Waren Gonzaga**
+**</>** with **<3** by **Waren Gonzaga**
