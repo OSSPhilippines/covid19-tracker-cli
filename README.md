@@ -10,6 +10,21 @@
 
 **COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. [Visit Wiki](https://github.com/warengonzaga/covid19-tracker-cli/wiki)
 
+## Domain Names
+
+```bash
+# stable build
+covid19.trackercli.com
+covid19.warengonzaga.com
+covid19cli.now.sh
+
+# dev build
+dev.covid19.trackercli.com
+covid19clidev.now.sh
+```
+
+> Do you want a custom and private URL for your personal use? Join here: <https://warengonza.ga/TtYvZ34>
+
 ## Featured By
 
 Wanna feature this project? Let me know!
@@ -49,20 +64,20 @@ To track COVID-19 cases on CLI globally, all you need to do is to use CURL or WG
 #### CURL
 
 ```bash
-curl https://trackercli.com
+curl https://covid19.trackercli.com
 ```
 
 #### WGET
 
 ```bash
-wget -i https://trackercli.com && cat index.html
+wget -i https://covid19.trackercli.com && cat index.html
 ```
 
 #### HTTPie
 
 ```bash
 # visit httpie.org
-http http://trackercli.com
+http http://covid19.trackercli.com
 ```
 
 ### Country Tracking
@@ -73,31 +88,31 @@ To track COVID-19 cases on CLI by country, all you need to do is to append the U
 
 ```bash
 # example usage
-curl https://trackercli.com/philippines
+curl https://covid19.trackercli.com/philippines
 ```
 
 #### Country ISO 3166-1 Code
 
 ```bash
 # /ph or /phl is ISO 3166 code of the Philippines
-curl https://trackercli.com/ph
+curl https://covid19.trackercli.com/ph
 ```
 
 #### Country with History Chart
 
 ```bash
 # shows result with history chart
-curl https://trackercli.com/history/ph
+curl https://covid19.trackercli.com/history/ph
 ```
 
 ```bash
 # shows by default a history chart
-curl https://trackercli.com/history/ph/cases
+curl https://covid19.trackercli.com/history/ph/cases
 ```
 
 ```bash
 # shows result with history chart
-curl https://trackercli.com/history/ph/deaths
+curl https://covid19.trackercli.com/history/ph/deaths
 ```
 
 ## Advance Usage
@@ -106,7 +121,7 @@ curl https://trackercli.com/history/ph/deaths
 
 ```bash
 # check update every 10 seconds (where -n 10 is the interval)
-watch -n 10 curl https://trackercli.com
+watch -n 10 curl https://covid19.trackercli.com
 ```
 
 ### Create a Shortcut Command
@@ -114,14 +129,14 @@ watch -n 10 curl https://trackercli.com
 ```bash
 # set a desired alias for the command (replace endcov with your desired alias)
 # this will give you a global update
-# alias <your alias>="curl https://trackercli.com"
+# alias <your alias>="curl https://covid19.trackercli.com"
 
-alias endcov="curl https://trackercli.com"
+alias endcov="curl https://covid19.trackercli.com"
 
 # if you want to track a specific country
-# alias <your alias>< coutry alias>="curl https://trackercli.com/<country name, ISO2, ISO3 here>"
+# alias <your alias>< coutry alias>="curl https://covid19.trackercli.com/<country name, ISO2, ISO3 here>"
 
-alias endcovPH="curl https://trackercli.com/philippines"
+alias endcovPH="curl https://covid19.trackercli.com/philippines"
 ```
 
 ## Official Blog
@@ -163,10 +178,10 @@ npm install
 # start the program by default it runs on port 7070
 npm run start
 
-# curl to your local this is equivalent to https://trackercli.com
+# curl to your local this is equivalent to https://covid19.trackercli.com
 curl localhost:7070
 
-# if you want to curl https://trackercli.com/ph then append /ph to the local host
+# if you want to curl https://covid19.trackercli.com/ph then append /ph to the local host
 curl localhost:7070/ph
 ```
 
@@ -196,7 +211,6 @@ If you're facing a problem in using COVID-19 Tracker CLI please let me know by c
 ## To Do
 
 * Add Static Version
-* Update URL in the banner
 * Sample Usage (gif)
 * Add HTTP Headers (currently F)
 * More Code Refactor! (I guess I know what I'm doing now... for sure)
@@ -221,7 +235,7 @@ If you love this project please consider to support the development by means of 
 
 ## Supporters and Backers
 
-* J. Archer, Gonzalo Montes, Keynell, Scullum, TX_Atheist
+* [J. Archer](https://www.buymeacoffee.com/WarenGonzaga/c/151732), [Gonzalo Montes](https://www.buymeacoffee.com/WarenGonzaga/c/155002), [Keynell](https://www.buymeacoffee.com/WarenGonzaga/c/156960), [Scullum](https://www.buymeacoffee.com/WarenGonzaga), [TX_Atheist](https://www.buymeacoffee.com/WarenGonzaga/c/157561), [Jade Cole](https://www.buymeacoffee.com/WarenGonzaga/c/159563)
 
 Wanna see your name here? [Just buy me a coffee](https://www.buymeacoffee.com/warengonzaga)!
 
