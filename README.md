@@ -72,7 +72,7 @@ To track COVID-19 cases on CLI globally, all you need to do is to use CURL or WG
 #### CURL
 
 ```bash
-curl https://covid19.trackercli.com
+curl -L covid19.trackercli.com
 ```
 
 #### WGET
@@ -96,31 +96,31 @@ To track COVID-19 cases on CLI by country, all you need to do is to append the U
 
 ```bash
 # example usage
-curl https://covid19.trackercli.com/philippines
+curl -L covid19.trackercli.com/philippines
 ```
 
 #### Country ISO 3166-1 Code
 
 ```bash
 # /ph or /phl is ISO 3166 code of the Philippines
-curl https://covid19.trackercli.com/ph
+curl -L covid19.trackercli.com/ph
 ```
 
 #### Country with History Chart
 
 ```bash
 # shows result with history chart
-curl https://covid19.trackercli.com/history/ph
+curl -L covid19.trackercli.com/history/ph
 ```
 
 ```bash
 # shows by default a history chart
-curl https://covid19.trackercli.com/history/ph/cases
+curl -L covid19.trackercli.com/history/ph/cases
 ```
 
 ```bash
 # shows result with history chart
-curl https://covid19.trackercli.com/history/ph/deaths
+curl -L covid19.trackercli.com/history/ph/deaths
 ```
 
 ## Advance Usage
@@ -129,7 +129,10 @@ curl https://covid19.trackercli.com/history/ph/deaths
 
 ```bash
 # check update every 10 seconds (where -n 10 is the interval)
-watch -n 10 curl https://covid19.trackercli.com
+watch -n 10 "curl -L covid19.trackercli.com"
+
+# for more advance setup (where -s is to suppress curl's progress bar)
+watch -c -n 600 "curl -s -L covid19.trackercli.com/<country>"
 ```
 
 ### Create a Shortcut Command
