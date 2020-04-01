@@ -268,7 +268,7 @@ If you love this project please consider to support the development and help me 
 
 ## Supporters and Backers
 
-* [J. Archer](https://www.buymeacoffee.com/WarenGonzaga/c/151732), [Gonzalo Montes](https://www.buymeacoffee.com/WarenGonzaga/c/155002), [Keynell](https://www.buymeacoffee.com/WarenGonzaga/c/156960), [Scullum](https://www.buymeacoffee.com/WarenGonzaga), [TX_Atheist](https://www.buymeacoffee.com/WarenGonzaga/c/157561), [Jade Cole](https://www.buymeacoffee.com/WarenGonzaga/c/159563), [@crypt0r3x](https://www.buymeacoffee.com/WarenGonzaga/c/160968)
+* [J. Archer](https://www.buymeacoffee.com/WarenGonzaga/c/151732), [Gonzalo Montes](https://www.buymeacoffee.com/WarenGonzaga/c/155002), [Keynell](https://www.buymeacoffee.com/WarenGonzaga/c/156960), [Scullum](https://www.buymeacoffee.com/WarenGonzaga), [TX_Atheist](https://www.buymeacoffee.com/WarenGonzaga/c/157561), [Jade Cole](https://www.buymeacoffee.com/WarenGonzaga/c/159563), [@crypt0r3x](https://www.buymeacoffee.com/WarenGonzaga/c/160968), [Qwitch](https://www.buymeacoffee.com/WarenGonzaga/c/161210)
 
 Wanna see your name here? [Just buy me a coffee](https://www.buymeacoffee.com/warengonzaga)!
 
