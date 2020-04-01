@@ -21,6 +21,8 @@ covid19cli.now.sh
 # dev build
 dev.covid19.trackercli.com
 covid19clidev.now.sh
+
+# uh-oh we reserve domains bro, now report us again! Try harder!
 ```
 
 > Do you want a custom and private URL for your personal use? Join here: <https://warengonza.ga/TtYvZ34>
@@ -52,6 +54,8 @@ This simple application offers you the following features...
 * Plain or Basic version.
   * e.g. (```/plain``` or ```/plain/country```) or (```/basic```, ```/basic/country```).
 * Random health saying on footer.
+* Local command line version.
+  * e.g. (```covid <country>```)
 
 _More features coming soon..._
 
@@ -137,6 +141,29 @@ alias endcov="curl https://covid19.trackercli.com"
 # alias <your alias>< coutry alias>="curl https://covid19.trackercli.com/<country name, ISO2, ISO3 here>"
 
 alias endcovPH="curl https://covid19.trackercli.com/philippines"
+```
+
+### Local Command Line Tracker
+
+```bash
+# clone the repo
+git clone https://github.com/warengonzaga/covid19-tracker-cli.git
+```
+
+```bash
+# copy paste the command
+cd covid19-tracker-cli && npm install && npm link
+```
+
+```bash
+# run the local command line tracker. ex. covid <country/iso 3166 code>
+covid ph
+
+# if you want to see the result in plain view without ansi encoding
+covid ph --plain
+
+# run help for more info
+covid help
 ```
 
 ## Official Blog
@@ -279,4 +306,4 @@ COVID-19 Tracker CLI is Developed and Maintained by **Waren Gonzaga** and **Ian 
 
 ---
 
-**</>** with **<3** by **Waren Gonzaga**
+**</country>** with **<3** by **Waren Gonzaga**
