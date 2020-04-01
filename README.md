@@ -27,6 +27,10 @@ covid19clidev.now.sh
 
 > Do you want a custom and private URL for your personal use? Join here: <https://warengonza.ga/TtYvZ34>
 
+## Sponsored By
+
+[![Github Banner](./lib/img/sponsor-zeit.jpg)](https://zeit.co/)
+
 ## Featured By
 
 Wanna feature this project? Let me know!
