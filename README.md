@@ -29,7 +29,7 @@ covid19clidev.now.sh
 
 ## Sponsored By
 
-[![Github Banner](./lib/img/sponsor-zeit.jpg)](https://zeit.co/)
+[![Github Banner](./lib/img/sponsor-zeit.jpg)](https://zeit.co)
 
 ## Featured By
 
@@ -39,7 +39,7 @@ Wanna feature this project? Let me know!
 
 It uses an API and collect the relevant information for your reference.
 
-> Data Source: <https://www.worldometers.info/coronavirus/>
+> Data Source: <https://www.worldometers.info/coronavirus>
 
 ## Features
 
@@ -265,6 +265,11 @@ If you love this project please consider to support the development and help me 
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge)](https://paypal.me/warengonzagaofficial)
 [![Support](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange.svg?style=for-the-badge)](https://www.buymeacoffee.com/warengonzaga)
+
+### Help Me To Help Others
+
+Some cups of my coffees goes to the foundation via [#OneAgainstCovid19 by PayMaya](https://donate.paymaya.com)
+[![PayMaya](./lib/img/paymaya.jpg)](https://donate.paymaya.com)
 
 ## Supporters and Backers
 
