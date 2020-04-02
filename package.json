@@ -32,10 +32,12 @@
     "ansi-styles": "^4.2.1",
     "asciichart": "^1.5.15",
     "axios": "^0.19.2",
+    "blessed": "^0.1.81",
     "clear": "^0.1.0",
     "cli-table3": "^0.5.1",
     "express": "^4.17.1",
     "ora": "^4.0.3",
+    "telnet2": "^0.0.1",
     "yargs": "^15.3.1"
   },
   "devDependencies": {
