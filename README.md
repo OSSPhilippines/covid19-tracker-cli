@@ -245,6 +245,9 @@ If you're facing a problem in using COVID-19 Tracker CLI please let me know by c
 ## To Do
 
 * Add Static Version
+* NPM package
+* By State (US)
+* By Region, City (PH)
 * Add HTTP Headers (currently F)
 * More Code Refactor! (I guess I know what I'm doing now... for sure)
 * More... (have suggestions? let me know!)
@@ -269,6 +272,7 @@ If you love this project please consider to support the development and help me 
 ### Help Me To Help Others
 
 Some cups of my coffees goes to the foundation via [#OneAgainstCovid19 by PayMaya](https://donate.paymaya.com)
+
 [![PayMaya](./lib/img/paymaya.jpg)](https://donate.paymaya.com)
 
 ## Supporters and Backers
