@@ -23,6 +23,26 @@ app.get('/', async (req, res, next) => {
     return next();
 });
 
+// global historical chart
+app.get(['/history/all/:chartType(cases|deaths)?', '/history/'], async (req, res, next) => {
+  const userAgent = req.headers['user-agent'],
+        api = await axios.get(`${apiBaseURL}/all`),
+        chartType = req.params.chartType || 'cases',
+        history = await axios.get(`${apiBaseURL}/v2/historical/all?lastdays=all`),
+        h = history.data;
+        data = api.data;
+  
+  if (util.isCommandline(userAgent)) {
+    await res.send(covid19.historyGlobalTracker(
+      data.cases, data.deaths,
+      data.recovered, data.updated,
+      h, chartType
+    ));
+    return null;
+  }
+  return next();
+});
+
 // for cmd and powershell
 app.get(['/plain','/cmd','/basic'], async (req, res, next) => {
   const userAgent = req.headers['user-agent'],
@@ -53,15 +73,13 @@ app.get('/:country', async (req, res, next) => {
   const userAgent = req.headers['user-agent'],
         countryData = req.params.country,
         api = await axios.get(`${apiBaseURL}/countries/${countryData}`),
-        all = await axios.get(`${apiBaseURL}/all`),
-        u = all.data,
         d = api.data;
   if (util.isCommandline(userAgent)) {
     await res.send(covid19.covid19countrytracker(
       d.country, d.cases, d.todayCases, 
       d.deaths, d.todayDeaths, d.recovered, 
       d.active, d.critical, d.casesPerOneMillion,
-      u.updated
+      d.updated
     ));
     return null;
   }
@@ -73,33 +91,28 @@ app.get(['/plain/:country','/cmd/:country','/basic/:country'], async (req, res, 
   const userAgent = req.headers['user-agent'],
         countryData = req.params.country,
         api = await axios.get(`${apiBaseURL}/countries/${countryData}`),
-        all = await axios.get(`${apiBaseURL}/all`),
-        u = all.data,
         d = api.data;
   if (util.isCommandline(userAgent)) {
     await res.send(covid19.plaincountrytracker(
       d.country, d.cases, d.todayCases, 
       d.deaths, d.todayDeaths, d.recovered, 
       d.active, d.critical, d.casesPerOneMillion,
-      u.updated
+      d.updated
     ));
     return null;
   }
   return next();
 });
 
-// by historical chart by country
+// historical chart by country
 app.get('/history/:country/:chartType(cases|deaths)?', async (req, res, next) => {
   const userAgent = req.headers['user-agent'],
         countryData = req.params.country,
         chartType = req.params.chartType || 'cases',
-        
         summary = await axios.get(`${apiBaseURL}/countries/${countryData}`),
-        history = await axios.get(`${apiBaseURL}/v2/historical/${summary.data.country}`),
-        all = await axios.get(`${apiBaseURL}/all`),
+        history = await axios.get(`${apiBaseURL}/v2/historical/${summary.data.country}?lastdays=all`),
         s = summary.data,
         h = history.data;
-        u = all.data;
 
   if (util.isCommandline(userAgent)) {
     await res.send(
@@ -107,7 +120,7 @@ app.get('/history/:country/:chartType(cases|deaths)?', async (req, res, next) =>
         s.country, s.cases, s.todayCases, 
         s.deaths, s.todayDeaths, s.recovered, 
         s.active, s.critical, s.casesPerOneMillion,
-        u.updated, h, chartType
+        s.updated, h, chartType
       )
     );
     return null;

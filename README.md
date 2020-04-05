@@ -106,7 +106,19 @@ curl -L covid19.trackercli.com/philippines
 curl -L covid19.trackercli.com/ph
 ```
 
-#### Country with History Chart
+#### Global Tracking with History Chart
+
+```bash
+# shows global result with history chart
+curl -L covid19.trackercli.com/history
+```
+
+```bash
+# shows by default a global history chart
+curl -L covid19.trackercli.com/history/all
+```
+
+#### Country Tracking with History Chart
 
 ```bash
 # shows result with history chart
@@ -277,7 +289,7 @@ Some cups of my coffees goes to the foundation via [#OneAgainstCovid19 by PayMay
 
 ## Supporters and Backers
 
-* [J. Archer](https://www.buymeacoffee.com/WarenGonzaga/c/151732), [Gonzalo Montes](https://www.buymeacoffee.com/WarenGonzaga/c/155002), [Keynell](https://www.buymeacoffee.com/WarenGonzaga/c/156960), [Scullum](https://www.buymeacoffee.com/WarenGonzaga), [TX_Atheist](https://www.buymeacoffee.com/WarenGonzaga/c/157561), [Jade Cole](https://www.buymeacoffee.com/WarenGonzaga/c/159563), [@crypt0r3x](https://www.buymeacoffee.com/WarenGonzaga/c/160968), [Qwitch](https://www.buymeacoffee.com/WarenGonzaga/c/161210)
+* [J. Archer](https://www.buymeacoffee.com/WarenGonzaga/c/151732), [Gonzalo Montes](https://www.buymeacoffee.com/WarenGonzaga/c/155002), [Keynell](https://www.buymeacoffee.com/WarenGonzaga/c/156960), [Scullum](https://www.buymeacoffee.com/WarenGonzaga), [TX_Atheist](https://www.buymeacoffee.com/WarenGonzaga/c/157561), [Jade Cole](https://www.buymeacoffee.com/WarenGonzaga/c/159563), [@crypt0r3x](https://www.buymeacoffee.com/WarenGonzaga/c/160968), [Qwitch](https://www.buymeacoffee.com/WarenGonzaga/c/161210), [Ian Vizarra](https://www.buymeacoffee.com/WarenGonzaga/c/161990)
 
 Wanna see your name here? [Just buy me a coffee](https://www.buymeacoffee.com/warengonzaga)!
 
