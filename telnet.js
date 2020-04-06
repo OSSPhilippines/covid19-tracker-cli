@@ -20,8 +20,6 @@ async function fetchByCountry(query) {
   // empty, country, history, chartType
   const [_x, country, history, chartType] = query.split('/'),
         countryData = await axios.get(`${apiBaseURL}/countries/${country}`),
-        all = await axios.get(`${apiBaseURL}/all`),
-        u = all.data,
         d = countryData.data;
   
   if (_x.length > 0) throw "Invalid query format. Must Start with \/"
@@ -34,7 +32,7 @@ async function fetchByCountry(query) {
       d.country, d.cases, d.todayCases, 
       d.deaths, d.todayDeaths, d.recovered, 
       d.active, d.critical, d.casesPerOneMillion,
-      u.updated, h, chartType || 'cases'
+      d.updated, h, chartType || 'cases'
     )
   }
 
@@ -42,7 +40,7 @@ async function fetchByCountry(query) {
     d.country, d.cases, d.todayCases, 
     d.deaths, d.todayDeaths, d.recovered, 
     d.active, d.critical, d.casesPerOneMillion,
-    u.updated
+    d.updated
   );
 }
 
