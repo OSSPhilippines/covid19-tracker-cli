@@ -24,14 +24,14 @@ app.get('/', async (req, res, next) => {
 });
 
 // global historical chart
-app.get(['/history/all/:chartType(cases|deaths)?', '/history/'], async (req, res, next) => {
+app.get(['/history/all/:chartType(cases|deaths|recovered|actives)?', '/history/'], async (req, res, next) => {
   const userAgent = req.headers['user-agent'],
         api = await axios.get(`${apiBaseURL}/all`),
         chartType = req.params.chartType || 'cases',
         history = await axios.get(`${apiBaseURL}/v2/historical/all?lastdays=all`),
         h = history.data;
         data = api.data;
-  
+
   if (util.isCommandline(userAgent)) {
     await res.send(covid19.historyGlobalTracker(
       data.cases, data.deaths,
@@ -76,8 +76,8 @@ app.get('/:country', async (req, res, next) => {
         d = api.data;
   if (util.isCommandline(userAgent)) {
     await res.send(covid19.covid19countrytracker(
-      d.country, d.cases, d.todayCases, 
-      d.deaths, d.todayDeaths, d.recovered, 
+      d.country, d.cases, d.todayCases,
+      d.deaths, d.todayDeaths, d.recovered,
       d.active, d.critical, d.casesPerOneMillion,
       d.updated
     ));
@@ -94,8 +94,8 @@ app.get(['/plain/:country','/cmd/:country','/basic/:country'], async (req, res, 
         d = api.data;
   if (util.isCommandline(userAgent)) {
     await res.send(covid19.plaincountrytracker(
-      d.country, d.cases, d.todayCases, 
-      d.deaths, d.todayDeaths, d.recovered, 
+      d.country, d.cases, d.todayCases,
+      d.deaths, d.todayDeaths, d.recovered,
       d.active, d.critical, d.casesPerOneMillion,
       d.updated
     ));
@@ -105,7 +105,7 @@ app.get(['/plain/:country','/cmd/:country','/basic/:country'], async (req, res, 
 });
 
 // historical chart by country
-app.get('/history/:country/:chartType(cases|deaths)?', async (req, res, next) => {
+app.get('/history/:country/:chartType(cases|deaths|recovered|actives)?', async (req, res, next) => {
   const userAgent = req.headers['user-agent'],
         countryData = req.params.country,
         chartType = req.params.chartType || 'cases',
@@ -117,8 +117,8 @@ app.get('/history/:country/:chartType(cases|deaths)?', async (req, res, next) =>
   if (util.isCommandline(userAgent)) {
     await res.send(
       covid19.historyCountryTracker(
-        s.country, s.cases, s.todayCases, 
-        s.deaths, s.todayDeaths, s.recovered, 
+        s.country, s.cases, s.todayCases,
+        s.deaths, s.todayDeaths, s.recovered,
         s.active, s.critical, s.casesPerOneMillion,
         s.updated, h, chartType
       )
