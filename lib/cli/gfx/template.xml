@@ -16,7 +16,7 @@
     </item>
 
     <item col="2" row="0" colSpan="7" rowSpan="2">
-        <table fg="white" width="30%" height="30%"  border-type="line" border-fg="gray" columnSpacing="5" columnWidth="1,15,15,15,15,15" data-headers=",Cases,Deaths,Recovered, Active,Cases/Million" interactive="false" label="Historical chart as of 4/1/2020, 9:15:56 AM Date: [4/1/2020]">
+        <table fg="white" width="30%" height="30%"  border-type="line" border-fg="rgb(200,200,200)" columnSpacing="5" columnWidth="1,15,15,15,15,15" data-headers=",Cases,Deaths,Recovered, Active,Cases/Million" interactive="false" label="Historical chart as of 4/1/2020, 9:15:56 AM Date: [4/1/2020]">
         <data-data>
           ,1,02:17,21,123,3453
           ,Today Cases,Today Deaths,Critical,Mortality %,Recovery %
@@ -30,7 +30,7 @@
     </item>
 
     <item col="7" row="2" colSpan="2" rowSpan="3">
-        <donut radius="8" archWidth='2' yPadding='4' border-type="line" border-fg="gray" label="Mortality Rate" xOffset='1' spacing='0'>
+        <donut radius="8" archWidth='2' yPadding='4' border-type="line" border-fg="red" label="Mortality Rate" xOffset='1' spacing='0'>
           <data>
             <m color="red" percent="40" label="mort" />
             <m color="yellow" percent="40" label="recov" />
