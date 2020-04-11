@@ -78,7 +78,7 @@ curl -L covid19.trackercli.com
 #### WGET
 
 ```bash
-wget -i https://trackercli.com && cat index.html
+wget -i https://covid19.trackercli.com && cat index.html
 ```
 
 #### HTTPie
