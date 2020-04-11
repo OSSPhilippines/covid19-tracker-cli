@@ -23,7 +23,7 @@ config:
   # Explicitly set the number of rows
   # or use `auto` to take the current
   # number of rows of your shell
-  rows: 41
+  rows: 44
   
   # Amount of times to repeat GIF
   # If value is -1, play once
@@ -130,6 +130,22 @@ records:
   - delay: 120
     content: ' '
   - delay: 120
+    content: c
+  - delay: 120
+    content: o
+  - delay: 120
+    content: v 
+  - delay: 120
+    content: i
+  - delay: 120
+    content: d
+  - delay: 120
+    content: '1'
+  - delay: 120
+    content: '9'
+  - delay: 120
+    content: .
+  - delay: 120
     content: t
   - delay: 120
     content: r
@@ -181,4 +197,4 @@ records:
   - delay: 1000
     content: "\r\n\e[32mtrackercli $ \e[39m"
   - delay: 606
-    content: "exit\r\n"
+    content: "exit\r"
