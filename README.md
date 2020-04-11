@@ -72,13 +72,13 @@ To track COVID-19 cases on CLI globally, all you need to do is to use CURL or WG
 #### CURL
 
 ```bash
-curl -L covid19.trackercli.com
+curl -L trackercli.com
 ```
 
 #### WGET
 
 ```bash
-wget -i https://covid19.trackercli.com && cat index.html
+wget -i https://trackercli.com && cat index.html
 ```
 
 #### HTTPie
@@ -87,6 +87,8 @@ wget -i https://covid19.trackercli.com && cat index.html
 # visit httpie.org
 http http://covid19.trackercli.com
 ```
+
+![CURL](./lib/img/demo-global.gif)
 
 ### Country Tracking
 
@@ -105,6 +107,7 @@ curl -L covid19.trackercli.com/philippines
 # /ph or /phl is ISO 3166 code of the Philippines
 curl -L covid19.trackercli.com/ph
 ```
+![CURL](./lib/img/demo-country.gif)
 
 #### Global Tracking with History Chart
 
@@ -117,6 +120,7 @@ curl -L covid19.trackercli.com/history
 # shows by default a global history chart
 curl -L covid19.trackercli.com/history/all
 ```
+![CURL](./lib/img/demo-history-global.gif)
 
 #### Country Tracking with History Chart
 
@@ -134,6 +138,7 @@ curl -L covid19.trackercli.com/history/ph/cases
 # shows result with history chart
 curl -L covid19.trackercli.com/history/ph/deaths
 ```
+![CURL](./lib/img/demo-history-country.gif)
 
 ## Advance Usage
 
