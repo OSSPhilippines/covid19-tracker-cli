@@ -1,0 +1,169 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/ianvizarra/Codes/covid19-tracker-cli/lib/img
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 75
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 29
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: COVID19 Tracker CLI
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 300
+    content: "\r\n\e[32mtrackercli $ \e[39m"
+  - delay: 120
+    content: c
+  - delay: 120
+    content: u
+  - delay: 120
+    content: r
+  - delay: 120
+    content: l
+  - delay: 120
+    content: ' '
+  - delay: 120
+    content: '-'
+  - delay: 120
+    content: L
+  - delay: 120
+    content: ' '
+  - delay: 120
+    content: t
+  - delay: 120
+    content: r
+  - delay: 120
+    content: a
+  - delay: 120
+    content: c
+  - delay: 120
+    content: k
+  - delay: 120
+    content: e
+  - delay: 120
+    content: r
+  - delay: 120
+    content: c
+  - delay: 120
+    content: l
+  - delay: 120
+    content: i
+  - delay: 120
+    content: .
+  - delay: 120
+    content: c
+  - delay: 120
+    content: o
+  - delay: 120
+    content: m
+  - delay: 120
+    content: "\r\n"
+  - delay: 400
+    content: "\e[36m╔\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m╗\e[39m\r\n\e[36m║\e[39m \e[37mCOVID-19 Tracker CLI v2.9.5 - Global Update\e[39m                 \e[36m║\e[39m\r\n\e[36m╟\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╢\e[39m\r\n\e[36m║\e[39m \e[33mAs of 4/11/2020, 9:05:26 AM [Date:4/11/2020]\e[39m                \e[36m║\e[39m\r\n\e[36m╟\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╤\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╤\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╤\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╤\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╢\e[39m\r\n\e[36m║\e[39m \e[35mCases\e[39m     \e[36m│\e[39m \e[31mDeaths\e[39m  \e[36m│\e[39m \e[32mRecovered\e[39m \e[36m│\e[39m \e[31mMortality %\e[39m \e[36m│\e[39m \e[32mRecovered %\e[39m \e[36m║\e[39m\r\n\e[36m╟\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m┼\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m┼\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m┼\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m┼\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╢\e[39m\r\n\e[36m║\e[39m 1,716,372 \e[36m│\e[39m 103,847 \e[36m│\e[39m 389,004   \e[36m│\e[39m 6.05        \e[36m│\e[39m 22.66       \e[36m║\e[39m\r\n\e[36m╟\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╧\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╧\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╧\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╧\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╢\e[39m\r\n\e[36m║\e[39m Source: https://www.worldometers.info/coronavirus/          \e[36m║\e[39m\r\n"
+  - delay: 14
+    content: "\e[36m╟\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m─\e[39m\e[36m╢\e[39m\r\n\e[36m║\e[39m Code: https://github.com/warengonzaga/covid19-tracker-cli   \e[36m║\e[39m\r\n\e[36m╚\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m═\e[39m\e[36m╝\e[39m\r\n\r\n \"\e[32mWe will survive!\e[39m\"\r\n\r\n ------------------------------------------------------------\r\n Love this project? Please consider buying me a cup of coffee!\r\n \e[91m(Buy Me A Coffee) warengonza.ga/coffee4dev\e[39m\r\n ------------------------------------------------------------\r\n Follow me on twitter for more updates!\r\n \e[46m\e[30m@warengonzaga\e[39m\e[49m \e[46m\e[30m#covid19trackercli\e[39m\e[49m\r\n\r\n "
+  - delay: 3
+    content: "\r\n\e[32mtrackercli $ \e[39m"
+  - delay: 1090
+    content: "exit\r\n"
