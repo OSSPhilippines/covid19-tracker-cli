@@ -72,7 +72,7 @@ To track COVID-19 cases on CLI globally, all you need to do is to use CURL or WG
 #### CURL
 
 ```bash
-curl -L trackercli.com
+curl -L covid19.trackercli.com
 ```
 
 #### WGET
