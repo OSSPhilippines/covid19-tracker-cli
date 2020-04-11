@@ -23,7 +23,7 @@ config:
   # Explicitly set the number of rows
   # or use `auto` to take the current
   # number of rows of your shell
-  rows: 29
+  rows: 28
   
   # Amount of times to repeat GIF
   # If value is -1, play once
