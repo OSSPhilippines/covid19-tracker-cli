@@ -130,6 +130,22 @@ records:
   - delay: 120
     content: ' '
   - delay: 120
+    content: c
+  - delay: 120
+    content: o
+  - delay: 120
+    content: v 
+  - delay: 120
+    content: i
+  - delay: 120
+    content: d
+  - delay: 120
+    content: '1'
+  - delay: 120
+    content: '9'
+  - delay: 120
+    content: .
+  - delay: 120
     content: t
   - delay: 120
     content: r
