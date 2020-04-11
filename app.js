@@ -4,7 +4,7 @@ const express     = require('express'),
       util        = require('./bin/util'),
       axios       = require('axios'),
       covid19     = require('./lib/cli'),
-      covid19GFX = require ('./lib/cli/gfx'),
+      covid19GFX = require('./lib/cli/gfx'),
       pkg         = require('./package.json'),    // package.json info
       apiBaseURL  = "https://corona.lmao.ninja",  // NovelCOVID API
       port        = process.env.port || 7070;     // set port
@@ -132,7 +132,7 @@ app.get('/history/:country/:chartType(cases|deaths)?', async (req, res, next) =>
 
 // historical chart by country
 app.get('/history/charts/:country', async (req, res, next) => {
-  const userAgent = req.headers['user-agent'],
+ const userAgent = req.headers['user-agent'],
         countryData = req.params.country,
         chartType = req.params.chartType || 'cases',
         summary = await axios.get(`${apiBaseURL}/countries/${countryData}`),
@@ -148,7 +148,6 @@ app.get('/history/charts/:country', async (req, res, next) => {
         s.active, s.critical, s.casesPerOneMillion,
         s.updated, h, chartType, s.countryInfo
       )
-    
     return null;
   }
   return next();
