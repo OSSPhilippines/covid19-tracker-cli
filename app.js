@@ -134,7 +134,7 @@ app.get('/history/charts/:country/:chartSize(sm|md|lg)?', async (req, res, next)
  const userAgent = req.headers['user-agent'],
         countryData = req.params.country,
         chartType = req.params.chartType || 'cases',
-        chartSize = req.params.chartSize || 'md',
+        chartSize = req.params.chartSize || 'sm',
         summary = await axios.get(`${apiBaseURL}/countries/${countryData}`),
         history = await axios.get(`${apiBaseURL}/v2/historical/${summary.data.country}?lastdays=all`),
         s = summary.data,
