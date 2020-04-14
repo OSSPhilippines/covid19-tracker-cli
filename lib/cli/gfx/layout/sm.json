@@ -1,0 +1,25 @@
+{
+  "grid": {},
+  "header": {
+    "grid": [0, 0, 2, 2]
+  },
+  "table": {
+    "grid": [2, 0, 2, 5],
+    "columnSpacing": 5
+  },
+  "bar": {
+    "grid": [4, 0, 3, 3]
+  },
+  "map": {
+    "grid": [0, 2, 2, 3]
+  },
+  "donut": {
+    "grid": [4, 3, 3, 2]
+  },
+  "line": {
+    "grid": [7, 0, 3, 5]
+  },
+  "footer": {
+    "grid": [9, 0, 2, 5]
+  }
+}
