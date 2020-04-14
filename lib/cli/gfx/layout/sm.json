@@ -5,10 +5,11 @@
   },
   "table": {
     "grid": [2, 0, 2, 5],
-    "columnSpacing": 5
+    "columnSpacing": 3
   },
   "bar": {
-    "grid": [4, 0, 3, 3]
+    "grid": [4, 0, 3, 3],
+    "xOffset": 6
   },
   "map": {
     "grid": [0, 2, 2, 3]
