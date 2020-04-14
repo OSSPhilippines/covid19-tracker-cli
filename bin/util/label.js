@@ -1,4 +1,4 @@
-const say = require("../sayings/threads.json"); // sayings
+const say = require("../../lib/sayings/threads.json"); // sayings
 const { color, txt } = require("./helper");
 const pkg = require("../../package.json"); // package.json info
 const { space, line, br, tab } = txt;
