@@ -4,7 +4,7 @@ const axios = require('axios'),
       ora = require('ora'),
       spinner = ora({ text: 'Loading...'}),
       covid19 = require('./lib/cli'),
-      apiBaseURL = "https://corona.lmao.ninja",
+      apiBaseURL = "https://corona.lmao.ninja/v2",
       argv = require('yargs')
             .usage('Usage: $0 <country> [options]')
             .example('$0 PH', 'Generate stats for Philippines. ISO 3166-1 is supported')
