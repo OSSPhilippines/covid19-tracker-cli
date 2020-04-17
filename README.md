@@ -6,12 +6,11 @@
 
 **COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. [Visit Wiki](https://github.com/tracker-cli/covid19-tracker-cli/wiki)
 
-## Domain Names
+## Public Domain Names
 
 ```bash
 # stable build
 covid19.trackercli.com
-covid19.warengonzaga.com
 covid19cli.now.sh
 
 # dev build
@@ -282,10 +281,10 @@ Wanna see other projects I made? Join today!
 
 If you love this project please consider to support the development and help me to support the API provider of this command line tracker by means of coffee. Be a sponsor or backer of this project. Just a cup of coffee!
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge)](https://paypal.me/warengonzagaofficial)
-[![Support](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange.svg?style=for-the-badge)](https://www.buymeacoffee.com/warengonzaga)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge)](https://paypal.me/trackercli)
+[![Support](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-orange.svg?style=for-the-badge)](https://buymeacoff.ee/trackercli)
 
-### Help Me To Help Others
+### Help Us To Help Others
 
 Some cups of my coffees goes to the foundation via [#OneAgainstCovid19 by PayMaya](https://donate.paymaya.com)
 
@@ -295,11 +294,11 @@ Some cups of my coffees goes to the foundation via [#OneAgainstCovid19 by PayMay
 
 * [J. Archer](https://www.buymeacoffee.com/WarenGonzaga/c/151732), [Gonzalo Montes](https://www.buymeacoffee.com/WarenGonzaga/c/155002), [Keynell](https://www.buymeacoffee.com/WarenGonzaga/c/156960), [Scullum](https://www.buymeacoffee.com/WarenGonzaga), [TX_Atheist](https://www.buymeacoffee.com/WarenGonzaga/c/157561), [Jade Cole](https://www.buymeacoffee.com/WarenGonzaga/c/159563), [@crypt0r3x](https://www.buymeacoffee.com/WarenGonzaga/c/160968), [Qwitch](https://www.buymeacoffee.com/WarenGonzaga/c/161210), [Ian Vizarra](https://www.buymeacoffee.com/WarenGonzaga/c/161990)
 
-Wanna see your name here? [Just buy me a coffee](https://www.buymeacoffee.com/warengonzaga)!
+Wanna see your name here? [Just buy us a coffee](https://buymeacoff.ee/trackercli)!
 
 ## License
 
-COVID-19 Tracker CLI is licensed under MIT - <https://opensource.org/licenses/MIT>
+COVID-19 Tracker CLI is licensed under GNU General Public License v3 - <https://opensource.org/licenses/GPL-3.0>
 
 ## Code of Conduct
 
