@@ -1,14 +1,10 @@
 # COVID-19 Tracker CLI [![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficial)
 
-[![Github Release](https://img.shields.io/github/release/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli/releases)
-[![Github Star](https://img.shields.io/github/stars/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli)
-[![Github Fork](https://img.shields.io/github/forks/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli)
-[![License](https://img.shields.io/github/license/warengonzaga/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli)
-[![Powered By](https://img.shields.io/badge/Powered%20By-NodeJS-green.svg?style=for-the-badge)](https://nodejs.org)
+[![Github Release](https://img.shields.io/github/release/tracker-cli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli/releases) [![Github Star](https://img.shields.io/github/stars/tracker-cli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli) [![Github Fork](https://img.shields.io/github/forks/tracker-cli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli) [![License](https://img.shields.io/github/license/tracker-cli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli) [![Powered By](https://img.shields.io/badge/Powered%20By-NodeJS-green.svg?style=for-the-badge)](https://nodejs.org)
 
 ![Github Banner](./lib/img/covid19-tracker-cli-github-banner.jpg)
 
-**COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. [Visit Wiki](https://github.com/warengonzaga/covid19-tracker-cli/wiki)
+**COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. [Visit Wiki](https://github.com/tracker-cli/covid19-tracker-cli/wiki)
 
 ## Domain Names
 
@@ -88,6 +84,8 @@ wget -i https://covid19.trackercli.com && cat index.html
 http http://covid19.trackercli.com
 ```
 
+![CURL](./lib/img/demo-global.gif)
+
 ### Country Tracking
 
 To track COVID-19 cases on CLI by country, all you need to do is to append the URL with the country name or country [ISO 3166-1](https://warengonza.ga/iso-3166-1-codes) code.
@@ -106,6 +104,8 @@ curl -L covid19.trackercli.com/philippines
 curl -L covid19.trackercli.com/ph
 ```
 
+![CURL](./lib/img/demo-country.gif)
+
 #### Global Tracking with History Chart
 
 ```bash
@@ -117,6 +117,8 @@ curl -L covid19.trackercli.com/history
 # shows by default a global history chart
 curl -L covid19.trackercli.com/history/all
 ```
+
+![CURL](./lib/img/demo-history-global.gif)
 
 #### Country Tracking with History Chart
 
@@ -134,6 +136,8 @@ curl -L covid19.trackercli.com/history/ph/cases
 # shows result with history chart
 curl -L covid19.trackercli.com/history/ph/deaths
 ```
+
+![CURL](./lib/img/demo-history-country.gif)
 
 ## Advance Usage
 
