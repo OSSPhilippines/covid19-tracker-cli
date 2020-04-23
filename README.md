@@ -1,7 +1,6 @@
 # COVID-19 Tracker CLI [![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficial)
 
-[![Github Release](https://img.shields.io/github/release/tracker-cli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli/releases) [![Github Star](https://img.shields.io/github/stars/tracker-cli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli) [![Github Fork](https://img.shields.io/github/forks/tracker-cli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli) [![License](https://img.shields.io/github/license/tracker-cli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/warengonzaga/covid19-tracker-cli) [![Powered By](https://img.shields.io/badge/Powered%20By-NodeJS-green.svg?style=for-the-badge)](https://nodejs.org)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftrackercli%2Fcovid19-tracker-cli.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftrackercli%2Fcovid19-tracker-cli?ref=badge_shield)
+[![Github Release](https://img.shields.io/github/release/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli/releases) [![Github Star](https://img.shields.io/github/stars/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![Github Fork](https://img.shields.io/github/forks/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![License](https://img.shields.io/github/license/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![Powered By](https://img.shields.io/badge/Powered%20By-NodeJS-green.svg?style=for-the-badge)](https://nodejs.org)
 
 ![Github Banner](./lib/img/covid19-tracker-cli-github-banner.jpg)
 
@@ -300,7 +299,6 @@ Wanna see your name here? [Just buy us a coffee](https://buymeacoff.ee/trackercl
 ## License
 
 COVID-19 Tracker CLI is licensed under GNU General Public License v3 - <https://opensource.org/licenses/GPL-3.0>
-
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ftrackercli%2Fcovid19-tracker-cli.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ftrackercli%2Fcovid19-tracker-cli?ref=badge_large)
 
