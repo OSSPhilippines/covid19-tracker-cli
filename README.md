@@ -24,7 +24,7 @@ covid19clidev.now.sh
 
 ## Sponsored By
 
-[![Github Banner](./lib/img/sponsor-zeit.jpg)](https://zeit.co)
+[![Github Banner](./lib/img/sponsor-vercel.jpg)](https://vercel.com)
 
 ## Featured By
 
