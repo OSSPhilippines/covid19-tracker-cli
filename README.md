@@ -2,7 +2,7 @@
 
 [![Github Release](https://img.shields.io/github/release/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli/releases) [![Github Star](https://img.shields.io/github/stars/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![Github Fork](https://img.shields.io/github/forks/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![License](https://img.shields.io/github/license/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![Powered By](https://img.shields.io/badge/Powered%20By-NodeJS-green.svg?style=for-the-badge)](https://nodejs.org)
 
-![Github Banner](./lib/img/covid19-tracker-cli-github-banner.jpg)
+![Github Banner](https://raw.githubusercontent.com/trackercli/covid19-tracker-cli/master/lib/img/covid19-tracker-cli-github-banner.jpg)
 
 **COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. [Visit Wiki](https://github.com/tracker-cli/covid19-tracker-cli/wiki)
 
@@ -24,7 +24,7 @@ covid19clidev.now.sh
 
 ## Sponsored By
 
-[![Github Banner](./lib/img/sponsor-vercel.jpg)](https://vercel.com)
+[![Github Banner](https://raw.githubusercontent.com/trackercli/covid19-tracker-cli/master/lib/img/sponsor-vercel.jpg)](https://vercel.com)
 
 ## Featured By
 
@@ -83,7 +83,7 @@ wget -i https://covid19.trackercli.com && cat index.html
 http http://covid19.trackercli.com
 ```
 
-![CURL](./lib/img/demo-global.gif)
+![CURL](https://raw.githubusercontent.com/trackercli/covid19-tracker-cli/master/lib/img/demo-global.gif)
 
 ### Country Tracking
 
@@ -103,7 +103,7 @@ curl -L covid19.trackercli.com/philippines
 curl -L covid19.trackercli.com/ph
 ```
 
-![CURL](./lib/img/demo-country.gif)
+![CURL](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/demo-country.gif)
 
 #### Global Tracking with History Chart
 
@@ -117,7 +117,7 @@ curl -L covid19.trackercli.com/history
 curl -L covid19.trackercli.com/history/all
 ```
 
-![CURL](./lib/img/demo-history-global.gif)
+![CURL](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/demo-history-global.gif)
 
 #### Country Tracking with History Chart
 
@@ -136,7 +136,7 @@ curl -L covid19.trackercli.com/history/ph/cases
 curl -L covid19.trackercli.com/history/ph/deaths
 ```
 
-![CURL](./lib/img/demo-history-country.gif)
+![CURL](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/demo-history-country.gif)
 
 ## Advance Usage
 
@@ -196,7 +196,7 @@ Many people asking me how to properly use my tracker. Here's the blog on [How to
 
 Here's the screeshot of the tracker on CLI...
 
-![Screenshot](./lib/img/screenshot.jpg)
+![Screenshot](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/screenshot.jpg)
 
 ## White Label / Personalize / Custom / Development
 
@@ -288,7 +288,7 @@ If you love this project please consider to support the development and help me 
 
 Some cups of my coffees goes to the foundation via [#OneAgainstCovid19 by PayMaya](https://donate.paymaya.com)
 
-[![PayMaya](./lib/img/paymaya.jpg)](https://donate.paymaya.com)
+[![PayMaya](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/paymaya.jpg)](https://donate.paymaya.com)
 
 ## Supporters and Backers
 
