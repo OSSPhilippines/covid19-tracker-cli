@@ -24,7 +24,7 @@
     "dev": "nodemon app.js"
   },
   "author": "Waren Gonzaga",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "bin": {
     "covid": "./cli.js"
   },
