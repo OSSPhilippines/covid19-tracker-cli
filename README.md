@@ -329,7 +329,7 @@ COVID-19 Tracker CLI is licensed under GNU General Public License v3 - <https://
 
 ## Author
 
-COVID-19 Tracker CLI is Developed and Maintained by **Waren Gonzaga** and **Ian Vizarra**
+COVID-19 Tracker CLI is Developed and Maintained by **Waren Gonzaga**, **Ian Vizarra**, and **Ken Gibas Abella**
 
 * **Facebook:** <https://facebook.com/warengonzagaofficial>
 * **Twitter:** <https://twitter.com/warengonzaga>
