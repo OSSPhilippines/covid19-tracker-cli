@@ -138,6 +138,15 @@ curl -L covid19.trackercli.com/history/ph/deaths
 
 ![CURL](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/demo-history-country.gif)
 
+#### Country Tracking with History Chart (Dashboard)
+
+```bash
+# shows result with history chart
+curl -L covid19.trackercli.com/history/charts/ph
+```
+
+![CURL](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/demo-history-chart.gif)
+
 ## Advance Usage
 
 ### Check Update Automagically
