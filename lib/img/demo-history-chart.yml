@@ -1,0 +1,219 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/ianvizarra/Codes/covid19-tracker-cli/lib/img
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 96
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 45
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: COVID19 Tracker CLI
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 300
+    content: "\r\n\e[32mtrackercli $ \e[39m"
+  - delay: 120
+    content: c
+  - delay: 120
+    content: u
+  - delay: 120
+    content: r
+  - delay: 120
+    content: l
+  - delay: 120
+    content: ' '
+  - delay: 120
+    content: '-'
+  - delay: 120
+    content: L
+  - delay: 120
+    content: ' '
+  - delay: 120
+    content: c
+  - delay: 120
+    content: o
+  - delay: 120
+    content: v
+  - delay: 120
+    content: i
+  - delay: 120
+    content: d
+  - delay: 120
+    content: '1'
+  - delay: 120
+    content: '9'
+  - delay: 120
+    content: .
+  - delay: 120
+    content: t
+  - delay: 120
+    content: r
+  - delay: 120
+    content: a
+  - delay: 120
+    content: c
+  - delay: 120
+    content: k
+  - delay: 120
+    content: e
+  - delay: 120
+    content: r
+  - delay: 120
+    content: c
+  - delay: 120
+    content: l
+  - delay: 120
+    content: i
+  - delay: 120
+    content: .
+  - delay: 120
+    content: c
+  - delay: 120
+    content: o
+  - delay: 120
+    content: m
+  - delay: 120
+    content: /
+  - delay: 120
+    content: h
+  - delay: 120
+    content: i
+  - delay: 120
+    content: s
+  - delay: 120
+    content: t
+  - delay: 120
+    content: o
+  - delay: 120
+    content: r
+  - delay: 120
+    content: 'y'
+  - delay: 120
+    content: /
+  - delay: 120
+    content: c
+  - delay: 120
+    content: h
+  - delay: 120
+    content: a
+  - delay: 120
+    content: r
+  - delay: 120
+    content: t
+  - delay: 120
+    content: s
+  - delay: 120
+    content: /
+  - delay: 120
+    content: p
+  - delay: 120
+    content: h
+  - delay: 400
+    content: "\r\n"
+  - delay: 62278
+    content: "\e[?1049h\e[?1h\e=\e[1;50r\e[?25l\e[1;1H\e[H\e[2J\e7\e[1;1H\e[30m\e(0lqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqklqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk\e[m\e[2;1H\e[2;1H\e[30mx\e[m\e(BCOVID19-TRACKER-CLI\e[1C(v3.8.9)\e[5C\e[30m\e(0xx\e[51Cx\e[m\e[3;1H\e[3;1H\e[30mx\e[m\e(BA\e[1Ccurl-based\e[1Ccommand\e[1Cline\e[8C\e[30m\e(0xx\e[2C\e[m\e[33m\e(B⢀⣀⣀⣀⣀⣀⣀⣤⣤⣤⣤⣶⣶⣶⡴⡒⠒⣒⣶⣤⢀\e[1C⠠⣤⣤⣀⣠⣄⣤⣄⣀⡤⠤⠤⢤⣀⣀⣠⣤⣀⣀⣀⡀\e[6C\e[m\e[30m\e(0x\e[m\e[4;1H\e[4;1H\e[30mx\e[m\e(Btracker\e[1Cfor\e[1CNovel\e[1CCoronavirus\e[1Cor\e[1C\e[30m\e(0xx\e[2C\e[m\e[33m\e(B⠘⠓⠛⠋⠉⠙⠲⣍⠍⠙⠿⠿⢿⠽⠷⠎⠉\e[1C⠈⠉⣺⣷⣿⣾⣫⣬⠅⣤⠤\e[1C⠤\e[4C⣀⣠⣾⠏⠙⠋⠙⠃\e[6C\e[m\e[30m\e(0x\e[m\e[5;1H\e[5;1H\e[30mx\e[m\e(BCOVID-19\e[1Cpandemic.\e[15C\e[30m\e(0xx\e[5C\e[m\e[33m\e(B⠂\e[3C⠈⠙⠒⠿⠿⣷⠶⠤⡀\e[3C⠸⣁⣀⣀⠉⠉⠙⠦⡽⠋⠒⢤⠤⢢⣤⢖\e[m\e[35mⓧ Philippines  \e[m\e[30m\e(0x\e[m\e[6;1H\e[6;1H\e[30mx\e[33Cxx\e[m\e[35m\e(B\e[m\e[33m⠂\e[8C⠈\e[1C⠑⡄\e[1C⢈⠽⠁\e[4C⠨⢆\e[1C⡡⢻⠆\e[5C⠉⢩⠤⢚⠫⠻⡂⠠\e[1C⠄\e[6C\e[m\e[30m\e(0x\e[m\e[7;1H\e[7;1H\e[30mx\e[33Cxx\e[14C\e[m\e[33m\e(B⠸⠴⠫⠁\e[7C⠈⠉\e[9C⠈⠉⠁⠉⠛⠁\e[1C⠚⠁\e[6C\e[m\e[30m\e(0x\e[m\e[8;1H\e[8;1H\e[30mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqjmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj\e[m\e[9;1H\e[9;1H\e[37mlq\e[m\e(BHistorical\e[1Cdata\e[1Cas\e[1Cof\e[1C6/21/2020,\e[1C12:34:10\e[1CPM\e[1C[Date:6/21/2020]\e[37m\e(0qqqqqqqqqqqqqqqqqqqqqqqqqk\e[m\e[10;1H\e[10;1H\e[37mx\e[3C\e[m\e(BCases\e[13CDeaths\e[8CRecovered\e[5CActive\e[8CCases/Million\e[11C\e[37m\e(0x\e[m\e[11;1H\e[11;1H\e[37mx\e[87Cx\e[m\e[12;1H\e[12;1H\e[37mx\e[1C\e(B   30052             1169          7893          20990         274                    \e(0x\e[m\e[13;1H\e[13;1H\e[37mx\e[1C\e(B   Today Cases       Today Deaths  Critical      Mortality %   Recovery %             \e(0x\e[m\e[14;1H\e[14;1H\e[37mx\e[1C\e(B   652               19            82            3.8899241     26.26447491            \e(0x\e[m\e[15;1H\e[15;1H\e[37mx\e[87Cx\e[m\e[16;1H\e[16;1H\e[37mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj\e[m\e[17;1H\e[17;1H\e[37mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk\e[m\e[31mlq\e[m\e(BMortality\e[1CRate\e[31m\e(0qqqqqqqqqqqqqqqqqqk\e[m\e[18;1H\e[18;1H\e[37mx\e[51Cx\e[m\e[31mx\e[33Cx\e[m\e[19;1H\e[19;1H\e[37mx\e[6C\e[m\e[41m\e(B        \e[37C\e[m\e[37m\e(0x\e[m\e[31mx\e[33Cx\e[m\e[20;1H\e[20;1H\e[37mx\e[6C\e[m\e[41m\e(B        \e[37C\e[m\e[37m\e(0x\e[m\e[31mx\e[6C\e[m\e[30m\e(B⢀⣤⣶\e[m\e[31m⣶⣶\e[m\e[30m⣤⡀\e[7C⣠⣴⣶\e[m\e[32m⣶⣦⣄\e[7C\e[m\e[31m\e(0x\e[m\e[21;1H\e[21;1H\e[37mx\e[6C\e[m\e[41m\e(B        \e[22C        \e[7C\e[m\e[37m\e(0x\e[m\e[31mx\e[6C\e[m\e[30m\e(B⣾⡟⠁\e[1C⠈⢻⣿⡀\e[5C⣸⣿⠋\e[2C\e[m\e[32m⠙⣿⡆\e[6C\e[m\e[31m\e(0x\e[m\e[22;1H\e[22;1H\e[37mx\e[6C\e[m\e[41m\e(B        \e[22C        \e[7C\e[m\e[37m\e(0x\e[m\e[31mx\e[6C\e[m\e[30m\e(B⣿⣇\e[1C\e[m\e[37m4%\e[m\e[30m⣰⣿⠃\e[5C⢻⣷⡀\e[m\e[37m26%\e[m\e[32m⣿⡇\e[6C\e[m\e[31m\e(0x\e[m\e[23;1H\e[23;1H\e[37mx\e[6C\e[m\e[41m\e(B        \e[22C        \e[7C\e[m\e[37m\e(0x\e[m\e[31mx\e[6C\e[m\e[30m\e(B⠘⠿⣷⣶⣾⠿⠋\e[6C⠈⠻⢿⣶⣶⡿⠟\e[7C\e[m\e[31m\e(0x\e[m\e[24;1H\e[24;1H\e[37mx\e[6C\e[m\e[41m\e(B        \e[12C        \e[2C        \e[7C\e[m\e[37m\e(0x\e[m\e[31mx\e[33Cx\e[m\e[25;1H\e[25;1H\e[37mx\e[6C\e[m\e[41m\e(B        \e[12C        \e[2C        \e[7C\e[m\e[37m\e(0x\e[m\e[31mx\e[5C\e[m\e[37m\e(BMortality\e[5CRecovery\e[6C\e[m\e[31m\e(0x\e[m\e[26;1H\e[26;1H\e[37mx\e[6C\e[m\e[41m\e(B \e[m\e[41;37m30052\e[m\e[41m  \e[2C \e[m\e[41;37m1169\e[m\e[41m   \e[2C \e[m\e[41;37m7893\e[m\e[41m   \e[2C \e[m\e[41;37m20990\e[m\e[41m  \e[7C\e[m\e[37m\e(0x\e[m\e[31mx\e[33Cx\e[m\e[27;1H\e[27;1H\e[37mx\e[7C\e(BCases\e[5CDeaths\e[4CRecovered\e[1CActive\e[8C\e(0x\e[m\e[31mx\e[33Cx\e[m\e[28;1H\e[28;1H\e[37mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj\e[m\e[31mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj\e[m\e[30;1H\e[30;1H\e[30mlq\e[m\e(BCases\e[1Cfrom\e[1C1/22/20\e[1Cto\e[1C6/20/20\e[30m\e(0qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk\e[m\e[31;1H\e[31;1H\e[30mx\e[m\e[32m\e(B28224\e[m\e[30m⡇\e[76C\e[m\e[34m⢀\e[4C\e[m\e[30m\e(0x\e[m\e[32;1H\e[32;1H\e[30mx\e[5C\e(B⡇\e[65C\e(0lqqqqqqqqqqqqqk\e[1Cx\e[m\e[33;1H\e[33;1H\e[30mx\e[m\e[32m\e(B21168\e[m\e[30m⡇\e[65C\e(0x\e[m\e[34m\e(BCases        \e[m\e[30m\e(0x\e[1Cx\e[m\e[34;1H\e[34;1H\e[30mx\e[m\e[32m\e(B14112\e[m\e[30m⡇\e[61C\e[m\e[34m⢀⣀⣀⡠\e[m\e[30m\e(0x\e[m\e[31m\e(BDeaths\e[m\e[34m       \e[m\e[30m\e(0x\e[1Cx\e[m\e[35;1H\e[35;1H\e[30mx\e[5C\e(B⡇\e[51C\e[m\e[34m⢀⣀⣀⠤⠤⠔⠒⠒⠉⠉⠁\e[3C\e[m\e[30m\e(0x\e[m\e[32m\e(BRecovered\e[m\e[34m    \e[m\e[30m\e(0x\e[1Cx\e[m\e[36;1H\e[36;1H\e[30mx\e[m\e[32m\e(B7056\e[1C\e[m\e[30m⡇\e[38C\e[m\e[34m⢀⣀⣀⣀⠤⠤⠔⠒⠒⠒⠒⠉⠉⠁\e[13C\e[m\e[30m\e(0mqqqqqqqqqqqqqj\e[1Cx\e[m\e[37;1H\e[37;1H\e[30mx\e[m\e[32m\e(B0\e[4C\e[m\e[30m⡇\e[m\e[32m⣀⣀⣀⣀⣤⣤⣤⣤⣤⣤⡤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠴⠶⠮⠭⠥⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠶⠶⠶⠶⠶⠮⠭⠭⠭⠭⠭⠭⠭\e[m\e[31m⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤\e[4C\e[m\e[30m\e(0x\e[m\e[38;1H\e[38;1H\e[30mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk\e[m\e[39;1H\e[39;1H\e[30mx\e[m\e(BHealth\e[1Cis\e[1Cwealth...\e[68C\e[30m\e(0x\e[m\e[40;1H\e[40;1H\e[30mx\e[m\e(B(GCash)\e[1C+639176462753\e[66C\e[30m\e(0x\e[m\e[41;1H\e[41;1H\e[30mx\e[m\e(B(Buy\e[1CMe\e[1CA\e[1CCoffee)\e[1Cwarengonza.ga/coffee4dev@warengonzaga\e[1C#covid19trackercli\e[13C\e[30m\e(0x\e[m\e[42;1H\e[42;1H\e[30mx\e[87Cx\e[m\e[43;1H\e[43;1H\e[30mx\e[m\e(BSource:\e[1Chttps://www.worldometers.info/coronavirus/\e[37C\e[30m\e(0x\e[m\e[44;1H\e[44;1H\e[30mx\e[m\e(BCode:\e[1Chttps://github.com/warengonzaga/covid19-tracker-cli\e[30C\e[30m\e(0x\e[m\e[45;1H\e[45;1H\e[30mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj\e[m\e(B\r\r\n\e[?25h"
+  - delay: 3
+    content: "\r\n\e[32mtrackercli $ \e[39m"
+  - delay: 1090
+    content: "exit\r\n"
