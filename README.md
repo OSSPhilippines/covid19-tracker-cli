@@ -347,4 +347,4 @@ COVID-19 Tracker CLI is Developed and Maintained by **Waren Gonzaga**, **Ian Viz
 
 ---
 
-:computer: with :heart: by **Waren Gonzaga** with **YHWH**
+:computer: with :heart: by **Waren Gonzaga** with **YHWH** | Tracker CLI Developers
