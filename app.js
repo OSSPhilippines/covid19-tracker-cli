@@ -4,7 +4,7 @@ const express     = require('express'),
       util        = require('./bin/util'),
       axios       = require('axios'),
       covid19     = require('./lib/cli'),
-      covid19GFX = require('./lib/cli/gfx'),
+      covid19GFX  = require('./lib/cli/gfx'),
       pkg         = require('./package.json'),    // package.json info
       apiBaseURL  = "https://corona.lmao.ninja/v2",  // NovelCOVID API
       port        = process.env.port || 7070;     // set port
@@ -147,12 +147,13 @@ app.get('/history/charts/:country/:chartSize(sm|md|lg)?', async (req, res, next)
         s.deaths, s.todayDeaths, s.recovered, 
         s.active, s.critical, s.casesPerOneMillion,
         s.updated, h, chartType, s.countryInfo, chartSize
-      )
+      );
     return null;
   }
   return next();
 });
 
+// route for web browser clients
 app.get('*', (req, res) => res.send(`
 Welcome to COVID-19 Tracker CLI v${pkg.version} by Waren Gonzaga\n
 Please visit: https://warengonza.ga/covid19-tracker-cli
