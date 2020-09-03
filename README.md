@@ -30,6 +30,8 @@ covid19clidev.now.sh
 
 Wanna feature this project? Let me know!
 
+[![COVID-19 Tracker CLI](https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=250019&theme=dark)](https://www.producthunt.com/posts/covid-19-tracker-cli?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-covid-19-tracker-cli)
+
 ## How it Works
 
 It uses an API and collect the relevant information for your reference.
