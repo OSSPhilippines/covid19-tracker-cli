@@ -4,7 +4,7 @@
 
 ![Github Banner](https://raw.githubusercontent.com/trackercli/covid19-tracker-cli/master/lib/img/covid19-tracker-cli-github-banner.jpg)
 
-**COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. [Visit Wiki](https://github.com/tracker-cli/covid19-tracker-cli/wiki)
+**COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. It Supports terminal for linux and macos, command prompt for windows, and termux for android. [Visit Wiki](https://github.com/tracker-cli/covid19-tracker-cli/wiki)
 
 ## Public Domain Names
 
