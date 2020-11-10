@@ -192,7 +192,8 @@ covid help
 
 ### Local Command Line Tracker in Container
 ```bash
-# vim covid19-tracker-cli.containerfile
+# Create build file 
+$ vim covid19-tracker-cli.containerfile
 FROM docker.io/library/alpine
 RUN apk update
 RUN apk add git
@@ -200,9 +201,11 @@ RUN apk add npm
 RUN git clone https://github.com/warengonzaga/covid19-tracker-cli.git
 RUN cd covid19-tracker-cli && npm install && npm link
 
-# podman build -t covid19-tracker-cli --file=covid19-tracker-cli.containerfile
+# Build container
+$ podman build -t covid19-tracker-cli --file=covid19-tracker-cli.containerfile
 
-# podman run -it --rm=true localhost/covid19-tracker-cli covid PH
+# Run container
+$ podman run -it --rm=true localhost/covid19-tracker-cli covid PH
 ```
 
 ## Official Blog
