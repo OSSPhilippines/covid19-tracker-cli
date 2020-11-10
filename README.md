@@ -190,6 +190,21 @@ covid ph --plain
 covid help
 ```
 
+### Local Command Line Tracker in Container
+```bash
+# vim covid19-tracker-cli.containerfile
+FROM docker.io/library/alpine
+RUN apk update
+RUN apk add git
+RUN apk add npm
+RUN git clone https://github.com/warengonzaga/covid19-tracker-cli.git
+RUN cd covid19-tracker-cli && npm install && npm link
+
+# podman build -t covid19-tracker-cli --file=covid19-tracker-cli.containerfile
+
+# podman run -it --rm=true localhost/covid19-tracker-cli covid PH
+```
+
 ## Official Blog
 
 Many people asking me how to properly use my tracker. Here's the blog on [How to Track Coronavirus on Command Line](https://warengonza.ga/covid19-tracker-cli). If you have comments or suggestions please leave it on the comment section of the blog.
