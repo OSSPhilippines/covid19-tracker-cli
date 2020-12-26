@@ -145,7 +145,7 @@ curl -L covid19.trackercli.com/history/ph/deaths
 curl -L covid19.trackercli.com/history/charts/ph
 ```
 
-![CURL](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/demo-history-chart.gif)
+![CURL](./lib/img/demo-history-chart.gif)
 
 ## Advance Usage
 
