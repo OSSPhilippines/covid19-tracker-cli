@@ -1,10 +1,10 @@
-# COVID-19 Tracker CLI [![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficial)
+# COVID-19 Tracker CLI [![Mentioned in Awesome Coronavirus](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/soroushchehresa/awesome-coronavirus)
 
-[![Github Release](https://img.shields.io/github/release/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli/releases) [![Github Star](https://img.shields.io/github/stars/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![Github Fork](https://img.shields.io/github/forks/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![License](https://img.shields.io/github/license/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![Powered By](https://img.shields.io/badge/Powered%20By-NodeJS-green.svg?style=for-the-badge)](https://nodejs.org)
+[![Developed by Waren Gonzaga](https://img.shields.io/badge/Developed%20by-Waren%20Gonzaga-blue.svg?longCache=true&style=for-the-badge)](https://facebook.com/warengonzagaofficial) [![Github Release](https://img.shields.io/github/release/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli/releases) [![Github Star](https://img.shields.io/github/stars/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![Github Fork](https://img.shields.io/github/forks/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![License](https://img.shields.io/github/license/trackercli/covid19-tracker-cli.svg?style=for-the-badge)](https://github.com/trackercli/covid19-tracker-cli) [![Powered By](https://img.shields.io/badge/Powered%20By-NodeJS-green.svg?style=for-the-badge)](https://nodejs.org)
 
 ![Github Banner](https://raw.githubusercontent.com/trackercli/covid19-tracker-cli/master/lib/img/covid19-tracker-cli-github-banner.jpg)
 
-**COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. [Visit Wiki](https://github.com/tracker-cli/covid19-tracker-cli/wiki)
+**COVID-19 Tracker CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. It Supports terminal for linux and macos, command prompt for windows, and termux for android. [Visit Wiki](https://github.com/tracker-cli/covid19-tracker-cli/wiki)
 
 ## Public Domain Names
 
@@ -75,7 +75,7 @@ curl -L covid19.trackercli.com
 #### WGET
 
 ```bash
-wget -i https://covid19.trackercli.com && cat index.html
+wget -qO- https://covid19.trackercli.com
 ```
 
 #### HTTPie
@@ -140,6 +140,15 @@ curl -L covid19.trackercli.com/history/ph/deaths
 
 ![CURL](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/demo-history-country.gif)
 
+#### Country Tracking with History Chart (Dashboard)
+
+```bash
+# shows result with history chart
+curl -L covid19.trackercli.com/history/charts/ph
+```
+
+![CURL](./lib/img/demo-history-chart.gif)
+
 ## Advance Usage
 
 ### Check Update Automagically
@@ -188,6 +197,24 @@ covid ph --plain
 
 # run help for more info
 covid help
+```
+
+### Local Command Line Tracker in Container
+```bash
+# Create build file 
+$ vim covid19-tracker-cli.containerfile
+FROM docker.io/library/alpine
+RUN apk update
+RUN apk add git
+RUN apk add npm
+RUN git clone https://github.com/warengonzaga/covid19-tracker-cli.git
+RUN cd covid19-tracker-cli && npm install && npm link
+
+# Build container
+$ podman build -t covid19-tracker-cli --file=covid19-tracker-cli.containerfile
+
+# Run container
+$ podman run -it --rm=true localhost/covid19-tracker-cli covid PH
 ```
 
 ## Official Blog
@@ -340,4 +367,4 @@ COVID-19 Tracker CLI is Developed and Maintained by **Waren Gonzaga**, **Ian Viz
 
 ---
 
-**</>** with **<3** by **Waren Gonzaga**
+:computer: with :heart: by **Waren Gonzaga** with **YHWH** | Tracker CLI Developers
