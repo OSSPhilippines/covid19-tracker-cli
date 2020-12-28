@@ -156,9 +156,9 @@ app.get('/history/charts/:country/:chartSize(sm|md|lg)?', async (req, res, next)
 
 
 // historical chart by country
-app.get('/history/web/charts/:country/:chartSize(sm|md|lg)?', async (req, res, next) => {
+app.get('/history/web/charts/:country?/:chartSize(sm|md|lg)?', async (req, res, next) => {
   const userAgent = req.headers['user-agent'],
-        countryData = req.params.country,
+        countryData = req.params.country || 'ph',
         chartType = req.params.chartType || 'cases',
         chartSize = req.params.chartSize || 'sm',
         summary = await axios.get(`${apiBaseURL}/countries/${countryData}`),
