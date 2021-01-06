@@ -1,4 +1,5 @@
 node_modules
+debug.log
 .now
 .DS_Store
 .now

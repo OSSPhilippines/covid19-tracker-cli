@@ -4,7 +4,8 @@ const express     = require('express'),
       util        = require('./bin/util'),
       axios       = require('axios'),
       covid19     = require('./lib/cli'),
-      covid19GFX = require('./lib/cli/gfx'),
+      covid19GFX  = require('./lib/cli/gfx'),
+      EventEmitter = require('events'),
       pkg         = require('./package.json'),    // package.json info
       apiBaseURL  = "https://corona.lmao.ninja/v2",  // NovelCOVID API
       port        = process.env.port || 7070;     // set port
@@ -147,12 +148,66 @@ app.get('/history/charts/:country/:chartSize(sm|md|lg)?', async (req, res, next)
         s.deaths, s.todayDeaths, s.recovered, 
         s.active, s.critical, s.casesPerOneMillion,
         s.updated, h, chartType, s.countryInfo, chartSize
-      )
+      );
     return null;
   }
   return next();
 });
 
+
+// historical chart by country
+app.get('/history/web/charts/:country?/:chartSize(sm|md|lg)?', async (req, res, next) => {
+  const userAgent = req.headers['user-agent'],
+        countryData = req.params.country || 'ph',
+        chartType = req.params.chartType || 'cases',
+        chartSize = req.params.chartSize || 'sm',
+        summary = await axios.get(`${apiBaseURL}/countries/${countryData}`),
+        history = await axios.get(`${apiBaseURL}/historical/${summary.data.country}?lastdays=all`),
+        s = summary.data,
+        h = history.data,
+        terminator = `\r\n`+'\033[?25h',
+        xtermHTMLTemplate = require('./lib/cli/gfx/terminal-html-template'),
+        bufferEmitter = new EventEmitter();
+
+  let customHttpResponse = {
+      send: (data) => {
+          bufferEmitter.emit('screenBuffer', data)
+          this.data = data
+          return this;
+        },
+          get: () => {
+            return this.data
+          }
+      };
+
+  covid19GFX.historyCountryTracker(
+    req, customHttpResponse,
+    s.country, s.cases, s.todayCases, 
+    s.deaths, s.todayDeaths, s.recovered, 
+    s.active, s.critical, s.casesPerOneMillion,
+    s.updated, h, chartType, s.countryInfo, chartSize
+  );
+
+  let screenOutput = (await new Promise((resolve, reject) => {
+    bufferEmitter.on('screenBuffer', (screen) => {
+      resolve(screen)
+    })
+    setTimeout(() => {
+      resolve('')
+    },5000)
+  }));
+
+
+  if(!screenOutput.length || !h) res.send('Unable to load the chart.Please refresh the page')
+
+  return util.isCommandline(userAgent) ? res.send(screenOutput+terminator) : res.send(xtermHTMLTemplate(screenOutput.replace(terminator, '')))
+
+});
+
+app.use('/xterm', express.static(__dirname + '/node_modules/xterm'));
+app.use('/xterm/addons', express.static(__dirname + '/node_modules/xterm-addon-fit'));
+
+// route for web browser clients
 app.get('*', (req, res) => res.send(`
 Welcome to COVID-19 Tracker CLI v${pkg.version} by Waren Gonzaga\n
 Please visit: https://warengonza.ga/covid19-tracker-cli
