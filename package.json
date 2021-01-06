@@ -31,7 +31,7 @@
   "dependencies": {
     "ansi-styles": "^4.2.1",
     "asciichart": "^1.5.15",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "blessed": "^0.1.11",
     "blessed-contrib": "^4.8.19",
     "clear": "^0.1.0",
