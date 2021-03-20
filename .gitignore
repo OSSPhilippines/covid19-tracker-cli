@@ -3,3 +3,4 @@ debug.log
 .now
 .DS_Store
 .now
+.env
