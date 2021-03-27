@@ -85,7 +85,7 @@ wget -qO- https://covid19.trackercli.com
 http http://covid19.trackercli.com
 ```
 
-![CURL](https://raw.githubusercontent.com/trackercli/covid19-tracker-cli/master/lib/img/demo-global.gif)
+![CURL](lib/img/demo-global.gif)
 
 ### Country Tracking
 
@@ -105,7 +105,7 @@ curl -L covid19.trackercli.com/philippines
 curl -L covid19.trackercli.com/ph
 ```
 
-![CURL](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/demo-country.gif)
+![CURL](lib/img/demo-country.gif)
 
 #### Global Tracking with History Chart
 
@@ -119,7 +119,7 @@ curl -L covid19.trackercli.com/history
 curl -L covid19.trackercli.com/history/all
 ```
 
-![CURL](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/demo-history-global.gif)
+![CURL](lib/img/demo-history-global.gif)
 
 #### Country Tracking with History Chart
 
@@ -138,7 +138,7 @@ curl -L covid19.trackercli.com/history/ph/cases
 curl -L covid19.trackercli.com/history/ph/deaths
 ```
 
-![CURL](https://github.com/trackercli/covid19-tracker-cli/raw/master/lib/img/demo-history-country.gif)
+![CURL](lib/img/demo-history-country.gif)
 
 #### Country Tracking with History Chart (Dashboard)
 
