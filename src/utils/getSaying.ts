@@ -1,4 +1,4 @@
-[
+const sayings = [
     "Always wash your hands! Stay safe!",
     "Stay healthy, stay at home...",
     "Play online games with your friends.",
@@ -30,5 +30,10 @@
     "Natural foods is better than vitamins...",
     "Let food be thy medicine and medicine be thy food - Hippocrates",
     "Healthy citizens are the greatest asset any country can have - Winston S. Churchill",
-    "Wine is the most healthful and most hygienic of beverages - Louis Pasteur"
-]
+    "Wine is the most healthful and most hygienic of beverages - Louis Pasteur",
+];
+
+export const getSaying: () => string = () => {
+    const index = Math.floor(Math.random() * sayings.length);
+    return sayings[index];
+};
