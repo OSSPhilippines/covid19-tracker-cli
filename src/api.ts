@@ -11,16 +11,16 @@ const app = express();
 app.use(morgan("common"));
 app.use(userAgentMiddleware);
 
-app.use("/", router);
-app.use("/", errorHandler);
+app.use(["/quiet", "/"], router);
+app.use(["/quiet", "/"], errorHandler);
 
 app.use("*", (_req, res) =>
-    res.send(
-        `Welcome to COVID-19 Tracker CLI v${version} by Waren Gonzaga with Wareneutron Developers\n
+	res.send(
+		`Welcome to COVID-19 Tracker CLI v${version} by Waren Gonzaga with Wareneutron Developers\n
 Please visit: https://warengonza.ga/covid19-tracker-cli\n`
-    )
+	)
 );
 
 app.listen(port, () => {
-    console.log(`Express listening on port ${port}`);
+	console.log(`Express listening on port ${port}`);
 });

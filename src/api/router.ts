@@ -25,7 +25,7 @@ router.get(
 
         // if the mode is not in the api then return to next handler
         if (!["cases", "deaths", "recovered"].includes(mode)) return next();
-        res.send(await globalHistory(mode));
+        res.send(await globalHistory(mode, req.baseUrl.startsWith("/quiet")));
     })
 );
 
@@ -42,21 +42,33 @@ router.get(
 
         // if the mode is not in the api then return to next handler
         if (!["cases", "deaths", "recovered"].includes(mode)) return next();
-        res.send(await historyPerCountry(country, mode));
+        res.send(
+            await historyPerCountry(
+                country,
+                mode,
+                req.baseUrl.startsWith("/quiet")
+            )
+        );
     })
 );
 
 router.get(
     "/:country",
     handleAsync(async (req, res, _next) => {
+        console.log(req.path);
         const country = req.params.country;
-        res.send(await informationPerCountry(country));
+        res.send(
+            await informationPerCountry(
+                country,
+                req.baseUrl.startsWith("/quiet")
+            )
+        );
     })
 );
 
 router.get(
     "/",
-    handleAsync(async (_req, res, _next) => {
-        res.send(await globalInformation());
+    handleAsync(async (req, res, _next) => {
+        res.send(await globalInformation(req.baseUrl.startsWith("/quiet")));
     })
 );

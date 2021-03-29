@@ -4,3 +4,4 @@ debug.log
 .DS_Store
 .now
 .env
+dist/

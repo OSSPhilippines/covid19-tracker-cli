@@ -1,5 +1,5 @@
 import axios from "axios";
-import { addFooterAndGenerateChart } from "./addFooterAndGenerateChart";
+import { generateOutput } from "./generateOutput";
 import { generateAsciichart } from "./generateAsciichart";
 
 axios.defaults.baseURL = "https://disease.sh/v3/covid-19";
@@ -85,11 +85,13 @@ const getCountryInfo: (
  * Today Cases, Today Deaths, Critical, Mortality %, Recovery in a chart
  * @param country country code or country name that the user wants to query
  * @param mode Mode that the user wants to query must be: "cases" | "deaths" | "recoveries"
+ * @param quiet tells the response to be in quiet mode or not
  */
 export const historyPerCountry: (
     country: string,
-    mode: "cases" | "deaths" | "recovered"
-) => Promise<string> = async (country, mode) => {
+    mode: "cases" | "deaths" | "recovered",
+    quiet: boolean
+) => Promise<string> = async (country, mode, quiet) => {
     // Get summary info about a country
     let [updated, apiCountryname, countryName, rows] = await getCountryInfo(
         country
@@ -114,10 +116,11 @@ export const historyPerCountry: (
     rows = rows.concat(chart);
 
     // generate table
-    let response = addFooterAndGenerateChart(
+    let response = generateOutput(
         `${countryName} Historical Chart`,
         updated,
-        rows
+        rows,
+        quiet
     );
 
     return response;
@@ -127,10 +130,13 @@ export const historyPerCountry: (
  * globalHistory shows a tablechart of the cases of all the countries
  * Shows Cases, Deaths, Recovered, Active, Cases/Million
  * and a graph of a country's cases
+ * @param mode Mode that the user wants to query must be: "cases" | "deaths" | "recoveries"
+ * @param quiet tells the response to be in quiet mode or not
  */
 export const globalHistory: (
-    mode: "cases" | "deaths" | "recovered"
-) => Promise<string> = async (mode) => {
+    mode: "cases" | "deaths" | "recovered",
+    quiet: boolean
+) => Promise<string> = async (mode, quiet) => {
     // Get summary info
     let [updated, rows] = await getAllInfo();
 
@@ -150,10 +156,11 @@ export const globalHistory: (
     rows.push(`${ mode.charAt(0).toUpperCase() + mode.slice(1) } from ${firstDate} to ${lastDate}`.magenta)
     rows = rows.concat(chart);
 
-    let response = addFooterAndGenerateChart(
+    let response = generateOutput(
         "Global Historical Chart",
         updated,
-        rows
+        rows,
+        quiet
     );
 
     return response;
@@ -164,16 +171,19 @@ export const globalHistory: (
  * 	Shows Cases, Deaths, Recovered, Active, Cases/Million
  *  Today Cases, Today Deaths, Critical, Mortality %, Recovery in a chart
  * 	@param country country code or country name that the user wants to query
+ *  @param quiet tells the response to be in quiet mode or not
  */
 export const informationPerCountry: (
-    country: string
-) => Promise<string> = async (country) => {
+    country: string,
+    quiet: boolean
+) => Promise<string> = async (country, quiet) => {
     let [updated, _, countryName, rows] = await getCountryInfo(country);
 
-    let response = addFooterAndGenerateChart(
+    let response = generateOutput(
         `${countryName} Update`,
         updated,
-        rows
+        rows,
+        quiet
     );
 
     // return response;
@@ -183,15 +193,14 @@ export const informationPerCountry: (
 /**
  *  globalInformation tracks the info of all countries
  * 	Shows Cases, Deaths, Recovered, Mortality %, Recovered% in a chart
+ *  @param quiet tells the response to be in quiet mode or not
  */
-export const globalInformation: () => Promise<string> = async () => {
+export const globalInformation: (quiet: boolean) => Promise<string> = async (
+    quiet
+) => {
     const [updated, rowsOfData] = await getAllInfo();
 
-    let response = addFooterAndGenerateChart(
-        "Global Update",
-        updated,
-        rowsOfData
-    );
+    let response = generateOutput("Global Update", updated, rowsOfData, quiet);
 
     return response;
 };

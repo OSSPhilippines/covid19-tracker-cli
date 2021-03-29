@@ -8,7 +8,7 @@ import {
 } from "./utils/handlers";
 
 const args = argv(process.argv.slice(2));
-let { history, mode, help } = args;
+let { history, mode, help, quiet } = args;
 const country = args._[0];
 
 const { version } = require("../package.json");
@@ -22,23 +22,25 @@ Country:  Can be a country name or ISO 3166-1 alpha-2 country code
 
 Options:
   --history  Show a chart of country's cases of world's cases
-  --mode     Use with --history to make show a chart of cases, deaths, or recovered`;
+  --mode     Use with --history to make show a chart of cases, deaths, or recovered
+  --quiet    Only show necessary information`;
 
 let output: string = "";
 const main = async () => {
     if (help) return console.log(helpMessage);
+    quiet = quiet === undefined || typeof quiet === "undefined" ? false : quiet;
 
     if (history === undefined || typeof history === "undefined") {
-        if (country === undefined) output = await globalInformation();
-        else output = await informationPerCountry(country);
+        if (country === undefined) output = await globalInformation(quiet);
+        else output = await informationPerCountry(country, quiet);
     }
 
     mode = mode === undefined || typeof mode === "undefined" ? "cases" : mode; // defauilt to cases if mode is not present
     if (!["cases", "deaths", "recovered"].includes(mode)) mode === "cases"; // default to cases if mode is not cases | deaths | recovered
 
     if (history) {
-        if (country === undefined) output = await globalHistory(mode);
-        else output = await historyPerCountry(country, mode);
+        if (country === undefined) output = await globalHistory(mode, quiet);
+        else output = await historyPerCountry(country, mode, quiet);
     }
 
     console.log(output);
