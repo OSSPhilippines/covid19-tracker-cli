@@ -1,6 +1,10 @@
 import { plot } from "asciichart";
 
-export const generateAsciichart: (data: number[]) => string = (data) => {
+export const generateAsciichart: (
+    data: number[],
+    removePadding?: boolean,
+    height?: number
+) => string = (data, removePadding, height = 10) => {
     // Divide the data by 100 since asciichart runs out of ram
     let casesArray: number[] = [];
     data.forEach((int) => {
@@ -9,7 +13,7 @@ export const generateAsciichart: (data: number[]) => string = (data) => {
     });
 
     // Generate chart
-    let chart = plot(casesArray, { height: 10 });
+    let chart = plot(casesArray, { height });
 
     // Get and normalize the floats
     let floatsInAsciiChart: string[] = chart.match(/[+-]?\d+(\.\d+)?/g)!; // Get floats from asciichart
@@ -24,6 +28,14 @@ export const generateAsciichart: (data: number[]) => string = (data) => {
         let value = properAmount[index];
         chart = chart.replace(key, value);
     });
+
+    // Remove the padding if the user requests to
+    if (removePadding === true) {
+        chart = chart
+            .split("\n")
+            .map((str) => str.trimStart())
+            .join("\n");
+    }
 
     return chart;
 };
