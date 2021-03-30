@@ -12,10 +12,17 @@ const app = express();
 app.use(morgan("common"));
 app.use(userAgentMiddleware);
 
+/**
+ * Plain CMD/Basic routes have both quiet and full modes
+ * Same with regular / routes with ansi color codes
+ */
+app.use(["/quiet/basic", "/quiet/cmd", "/quiet/plain"], plainRouter);
 app.use(["/basic", "/cmd", "/plain"], plainRouter);
+
 app.use(["/quiet", "/"], router);
 app.use("/", errorHandler);
 
+// Not found handler
 app.use("*", (_req, res) =>
     res.send(
         `Welcome to COVID-19 Tracker CLI v${version} by Waren Gonzaga with Wareneutron Developers\n

@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Request, Router } from "express";
 import {
     globalHistory,
     globalInformation,
@@ -6,6 +6,14 @@ import {
     informationPerCountry,
 } from "../utils/handlers";
 import handleAsync from "./handleAsync";
+
+/**
+ *
+ * @param req Express request
+ * @returns Boolean if the request starts with /quiet
+ */
+export const isQuiet: (req: Request) => boolean = (req) =>
+    req.baseUrl.startsWith("/quiet");
 
 /**
  * The rootRouter handles all the processing of the requests *after* passing through
@@ -25,7 +33,7 @@ router.get(
 
         // if the mode is not in the api then return to next handler
         if (!["cases", "deaths", "recovered"].includes(mode)) return next();
-        res.send(await globalHistory(mode, req.baseUrl.startsWith("/quiet")));
+        res.send(await globalHistory(mode, isQuiet(req)));
     })
 );
 
@@ -41,13 +49,7 @@ router.get(
 
         // if the mode is not in the api then return to next handler
         if (!["cases", "deaths", "recovered"].includes(mode)) return next();
-        res.send(
-            await historyPerCountry(
-                country,
-                mode,
-                req.baseUrl.startsWith("/quiet")
-            )
-        );
+        res.send(await historyPerCountry(country, mode, isQuiet(req)));
     })
 );
 
@@ -55,18 +57,13 @@ router.get(
     "/:country",
     handleAsync(async (req, res, _next) => {
         const country = req.params.country;
-        res.send(
-            await informationPerCountry(
-                country,
-                req.baseUrl.startsWith("/quiet")
-            )
-        );
+        res.send(await informationPerCountry(country, isQuiet(req)));
     })
 );
 
 router.get(
     "/",
     handleAsync(async (req, res, _next) => {
-        res.send(await globalInformation(req.baseUrl.startsWith("/quiet")));
+        res.send(await globalInformation(isQuiet(req)));
     })
 );

@@ -6,6 +6,8 @@ import {
     historyPerCountryPlain,
     globalHistoryPlain,
 } from "../utils/plainHandlers";
+import { isQuiet } from "./router";
+
 export const plainRouter = Router({ mergeParams: true });
 
 plainRouter.get(
@@ -19,7 +21,7 @@ plainRouter.get(
 
         // if the mode is not in the api then return to next handler
         if (!["cases", "deaths", "recovered"].includes(mode)) return next();
-        res.send(await globalHistoryPlain(mode));
+        res.send(await globalHistoryPlain(mode, isQuiet(req)));
     })
 );
 
@@ -35,7 +37,7 @@ plainRouter.get(
 
         // if the mode is not in the api then return to next handler
         if (!["cases", "deaths", "recovered"].includes(mode)) return next();
-        res.send(await historyPerCountryPlain(country, mode));
+        res.send(await historyPerCountryPlain(country, mode, isQuiet(req)));
     })
 );
 
@@ -43,13 +45,13 @@ plainRouter.get(
     "/:country",
     handleAsync(async (req, res, _next) => {
         const country = req.params.country;
-        res.send(await informationPerCountryPlain(country));
+        res.send(await informationPerCountryPlain(country, isQuiet(req)));
     })
 );
 
 plainRouter.get(
     "/",
-    handleAsync(async (_req, res, _next) => {
-        res.send(await globalInformationPlain());
+    handleAsync(async (req, res, _next) => {
+        res.send(await globalInformationPlain(isQuiet(req)));
     })
 );

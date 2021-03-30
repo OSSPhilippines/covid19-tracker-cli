@@ -6,8 +6,9 @@ const { version } = require("../../package.json");
 export const generatePlainOutput: (
     info: PlainData,
     chartType: string,
+    quiet: boolean,
     extraRows?: string[]
-) => string = ({ data, metainfo }, chartType, extraRows) => {
+) => string = ({ data, metainfo }, chartType, quiet, extraRows) => {
     // Set line depending if it contains a chart or not
     let line = extraRows === undefined ? "-".repeat(60) : "-".repeat(68);
     line += "\n";
@@ -43,10 +44,11 @@ export const generatePlainOutput: (
         if (normalizedArray.length !== 0) table += `\n`; // do not add whitespace at the end of the table
     }
 
-    /**
-     * responseArray is the array of the raw data **before** adding the separator lines
-     */
-    let responseArray: string[] = [header, timestamp, table];
+    // responseArray is the array of the raw data **before** adding the separator lines
+
+    let responseArray: string[] = [timestamp, table];
+
+    if (!quiet) responseArray.unshift(header);
 
     // Add extraRows to responseArray
     if (extraRows !== undefined) {
@@ -56,14 +58,22 @@ export const generatePlainOutput: (
     }
 
     // Add the help msg and other messages
-    responseArray = responseArray.concat([
-        "Help: Try to append the URL with /help to learn more...",
-        "Source: https://www.worldometers.info/coronavirus/",
-        "Code: https://github.com/warengonzaga/covid19-tracker-cli",
-        `\n${saying}\n`,
-        `Love this project? Help us to help others by means of coffee!\n${GCashMessage}(Buy Me A Coffee) warengonza.ga/coffee4dev`,
-        "Follow me on twitter for more updates!\n@warengonzaga #covid19trackercli",
-    ]);
+    if (!quiet)
+        responseArray = responseArray.concat([
+            "Help: Try to append the URL with /help to learn more...",
+            "Source: https://www.worldometers.info/coronavirus/",
+            "Code: https://github.com/warengonzaga/covid19-tracker-cli",
+            `\n${saying}\n`,
+        ]);
+
+    responseArray.push(
+        `Love this project? Help us to help others by means of coffee!\n${GCashMessage}(Buy Me A Coffee) warengonza.ga/coffee4dev`
+    );
+
+    if (!quiet)
+        responseArray.push(
+            `Follow me on twitter for more updates!\n@warengonzaga #covid19trackercli`
+        );
 
     // Construct the final output
     let response: string = "\n";
