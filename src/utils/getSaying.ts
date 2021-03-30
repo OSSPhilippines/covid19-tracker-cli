@@ -33,6 +33,9 @@ const sayings = [
     "Wine is the most healthful and most hygienic of beverages - Louis Pasteur",
 ];
 
+/**
+ * @returns A random saying from the array of sayings
+ */
 export const getSaying: () => string = () => {
     const index = Math.floor(Math.random() * sayings.length);
     return sayings[index];

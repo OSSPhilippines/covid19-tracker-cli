@@ -176,7 +176,7 @@ const separatorHandler: (
         );
     }
 
-    return "If you have reached this then something has gone wrong";
+    throw new Error("Separator handler conditions failed");
 };
 
 /**

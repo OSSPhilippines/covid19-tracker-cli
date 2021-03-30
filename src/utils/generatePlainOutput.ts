@@ -3,6 +3,13 @@ import { getSaying } from "./getSaying";
 import { getTimestamp } from "./getTimestamp";
 const { version } = require("../../package.json");
 
+/**
+ * @param info The plain data that will be shown at the top in two columns
+ * @param chartType The type of chart that will be shown. Ex:  "Global Update", "Philippine Historical Chart"
+ * @param quiet Boolean, set to true if the user requsted quiet mode
+ * @param extraRows Any extra rows that will be presented under the main info. Used for Asciichart
+ * @returns A string showing the provided data and configuration
+ */
 export const generatePlainOutput: (
     info: PlainData,
     chartType: string,
@@ -45,9 +52,7 @@ export const generatePlainOutput: (
     }
 
     // responseArray is the array of the raw data **before** adding the separator lines
-
     let responseArray: string[] = [timestamp, table];
-
     if (!quiet) responseArray.unshift(header);
 
     // Add extraRows to responseArray

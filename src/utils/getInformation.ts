@@ -62,7 +62,7 @@ export const getAllInfo: (
  * @param country the country code or string that the user provides from req.params or CLI
  * @param isPlain Set to true to recieve an object containing the responses instead of the rows
  * @returns an object containing the data and metainfo **if isPlain is set to true**
- * @returns an array in the format of [timestamp, API countryname, formal countryname, rows[]] **if isPlain is false
+ * @returns an array in the format of [timestamp, API countryname, formal countryname, rows[]] **if isPlain is false**
  */
 export const getCountryInfo: (
     country: string,

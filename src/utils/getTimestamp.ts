@@ -1,5 +1,4 @@
 /**
- *
  * @param timestamp Timestamp in Epoch Time
  * @returns String in form of As of MM/DD/YYYY, HH:mm:SS AM/PM [Date: MM/DD/YYYY]
  */

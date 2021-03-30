@@ -8,6 +8,10 @@ import {
 } from "../utils/plainHandlers";
 import { isQuiet } from "./router";
 
+/**
+ * The plainRouter handles all the plain routes such as /basic, /cmd, and /plain
+ * It also handles the quiet version of these routes
+ */
 export const plainRouter = Router({ mergeParams: true });
 
 plainRouter.get(
