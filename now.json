@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "src/index.ts",
+            "src": "src/api.ts",
             "use": "@vercel/node"
         }
     ],
@@ -13,8 +13,8 @@
                 "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
                 "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
             },
-            "src": "/.*",
-            "dest": "/app.js"
+            "src": "/(.*)",
+            "dest": "src/api.ts"
         }
     ],
     "env": {
