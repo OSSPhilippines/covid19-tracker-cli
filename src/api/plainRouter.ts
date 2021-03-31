@@ -1,28 +1,20 @@
-import { Request, Router } from "express";
-import {
-    globalHistory,
-    globalInformation,
-    historyPerCountry,
-    informationPerCountry,
-} from "../utils/handlers";
+import { Router } from "express";
 import handleAsync from "./handleAsync";
+import {
+    globalInformationPlain,
+    informationPerCountryPlain,
+    historyPerCountryPlain,
+    globalHistoryPlain,
+} from "../utils/plainHandlers";
+import { isQuiet } from "./router";
 
 /**
- *
- * @param req Express request
- * @returns Boolean if the request starts with /quiet
+ * The plainRouter handles all the plain routes such as /basic, /cmd, and /plain
+ * It also handles the quiet version of these routes
  */
-export const isQuiet: (req: Request) => boolean = (req) =>
-    req.baseUrl.startsWith("/quiet");
+export const plainRouter = Router({ mergeParams: true });
 
-/**
- * The rootRouter handles all the processing of the requests *after* passing through
- * all middlewares except not found and error handling middleware
- */
-export const router = Router({ mergeParams: true });
-
-// rootRouter.get("/history/:country/:type", historyPerCountryAndType);
-router.get(
+plainRouter.get(
     "/history/:mode?",
     handleAsync(async (req, res, next) => {
         // get mode from params
@@ -33,11 +25,11 @@ router.get(
 
         // if the mode is not in the api then return to next handler
         if (!["cases", "deaths", "recovered"].includes(mode)) return next();
-        res.send(await globalHistory(mode, isQuiet(req)));
+        res.send(await globalHistoryPlain(mode, isQuiet(req)));
     })
 );
 
-router.get(
+plainRouter.get(
     "/history/:country/:mode?",
     handleAsync(async (req, res, next) => {
         const country = req.params.country;
@@ -49,21 +41,21 @@ router.get(
 
         // if the mode is not in the api then return to next handler
         if (!["cases", "deaths", "recovered"].includes(mode)) return next();
-        res.send(await historyPerCountry(country, mode, isQuiet(req)));
+        res.send(await historyPerCountryPlain(country, mode, isQuiet(req)));
     })
 );
 
-router.get(
+plainRouter.get(
     "/:country",
     handleAsync(async (req, res, _next) => {
         const country = req.params.country;
-        res.send(await informationPerCountry(country, isQuiet(req)));
+        res.send(await informationPerCountryPlain(country, isQuiet(req)));
     })
 );
 
-router.get(
+plainRouter.get(
     "/",
     handleAsync(async (req, res, _next) => {
-        res.send(await globalInformation(isQuiet(req)));
+        res.send(await globalInformationPlain(isQuiet(req)));
     })
 );
