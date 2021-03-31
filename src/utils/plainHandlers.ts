@@ -1,7 +1,11 @@
-import axios from "axios";
 import { generateAsciichart } from "./generateAsciichart";
 import { generatePlainOutput } from "./generatePlainOutput";
-import { getAllInfo, getCountryInfo, PlainData } from "./getInformation";
+import {
+    getAllInfo,
+    getCountryInfo,
+    getHistorical,
+    PlainData,
+} from "./getInformation";
 
 /**
  * globalHistory shows a tablechart of the cases of all the countries
@@ -11,29 +15,20 @@ import { getAllInfo, getCountryInfo, PlainData } from "./getInformation";
  * @param quiet tells the response to be in quiet mode or not
  */
 export const globalHistoryPlain: (
-    mode: string,
+    mode: "cases" | "deaths" | "recovered",
     quiet: boolean
 ) => Promise<string> = async (mode, quiet) => {
     // Get summary info
     const info = (await getAllInfo(true)) as PlainData;
 
     // Get data from API
-    const { data: historicalData } = await axios.get("/historical/all");
-    const data: {
-        [key: string]: number;
-    } = historicalData[mode];
-
-    // Get first and last date of data
-    const dates = Object.keys(data);
-    const date = `${
-        mode.charAt(0).toUpperCase() + mode.slice(1)
-    } from ${dates.shift()} to ${dates.pop()}`;
+    const historicalData = await getHistorical(mode);
 
     // Generate historical graph
-    const chart = generateAsciichart(Object.values(data), true, 7);
+    const chart = generateAsciichart(historicalData.chart, true, 7);
 
     return generatePlainOutput(info, `Global Historical Chart`, quiet, [
-        date,
+        historicalData.date,
         chart,
     ]);
 };
@@ -49,32 +44,25 @@ export const globalHistoryPlain: (
 
 export const historyPerCountryPlain: (
     country: string,
-    mode: string,
+    mode: "cases" | "deaths" | "recovered",
     quiet: boolean
 ) => Promise<string> = async (country, mode, quiet) => {
     // Get summary info about a country
     const info = (await getCountryInfo(country, true)) as PlainData;
 
-    let { data: historicalData } = await axios.get(
-        `/historical/${info.metainfo.countryName}`
+    const historicalData = await getHistorical(
+        mode,
+        info.metainfo.countryName as string
     );
 
-    // Get data from API request based on the mode;
-    let data = historicalData["timeline"][mode];
-
-    // Get first and last date of data
-    const dates = Object.keys(data);
-    // prettier-ignore
-    const date = `${ mode.charAt(0).toUpperCase() + mode.slice(1) } from ${dates.shift()} to ${dates.pop()}`
-
     // Generate historical graph
-    const chart = generateAsciichart(Object.values(data), true, 7);
+    const chart = generateAsciichart(historicalData.chart, true, 7);
 
     return generatePlainOutput(
         info,
         `${info.metainfo.countryName} Chart`,
         quiet,
-        [date, chart]
+        [historicalData.date, chart]
     );
 };
 

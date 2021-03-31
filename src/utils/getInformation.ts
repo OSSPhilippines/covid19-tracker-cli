@@ -131,3 +131,41 @@ export const getCountryInfo: (
         throw new Error(`Cannot find the provided country`);
     }
 };
+
+/**
+ * Get historical info about a country / the world
+ * @param mode - mode that the user requested
+ * @param country - countryname that the user requested, leave blank to get world data
+ * @returns an object containing date and chartData properties
+ */
+export const getHistorical: (
+    mode: "cases" | "deaths" | "recovered",
+    country?: string
+) => Promise<{
+    date: string;
+    chart: number[];
+}> = async (mode, country = "all") => {
+    const { data: historicalData } = await axios.get(`/historical/${country}`);
+
+    const data: {
+        [key: string]: number;
+    } =
+        country === "all"
+            ? historicalData[mode]
+            : historicalData["timeline"][mode];
+
+    // Get first and last date
+    const dates = Object.keys(data);
+
+    // Label for chart
+    const date = `${
+        mode.charAt(0).toUpperCase() + mode.slice(1)
+    } from ${dates.shift()} to ${dates.pop()}`;
+
+    const chartData = Object.values(data);
+
+    return {
+        date,
+        chart: chartData,
+    };
+};

@@ -1,8 +1,6 @@
-import axios from "axios";
 import { generateOutput } from "./generateOutput";
 import { generateAsciichart } from "./generateAsciichart";
-import { getAllInfo, getCountryInfo } from "./getInformation";
-axios.defaults.baseURL = "https://disease.sh/v3/covid-19";
+import { getAllInfo, getCountryInfo, getHistorical } from "./getInformation";
 
 /**
  * historyPerCountry shows a tablechart of the <mode> of a country
@@ -22,23 +20,12 @@ export const historyPerCountry: (
         country
     )) as [number, string, string, (string[] | string)[]];
 
-    let { data: historicalData } = await axios.get(
-        `/historical/${apiCountryname}`
-    );
-
-    // get data from API request based on the mode
-    let data = historicalData["timeline"][mode];
-
-    // Get first and last date of timeline
-    const firstDate = Object.keys(data).shift();
-    const lastDate = Object.keys(data).pop();
-
-    // Generate historical graph
-    const chart = generateAsciichart(Object.values(data)).split("\n");
+    // Fetch chart data and generate historical graph;
+    let historicalData = await getHistorical(mode, apiCountryname);
+    const chart = generateAsciichart(historicalData.chart).split("\n");
 
     // add chart label and chart
-    // prettier-ignore
-    rows.push(`${ mode.charAt(0).toUpperCase() + mode.slice(1) } from ${firstDate} to ${lastDate}`.magenta);
+    rows.push(historicalData.date.magenta);
     rows = rows.concat(chart);
 
     // Generate table
@@ -69,20 +56,11 @@ export const globalHistory: (
         (string[] | string)[]
     ];
 
-    // Get data from API
-    const { data: historicalData } = await axios.get("/historical/all");
-    const data: {
-        [key: string]: number;
-    } = historicalData[mode];
+    // Fetch chart data and generate historical graph;
+    const historicalData = await getHistorical(mode);
+    const chart = generateAsciichart(historicalData.chart).split("\n");
 
-    const firstDate = Object.keys(data).shift();
-    const lastDate = Object.keys(data).pop();
-
-    // Generate historical graph;
-    const chart = generateAsciichart(Object.values(data)).split("\n");
-
-    // prettier-ignore
-    rows.push(`${ mode.charAt(0).toUpperCase() + mode.slice(1) } from ${firstDate} to ${lastDate}`.magenta)
+    rows.push(historicalData.date.magenta);
     rows = rows.concat(chart);
 
     let response = generateOutput(
