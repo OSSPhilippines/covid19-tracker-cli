@@ -1,7 +1,7 @@
 {
-    "name": "covid19-tracker-cli-v4",
+    "name": "covid19trackercli",
     "version": "4.0.0",
-    "description": "",
+    "description": "Track global COVID-19 cases from command line interface.",
     "main": "dist/api.js",
     "scripts": {
         "start": "node dist/api.js",
@@ -10,9 +10,24 @@
         "dev": "nodemon dist/api.js",
         "watch": "tsc -w"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
+    "keywords": [
+        "coronavirus-cli",
+        "corona-cli",
+        "covid-cli",
+        "covid-tracker",
+        "covid-cli-tracker",
+        "coronavirus",
+        "corona",
+        "covid-19",
+        "covid19",
+        "covid",
+        "virus",
+        "bat-soup",
+        "Waren Gonzaga",
+        "Wareneutron"
+    ],
+    "author": "Waren Gonzaga",
+    "license": "GPL-3.0",
     "devDependencies": {
         "@types/asciichart": "^1.5.4",
         "@types/express": "^4.17.11",
