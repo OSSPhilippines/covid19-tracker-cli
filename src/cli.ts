@@ -21,15 +21,15 @@ const { version } = require("../package.json");
 const helpMessage = `COVID-19 Tracker CLI v${version} by Waren Gonzaga with Wareneutron Developers
 Usage: covid [COUNTRY] [OPTIONS...]
 
-Country:  Can be a country name or ISO 3166-1 alpha-2 country code
-          Ex: ph = Philippines, kr = South Korea
-          Leave empty to show global data
+Country:    Can be a country name or ISO 3166-1 alpha-2 country code
+            Ex: ph = Philippines, kr = South Korea
+            Leave empty to show global data
 
 Options:
-  --history  Show a chart of country's cases of world's cases
-  --mode     Use with --history to make show a chart of cases, deaths, or recovered
-  --quiet    Only show necessary information
-  --plain    Enable plain mode`;
+    --history   Show a chart of country's cases of world's cases
+    --mode      Use with --history to make show a chart of cases, deaths, or recovered
+    --quiet     Only show necessary information
+    --plain     Enable plain mode`;
 
 let output: string = "";
 const main = async () => {

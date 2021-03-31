@@ -46,7 +46,7 @@ export const generateOutput: (
         : "";
 
     // @ts-expect-error: Missing type definitions causes TS to highlight brightRed
-    response += `(Buy Me A Coffee) warengonza.ga/coffee4dev\n`.brightRed; //BMC link
+    response += `(Buy Us A Coffee) wareneutron.com/donate\n`.brightRed; //BMC link
 
     if (!quiet) {
         response += `${"═".repeat(60)}\n`;
