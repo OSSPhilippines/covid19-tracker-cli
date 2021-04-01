@@ -5,12 +5,12 @@
 export const getTimestamp: (timestamp: number) => string = (timestamp) => {
     const date = new Date(timestamp);
 
-    const year = date.getUTCFullYear().toString();
-    const month = (date.getUTCMonth() + 1).toString();
-    const day = date.getUTCDate().toString();
-    let hour: number | string = date.getUTCHours();
-    const minute = date.getUTCMinutes().toString().padStart(2, "0");
-    const second = date.getUTCSeconds().toString().padStart(2, "0");
+    const year = date.getFullYear().toString();
+    const month = (date.getMonth() + 1).toString();
+    const day = date.getDate().toString();
+    let hour: number | string = date.getHours();
+    const minute = date.getMinutes().toString().padStart(2, "0");
+    const second = date.getSeconds().toString().padStart(2, "0");
 
     let ampm = hour > 11 ? "PM" : "AM";
     hour = ampm === "PM" ? hour - 12 : hour;
