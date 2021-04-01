@@ -66,8 +66,8 @@ export const generatePlainOutput: (
     if (!quiet)
         responseArray = responseArray.concat([
             lines.helpMessage,
-            lines.source,
-            lines.repoLink,
+            lines.docsLink,
+            lines.WNrepoLink,
             `\n${saying}\n`,
         ]);
 
