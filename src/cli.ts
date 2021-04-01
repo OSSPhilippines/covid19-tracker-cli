@@ -18,7 +18,7 @@ const country = args._[0];
 
 const { version } = require("../package.json");
 
-const helpMessage = `COVID-19 Tracker CLI v${version} by Waren Gonzaga with Wareneutron Developers
+const helpMessage = `COVID-19 Tracker & CLI v${version} by Waren Gonzaga with Wareneutron Developers
 Usage: covid [COUNTRY] [OPTIONS...]
 
 Country:    Can be a country name or ISO 3166-1 alpha-2 country code
@@ -29,7 +29,12 @@ Options:
     --history   Show a chart of country's cases of world's cases
     --mode      Use with --history to make show a chart of cases, deaths, or recovered
     --quiet     Only show necessary information
-    --plain     Enable plain mode`;
+    --plain     Enable plain mode
+    
+Useful Links:
+    Docs:       docs.wareneutron.com/covid19-tracker-cli
+    Repo:       repo.wareneutron.com/covid19-tracker-cli
+    Donate:     wareneutron.com/donate`;
 
 let output: string = "";
 const main = async () => {

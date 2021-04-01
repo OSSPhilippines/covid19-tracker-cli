@@ -19,7 +19,7 @@ export const generateOutput: (
     quiet?: boolean
 ) => string = (chartType, updateTime, data, quiet) => {
     quiet = quiet === undefined ? true : quiet;
-    let header = `COVID-19 Tracker CLI v${version} - ${chartType}`;
+    let header = `COVID-19 Tracker & CLI v${version} - ${chartType}`;
     let timestamp = getTimestamp(updateTime).yellow;
 
     data.unshift(timestamp);
@@ -28,8 +28,8 @@ export const generateOutput: (
     if (!quiet)
         data = data.concat([
             "Help: Try to append the URL with /help to learn more...",
-            "Source: https://disease.sh/v3/covid-19/",
-            "Code: https://github.com/wareneutron/covid19-tracker-cli",
+            "Docs: docs.wareneutron.com/covid19-tracker-cli",
+            "Repo: repo.wareneutron.com/covid19-tracker-cli",
         ]);
 
     let response = generateColorTable(data, "cyan");

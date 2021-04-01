@@ -20,7 +20,7 @@ export const generatePlainOutput: (
     let line = extraRows === undefined ? "-".repeat(60) : "-".repeat(68);
     line += "\n";
 
-    let header = `COVID-19 Tracker CLI v${version} - ${chartType}`;
+    let header = `COVID-19 Tracker & CLI v${version} - ${chartType}`;
     let timestamp = getTimestamp(metainfo.updated as number);
     let saying = getSaying();
 
