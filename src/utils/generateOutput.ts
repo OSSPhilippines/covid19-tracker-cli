@@ -39,11 +39,6 @@ export const generateOutput: (
 
     response += lines.sponsorMessage; // support msg
 
-    // Include GCash message if the query is to the PH
-    response += chartType.toLowerCase().includes("philippines")
-        ? lines.GCashMessage.blue + "\n"
-        : "";
-
     // @ts-expect-error: Missing type definitions causes TS to highlight brightRed
     response += `${lines.BMCLink}\n`.brightRed; //BMC link
 

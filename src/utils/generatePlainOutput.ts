@@ -24,11 +24,6 @@ export const generatePlainOutput: (
     let timestamp = getTimestamp(metainfo.updated as number);
     let saying = getSaying();
 
-    // Include GCash message if the query is to the PH
-    let GCashMessage = chartType.toLowerCase().includes("philippines")
-        ? lines.GCashMessage + "\n"
-        : "";
-
     // Generate table
     let table = "";
 
@@ -71,9 +66,7 @@ export const generatePlainOutput: (
             `\n${saying}\n`,
         ]);
 
-    responseArray.push(
-        `${lines.sponsorMessage}${GCashMessage}${lines.BMCLink}`
-    );
+    responseArray.push(`${lines.sponsorMessage}${lines.BMCLink}`);
 
     if (!quiet)
         responseArray.push(

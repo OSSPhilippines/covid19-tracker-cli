@@ -9,7 +9,6 @@ export const lines = {
     defaultHeader: `COVID-19 Tracker & CLI v${version}`,
     helpMessage: `Help: Try to append the URL with /help to learn more...`,
     sponsorMessage: `Love this project? Help us to help others by means of coffee!\n`,
-    GCashMessage: `(GCash) +639176462753`,
     BMCLink: `(Buy Me A Coffee) warengonza.ga/coffee4dev`,
     twitterPlug: `Follow me on twitter for more updates!\n`,
     handleHashtag: ["@warengonzaga", "#covid19trackercli"],
