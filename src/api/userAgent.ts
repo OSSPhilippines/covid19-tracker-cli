@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-const { version } = require("../../package.json");
+import { lines } from "../utils/getResponses";
 
 // Type of middleware and handler
 export type Handler = (
@@ -28,9 +28,7 @@ export const userAgentMiddleware: Handler = (req, res, next) => {
      */
     const userAgent = req.headers["user-agent"];
     if (!isTerminal(userAgent)) {
-        res.send(
-            `Welcome to COVID-19 Tracker CLI v${version} by Waren Gonzaga with Wareneutron Developers\nPlease visit: https://warengonza.ga/covid19-tracker-cli\n`
-        );
+        res.send(lines.notFound);
         return;
     }
 

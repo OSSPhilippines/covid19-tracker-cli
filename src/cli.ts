@@ -1,4 +1,5 @@
 import argv from "minimist";
+import { lines, welcomeMessage } from "./utils/getResponses";
 import {
     globalHistory,
     globalInformation,
@@ -16,9 +17,7 @@ const args = argv(process.argv.slice(2));
 let { history, mode, help, quiet, plain } = args;
 const country = args._[0];
 
-const { version } = require("../package.json");
-
-const helpMessage = `COVID-19 Tracker & CLI v${version} by Waren Gonzaga with Wareneutron Developers
+const helpMessage = `${welcomeMessage}
 Usage: covid [COUNTRY] [OPTIONS...]
 
 Country:    Can be a country name or ISO 3166-1 alpha-2 country code
@@ -32,9 +31,9 @@ Options:
     --plain     Enable plain mode
     
 Useful Links:
-    Docs:       docs.wareneutron.com/covid19-tracker-cli
-    Repo:       repo.wareneutron.com/covid19-tracker-cli
-    Donate:     wareneutron.com/donate`;
+    ${lines.docsLink}
+	${lines.WNrepoLink}
+    ${lines.WNDonateLink}`;
 
 let output: string = "";
 const main = async () => {
@@ -72,7 +71,11 @@ const main = async () => {
         }
     }
 
-    console.log(output);
+    // remove magic? newline
+    let response = output.split("\n");
+    response.pop();
+
+    console.log(response.join("\n"));
 };
 
 main().catch((err) => {

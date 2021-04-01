@@ -1,8 +1,7 @@
 import { generateColorTable } from "./generateTable";
 import { getTimestamp } from "./getTimestamp";
 import { getSaying } from "./getSaying";
-
-const { version } = require("../../package.json");
+import { lines } from "./getResponses";
 
 /**
  *
@@ -19,7 +18,7 @@ export const generateOutput: (
     quiet?: boolean
 ) => string = (chartType, updateTime, data, quiet) => {
     quiet = quiet === undefined ? true : quiet;
-    let header = `COVID-19 Tracker & CLI v${version} - ${chartType}`;
+    let header = `${lines.defaultHeader} - ${chartType}`;
     let timestamp = getTimestamp(updateTime).yellow;
 
     data.unshift(timestamp);
@@ -27,9 +26,9 @@ export const generateOutput: (
 
     if (!quiet)
         data = data.concat([
-            "Help: Try to append the URL with /help to learn more...",
-            "Docs: docs.wareneutron.com/covid19-tracker-cli",
-            "Repo: repo.wareneutron.com/covid19-tracker-cli",
+            lines.helpMessage,
+            lines.docsLink,
+            lines.WNrepoLink,
         ]);
 
     let response = generateColorTable(data, "cyan");
@@ -38,24 +37,24 @@ export const generateOutput: (
         response += `\n${"═".repeat(60)}\n`;
     }
 
-    response += `Love this project? Help us to help others by means of coffee!\n`; // support msg
+    response += lines.sponsorMessage; // support msg
 
     // Include GCash message if the query is to the PH
     response += chartType.toLowerCase().includes("philippines")
-        ? "(GCash) +639176462753".blue + "\n"
+        ? lines.GCashMessage.blue + "\n"
         : "";
 
     // @ts-expect-error: Missing type definitions causes TS to highlight brightRed
-    response += `(Buy Us A Coffee) wareneutron.com/donate\n`.brightRed; //BMC link
+    response += `${lines.BMCLink}\n`.brightRed; //BMC link
 
     if (!quiet) {
         response += `${"═".repeat(60)}\n`;
-        response += `Follow me on twitter for more updates!\n`;
+        response += `${lines.twitterPlug}`;
         response +=
-            ["@warengonzaga", "#covid19trackercli"]
-                .map((text) => text.black.bgCyan)
-                .join(" ") + "\n";
+            lines.handleHashtag.map((text) => text.black.bgCyan).join(" ") +
+            "\n";
     }
 
+    response += "\n";
     return response;
 };

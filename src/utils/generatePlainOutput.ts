@@ -1,7 +1,7 @@
 import { PlainData } from "./getInformation";
+import { lines } from "./getResponses";
 import { getSaying } from "./getSaying";
 import { getTimestamp } from "./getTimestamp";
-const { version } = require("../../package.json");
 
 /**
  * @param info The plain data that will be shown at the top in two columns
@@ -20,13 +20,13 @@ export const generatePlainOutput: (
     let line = extraRows === undefined ? "-".repeat(60) : "-".repeat(68);
     line += "\n";
 
-    let header = `COVID-19 Tracker & CLI v${version} - ${chartType}`;
+    let header = `${lines.defaultHeader} - ${chartType}`;
     let timestamp = getTimestamp(metainfo.updated as number);
     let saying = getSaying();
 
     // Include GCash message if the query is to the PH
     let GCashMessage = chartType.toLowerCase().includes("philippines")
-        ? "(GCash) +639176462753\n"
+        ? lines.GCashMessage + "\n"
         : "";
 
     // Generate table
@@ -65,19 +65,19 @@ export const generatePlainOutput: (
     // Add the help msg and other messages
     if (!quiet)
         responseArray = responseArray.concat([
-            "Help: Try to append the URL with /help to learn more...",
-            "Source: https://www.worldometers.info/coronavirus/",
-            "Code: https://github.com/warengonzaga/covid19-tracker-cli",
+            lines.helpMessage,
+            lines.source,
+            lines.repoLink,
             `\n${saying}\n`,
         ]);
 
     responseArray.push(
-        `Love this project? Help us to help others by means of coffee!\n${GCashMessage}(Buy Me A Coffee) warengonza.ga/coffee4dev`
+        `${lines.sponsorMessage}${GCashMessage}${lines.BMCLink}`
     );
 
     if (!quiet)
         responseArray.push(
-            `Follow me on twitter for more updates!\n@warengonzaga #covid19trackercli`
+            `${lines.twitterPlug}${lines.handleHashtag.join(" ")}`
         );
 
     // Construct the final output
@@ -94,6 +94,5 @@ export const generatePlainOutput: (
         .join("\n");
 
     response += "\n";
-
     return response;
 };
