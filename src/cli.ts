@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import argv from "minimist";
 import { lines, welcomeMessage } from "./utils/getResponses";
 import {

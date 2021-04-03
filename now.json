@@ -13,8 +13,8 @@
                 "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
                 "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
             },
-            "src": "/(.*)",
-            "dest": "src/api.ts"
+            "src": "/.*",
+            "dest": "/src/api.ts"
         }
     ],
     "env": {
