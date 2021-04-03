@@ -19,7 +19,7 @@ Contributions are welcome, create a pull request to this repo and we'll review y
 
 ## 🐛 Issues
 
-If you're facing a problem in using COVID19 Tracker and CLI please let us know by [creating an issue here](https://github.com/wareneutron/covid19-tracker-cli/issues/new). We are happy to help you! Don't forget to provide us some screenshot or errors of it, thank you!
+If you're facing a problem in using COVID-19 Tracker and CLI please let us know by [creating an issue here](https://github.com/wareneutron/covid19-tracker-cli/issues/new). We are happy to help you! Don't forget to provide us some screenshot or errors of it, thank you!
 
 ## 🏆 Sponsors and Supporters
 
@@ -46,11 +46,11 @@ Read the project's [code of conduct](./code_of_conduct.md).
 
 ## 📃 License
 
-COVID19 Tracker and CLI is licensed under [GNU General Public License v3](https://opensource.org/licenses/GPL-3.0).
+COVID-19 Tracker and CLI is licensed under [GNU General Public License v3](https://opensource.org/licenses/GPL-3.0).
 
 ## 📝 Author
 
-COVID19 Tracker and CLI is created by **[Waren Gonzaga](https://github.com/warengonzaga)**, developed and maintained by [Wareneutron Developers](https://wareneutron.com) with the help of awesome [contributors](https://github.com/wareneutron/covid19-tracker-cli/graphs/contributors).
+COVID-19 Tracker and CLI is created by **[Waren Gonzaga](https://github.com/warengonzaga)**, developed and maintained by [Wareneutron Developers](https://wareneutron.com) with the help of awesome [contributors](https://github.com/wareneutron/covid19-tracker-cli/graphs/contributors).
 
 ---
 
