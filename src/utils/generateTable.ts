@@ -34,12 +34,12 @@ const getPosOfSeparator: (row: string, separator: string) => number[] = (
     let response: number[] = [];
     // Temporarily replace color codes as it breaks string.length
     while (row.includes(separator)) {
-        row = row.replace(separator, "│");
+        row = row.replace(separator, "~");
     }
 
     let charArray = row.split("");
     charArray.forEach((char, index) => {
-        if (char === "│") {
+        if (char === "~") {
             response.push(index);
         }
     });
@@ -229,7 +229,7 @@ export const generateTable: (
     rows.forEach((row) => {
         // Temporarily replace color codes as it breaks string.length
         while (row.includes(boxArt.singleVertical)) {
-            row = row.replace(boxArt.singleVertical, "│");
+            row = row.replace(boxArt.singleVertical, "~");
         }
 
         let rowLength = row.length;

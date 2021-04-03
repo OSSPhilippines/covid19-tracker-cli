@@ -18,6 +18,7 @@
         }
     ],
     "env": {
-        "VERSION": "1"
+        "VERSION": "1",
+        "FORCE_COLOR": "1"
     }
 }
