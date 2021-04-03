@@ -39,7 +39,7 @@ const getPosOfSeparator: (row: string, separator: string) => number[] = (
 
     let charArray = row.split("");
     charArray.forEach((char, index) => {
-        if (char === "│") {
+        if (char === "~") {
             response.push(index);
         }
     });
