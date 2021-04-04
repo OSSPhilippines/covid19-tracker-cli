@@ -1,5 +1,7 @@
 node_modules
-debug.log
+dist/
+.log
 .now
 .DS_Store
 .now
+.env
