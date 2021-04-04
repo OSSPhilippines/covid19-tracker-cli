@@ -23,7 +23,7 @@ If you're facing a problem in using COVID-19 Tracker and CLI please let us know 
 
 ## 🏆 Sponsors and Supporters
 
-[![Vercel](https://wrngnz.ga/badge-vercel)](https://vercel.com) [![CircleCI](https://wrngnz.ga/badge-circleci)](https://circleci.com) [![GitBook](https://wrngnz.ga/badge-gitbook)](https://gitbook.io)
+[![Vercel](https://wrngnz.ga/badge-vercel)](https://vercel.com) [![CircleCI](https://wrngnz.ga/badge-circleci)](https://circleci.com) [![GitBook](https://wrngnz.ga/badge-gitbook)](https://gitbook.io) [![Digital Ocean](https://wrngnz.ga/badge-digitalocean)](https://digitalocean.com)
 
 <!-- markdownlint-disable MD033 -->
 > Love what we do? **[Send us some coffees](https://buymeacoff.ee/wareneutron)**!<br/>
