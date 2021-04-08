@@ -2,9 +2,9 @@ import express from "express";
 import morgan from "morgan";
 import { errorHandler } from "./api/errorHandler";
 import { plainRouter } from "./api/plainRouter";
-import { router } from "./api/router";
+import { regularRouter } from "./api/regularRouter";
 import { userAgentMiddleware } from "./api/userAgent";
-import { lines } from "./utils/getResponses";
+import { lines } from "./utils/libs/getResponses";
 
 const port = parseInt(process.env.PORT!) || 7070;
 
@@ -19,7 +19,7 @@ app.use(userAgentMiddleware);
 app.use(["/quiet/basic", "/quiet/cmd", "/quiet/plain"], plainRouter);
 app.use(["/basic", "/cmd", "/plain"], plainRouter);
 
-app.use(["/quiet", "/"], router);
+app.use(["/quiet", "/"], regularRouter);
 app.use("/", errorHandler);
 
 // Not found handler

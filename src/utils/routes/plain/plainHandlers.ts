@@ -1,11 +1,11 @@
-import { generateAsciichart } from "./generateAsciichart";
+import { generateAsciichart } from "../../libs/generateAsciichart";
 import { generatePlainOutput } from "./generatePlainOutput";
 import {
     getAllInfo,
     getCountryInfo,
     getHistorical,
     PlainData,
-} from "./getInformation";
+} from "../../getInformation";
 
 /**
  * globalHistory shows a tablechart of the cases of all the countries

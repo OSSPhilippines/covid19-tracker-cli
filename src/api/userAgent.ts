@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { lines } from "../utils/getResponses";
+import { lines } from "../utils/libs/getResponses";
 
 // Type of middleware and handler
 export type Handler = (

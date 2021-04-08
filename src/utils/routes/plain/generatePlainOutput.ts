@@ -1,7 +1,7 @@
-import { PlainData } from "./getInformation";
-import { lines } from "./getResponses";
-import { getSaying } from "./getSaying";
-import { getTimestamp } from "./getTimestamp";
+import { PlainData } from "../../getInformation";
+import { lines } from "../../libs/getResponses";
+import { getSaying } from "../../libs/getSaying";
+import { getTimestamp } from "../../libs/getTimestamp";
 
 /**
  * @param info The plain data that will be shown at the top in two columns

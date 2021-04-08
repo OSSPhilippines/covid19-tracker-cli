@@ -1,6 +1,10 @@
-import { generateOutput } from "./generateOutput";
-import { generateAsciichart } from "./generateAsciichart";
-import { getAllInfo, getCountryInfo, getHistorical } from "./getInformation";
+import { generateRegularOutput } from "./generateRegularOutput";
+import { generateAsciichart } from "../../libs/generateAsciichart";
+import {
+    getAllInfo,
+    getCountryInfo,
+    getHistorical,
+} from "../../getInformation";
 
 /**
  * historyPerCountry shows a tablechart of the <mode> of a country
@@ -29,7 +33,7 @@ export const historyPerCountry: (
     rows = rows.concat(chart);
 
     // Generate table
-    let response = generateOutput(
+    let response = generateRegularOutput(
         `${countryName} Historical Chart`,
         updated,
         rows,
@@ -63,7 +67,7 @@ export const globalHistory: (
     rows.push(historicalData.date.magenta);
     rows = rows.concat(chart);
 
-    let response = generateOutput(
+    let response = generateRegularOutput(
         "Global Historical Chart",
         updated,
         rows,
@@ -88,7 +92,7 @@ export const informationPerCountry: (
     let [updated, _, countryName, rows] = (await getCountryInfo(country)) as [
 		number, string, string, (string[] | string)[]];
 
-    let response = generateOutput(
+    let response = generateRegularOutput(
         `${countryName} Update`,
         updated,
         rows,
@@ -112,7 +116,12 @@ export const globalInformation: (quiet: boolean) => Promise<string> = async (
         (string[] | string)[]
     ];
 
-    let response = generateOutput("Global Update", updated, rowsOfData, quiet);
+    let response = generateRegularOutput(
+        "Global Update",
+        updated,
+        rowsOfData,
+        quiet
+    );
 
     return response;
 };
