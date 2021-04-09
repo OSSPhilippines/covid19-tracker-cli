@@ -1,10 +1,7 @@
 import { generateRegularOutput } from "./generateRegularOutput";
 import { generateAsciichart } from "../../libs/generateAsciichart";
-import {
-    getAllInfo,
-    getCountryInfo,
-    getHistorical,
-} from "../../getInformation";
+import { getHistorical } from "../../getInformation";
+import { countryInfo, globalInfo } from "./regularParser";
 
 /**
  * historyPerCountry shows a tablechart of the <mode> of a country
@@ -20,23 +17,26 @@ export const historyPerCountry: (
     quiet: boolean
 ) => Promise<string> = async (country, mode, quiet) => {
     // Get summary info about a country
-    let [updated, apiCountryname, countryName, rows] = (await getCountryInfo(
-        country
-    )) as [number, string, string, (string[] | string)[]];
+    let {
+        apiCountryName,
+        formalCountryName,
+        rowsOfData,
+        timeUpdated,
+    } = await countryInfo(country);
 
     // Fetch chart data and generate historical graph;
-    let historicalData = await getHistorical(mode, apiCountryname);
-    const chart = generateAsciichart(historicalData.chart).split("\n");
+    let historicalData = await getHistorical(mode, apiCountryName);
+    const chart = generateAsciichart(historicalData.chartData).split("\n");
 
     // add chart label and chart
-    rows.push(historicalData.date.magenta);
-    rows = rows.concat(chart);
+    rowsOfData.push(historicalData.date.magenta);
+    rowsOfData = rowsOfData.concat(chart);
 
     // Generate table
     let response = generateRegularOutput(
-        `${countryName} Historical Chart`,
-        updated,
-        rows,
+        `${formalCountryName} Historical Chart`,
+        timeUpdated,
+        rowsOfData,
         quiet
     );
 
@@ -55,22 +55,19 @@ export const globalHistory: (
     quiet: boolean
 ) => Promise<string> = async (mode, quiet) => {
     // Get summary info
-    let [updated, rows] = (await getAllInfo()) as [
-        number,
-        (string[] | string)[]
-    ];
+    let { timeUpdated, rowsOfData } = await globalInfo();
 
     // Fetch chart data and generate historical graph;
     const historicalData = await getHistorical(mode);
-    const chart = generateAsciichart(historicalData.chart).split("\n");
+    const chart = generateAsciichart(historicalData.chartData).split("\n");
 
-    rows.push(historicalData.date.magenta);
-    rows = rows.concat(chart);
+    rowsOfData.push(historicalData.date.magenta);
+    rowsOfData = rowsOfData.concat(chart);
 
     let response = generateRegularOutput(
         "Global Historical Chart",
-        updated,
-        rows,
+        timeUpdated,
+        rowsOfData,
         quiet
     );
 
@@ -89,13 +86,12 @@ export const informationPerCountry: (
     quiet: boolean
 ) => Promise<string> = async (country, quiet) => {
     // prettier-ignore
-    let [updated, _, countryName, rows] = (await getCountryInfo(country)) as [
-		number, string, string, (string[] | string)[]];
+    let {timeUpdated, formalCountryName, rowsOfData} = await countryInfo(country);
 
     let response = generateRegularOutput(
-        `${countryName} Update`,
-        updated,
-        rows,
+        `${formalCountryName} Update`,
+        timeUpdated,
+        rowsOfData,
         quiet
     );
 
@@ -111,14 +107,11 @@ export const informationPerCountry: (
 export const globalInformation: (quiet: boolean) => Promise<string> = async (
     quiet
 ) => {
-    const [updated, rowsOfData] = (await getAllInfo()) as [
-        number,
-        (string[] | string)[]
-    ];
+    const { timeUpdated, rowsOfData } = await globalInfo();
 
     let response = generateRegularOutput(
         "Global Update",
-        updated,
+        timeUpdated,
         rowsOfData,
         quiet
     );

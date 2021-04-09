@@ -1,4 +1,3 @@
-import { PlainData } from "../../getInformation";
 import { lines } from "../../libs/getResponses";
 import { getSaying } from "../../libs/getSaying";
 import { getTimestamp } from "../../libs/getTimestamp";
@@ -11,17 +10,22 @@ import { getTimestamp } from "../../libs/getTimestamp";
  * @returns A string showing the provided data and configuration
  */
 export const generatePlainOutput: (
-    info: PlainData,
+    info: {
+        data: {
+            [key: string]: string;
+        };
+        timeUpdated: number;
+    },
     chartType: string,
     quiet: boolean,
     extraRows?: string[]
-) => string = ({ data, metainfo }, chartType, quiet, extraRows) => {
+) => string = ({ data, timeUpdated }, chartType, quiet, extraRows) => {
     // Set line depending if it contains a chart or not
     let line = extraRows === undefined ? "-".repeat(60) : "-".repeat(68);
     line += "\n";
 
     let header = `${lines.defaultHeader} - ${chartType}`;
-    let timestamp = getTimestamp(metainfo.updated as number);
+    let timestamp = getTimestamp(timeUpdated);
     let saying = getSaying();
 
     // Generate table

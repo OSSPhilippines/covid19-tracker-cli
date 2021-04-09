@@ -1,61 +1,38 @@
 import axios from "axios";
+import { convertCountryCode } from "../utils/libs/convertCountry";
+import { capitalizeFirstLetter } from "../utils/libs/capitalizeFirstLetter";
 axios.defaults.baseURL = "https://disease.sh/v3/covid-19";
-
-let countryCodes: { [key: string]: string } = {};
-(async () => {
-    countryCodes = (await axios.get("http://country.io/names.json")).data;
-})();
-
-export interface PlainData {
-    data: {
-        [key: string]: string;
-    };
-    metainfo: {
-        [key: string]: number | string;
-    };
-}
 
 /**
  * @param isPlain Set to true to recieve an object containing the responses instead of the rows
  * @returns an object containing the data and metainfo **if isPlain is set to true**
  * @returns an array in the format of [timestamp, rows] **if isPlain is set to false**
  */
-export const getAllInfo: (
-    isPlain?: boolean
-) => Promise<[number, (string[] | string)[]] | PlainData> = async (
-    isPlain = false
-) => {
+export const getAllInfo: () => Promise<{
+    updated: number;
+    data: {
+        cases: number;
+        deaths: number;
+        recovered: number;
+        deathRate: number;
+        recoveryRate: number;
+    };
+}> = async () => {
     let { data: globalData } = await axios.get("/all");
     let { cases, deaths, recovered, updated } = globalData;
+    let deathRate = (deaths / cases) * 100;
+    let recoveryRate = (recovered / cases) * 100;
 
-    let mortalityPercentage = ((deaths / cases) * 100).toFixed(2) + "%";
-    let recoveredPercentage = ((recovered / cases) * 100).toFixed(2) + "%";
-
-    [cases, deaths, recovered] = [cases, deaths, recovered].map((num: number) =>
-        num.toLocaleString("en-US", { maximumFractionDigits: 0 })
-    );
-
-    // Return object containing information if isPlain is set to true
-    if (isPlain) {
-        return {
-            data: {
-                Cases: cases,
-                Deaths: deaths,
-                "Mortality %": mortalityPercentage,
-                Recovered: recovered,
-                "Recovered %": recoveredPercentage,
-            },
-            metainfo: {
-                updated,
-            },
-        };
-    }
-
-    // Return rows if isPlain is set to false
-    // prettier-ignore
-    return [updated, [
-        ["Cases".magenta, "Deaths".red,"Recovered".green, "Mortality %".red,"Recovered %".green],
-        [cases, deaths, recovered, mortalityPercentage, recoveredPercentage]]]
+    return {
+        updated,
+        data: {
+            cases,
+            deaths,
+            recovered,
+            deathRate,
+            recoveryRate,
+        },
+    };
 };
 
 /**
@@ -65,107 +42,108 @@ export const getAllInfo: (
  * @returns an array in the format of [timestamp, API countryname, formal countryname, rows[]] **if isPlain is false**
  */
 export const getCountryInfo: (
-    country: string,
-    isPlain?: boolean
-) => Promise<
-    [number, string, string, (string[] | string)[]] | PlainData
-> = async (country, isPlain) => {
-    // Wait 1 second for countryCodes to initialize, needed for CLI
-    if (Object.keys(countryCodes).length === 0) {
-        await new Promise((resolve) => {
-            setTimeout(resolve, 1000);
-        });
-    }
-
-    country =
-        country.length < 3 ? countryCodes[country.toUpperCase()] : country; // Convert country code to country name
-
-    if (country === undefined || typeof country === "undefined")
-        throw new Error(`Cannot find provided country`);
+    country: string
+) => Promise<{
+    updated: number;
+    formalCountryName: string;
+    apiCountryName: string;
+    data: {
+        cases: number;
+        todayCases: number;
+        active: number;
+        recovered: number;
+        deaths: number;
+        todayDeaths: number;
+        critical: number;
+        deathRate: number;
+        recoveryRate: number;
+        casesPerOneMillion: number;
+    };
+}> = async (country) => {
+    // Convert country to country code
+    country = await convertCountryCode(country);
+    let formalCountryName = capitalizeFirstLetter(country);
 
     try {
         let { data: countryData } = await axios.get(`/countries/${country}`);
         // prettier-ignore
-        let { country: countryName, updated, cases, deaths, recovered, active, casesPerOneMillion, todayCases, todayDeaths, critical} = countryData;
+        let { country: apiCountryName, updated, cases, deaths, recovered, active, casesPerOneMillion, todayCases, todayDeaths, critical} = countryData;
+        let deathRate = (deaths / cases) * 100;
+        let recoveryRate = (recovered / cases) * 100;
 
-        let mortalityPercentage = ((deaths / cases) * 100).toFixed(2) + "%";
-        let recoveredPercentage = ((recovered / cases) * 100).toFixed(2) + "%";
-
-        // prettier-ignore
-        [ cases, deaths, recovered, active, casesPerOneMillion, todayCases, todayDeaths, critical ] = 
-		[ cases, deaths, recovered, active, casesPerOneMillion, todayCases, todayDeaths, critical,
-			].map((num: number) =>
-				num.toLocaleString("en-US", { maximumFractionDigits: 0 })
-			);
-
-        // Return object containing information if isPlain is set to true
-        if (isPlain) {
-            return {
-                data: {
-                    Cases: cases,
-                    "Today Cases": todayCases,
-                    Active: active,
-                    Recovered: recovered,
-                    Deaths: deaths,
-                    "Today Deaths": todayDeaths,
-                    Critical: critical,
-                    "Mortality %": mortalityPercentage,
-                    "Recovery %": recoveredPercentage,
-                    "Cases/Million": casesPerOneMillion,
-                },
-                metainfo: {
-                    updated,
-                    countryName,
-                },
-            };
-        }
-
-        //prettier-ignore
-        return [updated, country, countryName, [
-			[ "Cases".magenta, "Deaths".red, "Recovered".green, "Active".blue, "Cases/Million".blue,], 
-			[ cases, deaths, recovered, active, casesPerOneMillion,],
-			[ "Today Cases".magenta, "Today Deaths".red, "Critical".red, "Mortaility %".red, "Recovery %".green], 
-			[ todayCases, todayDeaths, critical, mortalityPercentage, recoveredPercentage]]
-		]
+        return {
+            updated,
+            formalCountryName,
+            apiCountryName,
+            // prettier-ignore
+            data: {
+				cases, todayCases, active, recovered, deaths, todayDeaths, critical, deathRate, recoveryRate, casesPerOneMillion
+			},
+        };
     } catch {
         throw new Error(`Cannot find the provided country`);
     }
 };
 
-/**
- * Get historical info about a country / the world
- * @param mode - mode that the user requested
- * @param country - countryname that the user requested, leave blank to get world data
- * @returns an object containing date and chartData properties
- */
-export const getHistorical: (
-    mode: "cases" | "deaths" | "recovered",
+type getHistoricalMode = "cases" | "deaths" | "recovered" | "all";
+
+// prettier-ignore
+export async function getHistorical<T extends getHistoricalMode>(
+    mode: T,
     country?: string
-) => Promise<{
+): Promise<
+    T extends "all" ? {
+    	date: string;
+        chartData: {
+        	[key: string]: {
+        		[key: string]: number;
+            };
+        };
+    } : {
+        date: string;
+        chartData: number[];
+    }
+>;
+
+export async function getHistorical(
+    mode: getHistoricalMode,
+    country = "all"
+): Promise<{
     date: string;
-    chart: number[];
-}> = async (mode, country = "all") => {
+    chartData:
+        | number[]
+        | {
+              [key: string]: {
+                  [key: string]: number;
+              };
+          };
+}> {
     const { data: historicalData } = await axios.get(`/historical/${country}`);
 
-    const data: {
-        [key: string]: number;
-    } =
-        country === "all"
-            ? historicalData[mode]
-            : historicalData["timeline"][mode];
+    // Get all the modes
+    let chartData =
+        country === "all" ? historicalData : historicalData["timeline"];
+
+    // If the user did not select all, then get the mode they wanted
+    if (mode !== "all") chartData = chartData[mode];
 
     // Get first and last date
-    const dates = Object.keys(data);
+    const dates = Object.keys(mode === "all" ? chartData["cases"] : chartData);
 
     // Label for chart
     const date = `${
         mode.charAt(0).toUpperCase() + mode.slice(1)
     } from ${dates.shift()} to ${dates.pop()}`;
 
-    const chartData = Object.values(data);
-
-    return {
-        date,
-        chart: chartData,
-    };
-};
+    if (mode === "all") {
+        return {
+            date,
+            chartData,
+        };
+    } else {
+        return {
+            date,
+            chartData: Object.values(chartData) as number[],
+        };
+    }
+}
