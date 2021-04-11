@@ -1,3 +1,4 @@
+import { columnizeData } from "../../libs/columnizeData";
 import { lines } from "../../libs/getResponses";
 import { getSaying } from "../../libs/getSaying";
 import { getTimestamp } from "../../libs/getTimestamp";
@@ -28,27 +29,7 @@ export const generatePlainOutput: (
     let timestamp = getTimestamp(timeUpdated);
     let saying = getSaying();
 
-    // Generate table
-    let table = "";
-
-    // Create columns
-    let normalizedArray: string[] = [];
-    Object.keys(data).forEach((key) => {
-        let value = data[key];
-        let line = `${key.padEnd(15, " ")}| ${value.padEnd(13, " ")}`; // create a line with length 30;
-        normalizedArray.push(line);
-    });
-
-    while (normalizedArray.length > 0) {
-        let left = normalizedArray.shift();
-        let right = normalizedArray.shift();
-
-        //right may be undefined, so default to empty string
-        if (right === undefined) right = "";
-
-        table += `${left}${right}`;
-        if (normalizedArray.length !== 0) table += `\n`; // do not add whitespace at the end of the table
-    }
+    let table = columnizeData(data);
 
     // responseArray is the array of the raw data **before** adding the separator lines
     let responseArray: string[] = [timestamp, table];

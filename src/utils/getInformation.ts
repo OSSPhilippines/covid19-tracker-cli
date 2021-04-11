@@ -11,6 +11,7 @@ axios.defaults.baseURL = "https://disease.sh/v3/covid-19";
 export const getAllInfo: () => Promise<{
     updated: number;
     data: {
+        active: number;
         cases: number;
         deaths: number;
         recovered: number;
@@ -19,13 +20,14 @@ export const getAllInfo: () => Promise<{
     };
 }> = async () => {
     let { data: globalData } = await axios.get("/all");
-    let { cases, deaths, recovered, updated } = globalData;
+    let { cases, deaths, recovered, updated, active } = globalData;
     let deathRate = (deaths / cases) * 100;
     let recoveryRate = (recovered / cases) * 100;
 
     return {
         updated,
         data: {
+            active,
             cases,
             deaths,
             recovered,
@@ -131,9 +133,10 @@ export async function getHistorical(
     const dates = Object.keys(mode === "all" ? chartData["cases"] : chartData);
 
     // Label for chart
-    const date = `${
-        mode.charAt(0).toUpperCase() + mode.slice(1)
-    } from ${dates.shift()} to ${dates.pop()}`;
+    const informationType =
+        mode === "all" ? "Data" : mode.charAt(0).toUpperCase() + mode.slice(1);
+
+    const date = `${informationType} from ${dates.shift()} to ${dates.pop()}`;
 
     if (mode === "all") {
         return {

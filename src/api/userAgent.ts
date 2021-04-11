@@ -13,7 +13,9 @@ export type Handler = (
  * @param userAgent The user agent of the requester
  * @returns A boolean that is true of the user agent provided is from curl / wget / httpie
  */
-const isTerminal: (userAgent: string | undefined) => boolean = (userAgent) => {
+export const isTerminal: (userAgent: string | undefined) => boolean = (
+    userAgent
+) => {
     if (userAgent === undefined) return false;
     if (/curl|wget|httpie/i.test(userAgent)) return true;
     return false;

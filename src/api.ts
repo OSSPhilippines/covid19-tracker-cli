@@ -1,5 +1,6 @@
 import express from "express";
 import morgan from "morgan";
+import { dashboardRouter } from "./api/dashboardRouter";
 import { errorHandler } from "./api/errorHandler";
 import { plainRouter } from "./api/plainRouter";
 import { regularRouter } from "./api/regularRouter";
@@ -10,7 +11,11 @@ const port = parseInt(process.env.PORT!) || 7070;
 
 const app = express();
 app.use(morgan("common"));
+app.use("/history/web/charts", dashboardRouter);
+
 app.use(userAgentMiddleware);
+
+app.use("/history/charts", dashboardRouter);
 
 /**
  * Plain CMD/Basic routes have both quiet and full modes
