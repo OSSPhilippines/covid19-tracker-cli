@@ -55,7 +55,7 @@ export const blessedConfig: {
         },
         bar: {
             position: [8, 0, 5, 5],
-            barXOffset: 3,
+            barXOffset: 1,
         },
         donut: {
             position: [8, 5, 5, 4],
@@ -79,7 +79,7 @@ export const blessedConfig: {
         },
         bar: {
             position: [4, 3, 5, 3],
-            barXOffset: 6,
+            barXOffset: 4,
         },
         donut: {
             position: [4, 6, 5, 3],
@@ -103,7 +103,7 @@ export const blessedConfig: {
         },
         bar: {
             position: [6, 3, 5, 3],
-            barXOffset: 8,
+            barXOffset: 5,
         },
         donut: {
             position: [6, 6, 5, 3],

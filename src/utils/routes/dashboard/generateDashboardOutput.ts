@@ -1,5 +1,6 @@
 import blessed from "blessed";
 import contrib from "blessed-contrib";
+import { removeANSI } from "../../libs/generateTable";
 import { welcomeMessage } from "../../libs/getResponses";
 import { blessedConfig } from "./blessedConfig";
 import { DashboardSize } from "./dashboardHandlers";
@@ -137,8 +138,8 @@ export const generateDashboardOutput: (
 
     let bar = grid.set(barStartY, barStartX, barSpanY, barSpanX, contrib.bar, {
         label: "Information",
-        barWidth: 8,
-        barSpacing: 8,
+        barWidth: 9,
+        barSpacing: 9,
         xOffset: sizeConfig.bar.barXOffset,
         maxHeight: 9,
     });
@@ -197,8 +198,41 @@ export const generateDashboardOutput: (
 
     // Take a screenshot
     const [screenshotX, screenshotY] = sizeConfig.screenshot;
-    const response = screen.screenshot(0, screenshotX, 0, screenshotY);
+    let response = screen.screenshot(0, screenshotX, 0, screenshotY);
     screen.destroy();
 
+    response = removeUnneededLines(response);
     return response;
+};
+
+const removeUnneededLines: (str: string) => string = (str) => {
+    // Split the input
+    let splitLines = str.split("\n");
+
+    // Lines with ansi removed
+    let rawLines = splitLines.map((line) => {
+        // If line contains a background color code then replace it with NON ansi string
+        // This is mostly to preserve bars since they are just whitespace
+        if (line.includes("\x1B[4")) line.replace("\x1B[4", "_");
+        return removeANSI(line);
+    });
+
+    // This array represents the indexes of the lines in splitLines that are good and should be kept
+    let goodLines: number[] = [];
+
+    rawLines.forEach((line, index) => {
+        // remove border
+        line = line.replace(/│/g, "");
+
+        // remove spaces
+        line = line.replace(/\s/g, "");
+        if (line.length !== 0) goodLines.push(index);
+    });
+
+    let response: string[] = [];
+    splitLines.forEach((line, index) => {
+        if (goodLines.includes(index)) response.push(line);
+    });
+
+    return response.join("\n");
 };

@@ -1,7 +1,7 @@
 import colors from "colors";
 import { BoxArt, getBoxArt } from "./getBoxArt";
 
-const removeANSI: (str: string) => string = (str) => {
+export const removeANSI: (str: string) => string = (str) => {
     while (str.includes("\x1B")) {
         str = str.replace(/\u001b[^m]*?m/g, "");
     }
