@@ -1,7 +1,8 @@
 import blessed from "blessed";
 import contrib from "blessed-contrib";
 import { removeANSI } from "../../libs/generateTable";
-import { welcomeMessage } from "../../libs/getResponses";
+import { lines, welcomeMessage } from "../../libs/getResponses";
+import { getSaying } from "../../libs/getSaying";
 import { blessedConfig } from "./blessedConfig";
 import { DashboardSize } from "./dashboardHandlers";
 
@@ -201,7 +202,17 @@ export const generateDashboardOutput: (
     let response = screen.screenshot(0, screenshotX, 0, screenshotY);
     screen.destroy();
 
+    // Remove garbage lines
     response = removeUnneededLines(response);
+    response += "\n";
+
+    response += getSaying() + "\n";
+    response += lines.WNrepoLink + "\n\n";
+    response += lines.BMCLink + "\n";
+    response += lines.sponsorMessage + "\n";
+    response += lines.twitterPlug;
+    response += lines.handleHashtag.join(" ") + "\n";
+
     return response;
 };
 
@@ -212,7 +223,7 @@ const removeUnneededLines: (str: string) => string = (str) => {
     // Lines with ansi removed
     let rawLines = splitLines.map((line) => {
         // If line contains a background color code then replace it with NON ansi string
-        // This is mostly to preserve bars since they are just whitespace
+        // This is mostly to preserve bars since they are just colored whitespace
         if (line.includes("\x1B[4")) line.replace("\x1B[4", "_");
         return removeANSI(line);
     });
@@ -221,11 +232,9 @@ const removeUnneededLines: (str: string) => string = (str) => {
     let goodLines: number[] = [];
 
     rawLines.forEach((line, index) => {
-        // remove border
-        line = line.replace(/│/g, "");
+        // remove border and spaces
+        line = line.replace(/│/g, "").replace(/\s/g, "");
 
-        // remove spaces
-        line = line.replace(/\s/g, "");
         if (line.length !== 0) goodLines.push(index);
     });
 

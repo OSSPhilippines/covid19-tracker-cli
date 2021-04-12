@@ -41,8 +41,8 @@ export const blessedConfig: {
     [key in DashboardSize]: BlessedSizeConfiguration;
 } = {
     sm: {
-        mockStdout: [180, 40],
-        screenshot: [90, 36],
+        mockStdout: [180, 44],
+        screenshot: [90, 40],
         header: {
             position: [0, 0, 4, 4],
         },
