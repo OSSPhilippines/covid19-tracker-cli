@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 import argv from "minimist";
-import { lines, welcomeMessage } from "./utils/getResponses";
+import { lines, welcomeMessage } from "./utils/libs/getResponses";
 import {
     globalHistory,
     globalInformation,
     historyPerCountry,
     informationPerCountry,
-} from "./utils/handlers";
+} from "./utils/routes/regular/regularHandlers";
 import {
     globalHistoryPlain,
     globalInformationPlain,
     historyPerCountryPlain,
     informationPerCountryPlain,
-} from "./utils/plainHandlers";
+} from "./utils/routes/plain/plainHandlers";
 
 const args = argv(process.argv.slice(2));
 let { history, mode, help, quiet, plain } = args;

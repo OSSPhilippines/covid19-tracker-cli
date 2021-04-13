@@ -4,7 +4,7 @@ import {
     globalInformation,
     historyPerCountry,
     informationPerCountry,
-} from "../utils/handlers";
+} from "../utils/routes/regular/regularHandlers";
 import handleAsync from "./handleAsync";
 
 /**
@@ -16,13 +16,12 @@ export const isQuiet: (req: Request) => boolean = (req) =>
     req.baseUrl.startsWith("/quiet");
 
 /**
- * The rootRouter handles all the processing of the requests *after* passing through
+ * The regularRouter handles all the processing of the requests *after* passing through
  * all middlewares except not found and error handling middleware
  */
-export const router = Router({ mergeParams: true });
+export const regularRouter = Router({ mergeParams: true });
 
-// rootRouter.get("/history/:country/:type", historyPerCountryAndType);
-router.get(
+regularRouter.get(
     "/history/:mode?",
     handleAsync(async (req, res, next) => {
         // get mode from params
@@ -37,7 +36,7 @@ router.get(
     })
 );
 
-router.get(
+regularRouter.get(
     "/history/:country/:mode?",
     handleAsync(async (req, res, next) => {
         const country = req.params.country;
@@ -53,7 +52,7 @@ router.get(
     })
 );
 
-router.get(
+regularRouter.get(
     "/:country",
     handleAsync(async (req, res, _next) => {
         const country = req.params.country;
@@ -61,7 +60,7 @@ router.get(
     })
 );
 
-router.get(
+regularRouter.get(
     "/",
     handleAsync(async (req, res, _next) => {
         res.send(await globalInformation(isQuiet(req)));

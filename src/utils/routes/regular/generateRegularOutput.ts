@@ -1,7 +1,7 @@
-import { generateColorTable } from "./generateTable";
-import { getTimestamp } from "./getTimestamp";
-import { getSaying } from "./getSaying";
-import { lines } from "./getResponses";
+import { generateColorTable } from "../../libs/generateTable";
+import { getTimestamp } from "../../libs/getTimestamp";
+import { getSaying } from "../../libs/getSaying";
+import { lines } from "../../libs/getResponses";
 
 /**
  *
@@ -11,7 +11,7 @@ import { lines } from "./getResponses";
  * @param quiet Optional, set to true if the user does not want unnecessary information
  * @returns A string containing a formatted table
  */
-export const generateOutput: (
+export const generateRegularOutput: (
     chartType: string,
     updateTime: number,
     data: (string | string[])[],

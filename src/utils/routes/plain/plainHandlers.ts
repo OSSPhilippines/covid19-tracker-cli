@@ -1,11 +1,7 @@
-import { generateAsciichart } from "./generateAsciichart";
+import { generateAsciichart } from "../../libs/generateAsciichart";
 import { generatePlainOutput } from "./generatePlainOutput";
-import {
-    getAllInfo,
-    getCountryInfo,
-    getHistorical,
-    PlainData,
-} from "./getInformation";
+import { countryInfoPlain, globalInfoPlain } from "./plainParser";
+import { getHistorical } from "../../getInformation";
 
 /**
  * globalHistory shows a tablechart of the cases of all the countries
@@ -19,16 +15,16 @@ export const globalHistoryPlain: (
     quiet: boolean
 ) => Promise<string> = async (mode, quiet) => {
     // Get summary info
-    const info = (await getAllInfo(true)) as PlainData;
+    const info = await globalInfoPlain();
 
     // Get data from API
-    const historicalData = await getHistorical(mode);
+    const { date, chartData } = await getHistorical(mode);
 
     // Generate historical graph
-    const chart = generateAsciichart(historicalData.chart, true, 7);
+    const chart = generateAsciichart(chartData, true, 7);
 
     return generatePlainOutput(info, `Global Historical Chart`, quiet, [
-        historicalData.date,
+        date,
         chart,
     ]);
 };
@@ -48,22 +44,18 @@ export const historyPerCountryPlain: (
     quiet: boolean
 ) => Promise<string> = async (country, mode, quiet) => {
     // Get summary info about a country
-    const info = (await getCountryInfo(country, true)) as PlainData;
+    const info = await countryInfoPlain(country);
+    const { apiCountryName, formalCountryName } = info;
 
-    const historicalData = await getHistorical(
-        mode,
-        info.metainfo.countryName as string
-    );
+    const { date, chartData } = await getHistorical(mode, apiCountryName);
 
     // Generate historical graph
-    const chart = generateAsciichart(historicalData.chart, true, 7);
+    const chart = generateAsciichart(chartData, true, 7);
 
-    return generatePlainOutput(
-        info,
-        `${info.metainfo.countryName} Chart`,
-        quiet,
-        [historicalData.date, chart]
-    );
+    return generatePlainOutput(info, `${formalCountryName} Chart`, quiet, [
+        date,
+        chart,
+    ]);
 };
 
 /**
@@ -77,12 +69,8 @@ export const informationPerCountryPlain: (
     country: string,
     quiet: boolean
 ) => Promise<string> = async (country, quiet) => {
-    const info = (await getCountryInfo(country, true)) as PlainData;
-    return generatePlainOutput(
-        info,
-        `${info.metainfo.countryName} Update`,
-        quiet
-    );
+    const info = await countryInfoPlain(country);
+    return generatePlainOutput(info, `${info.formalCountryName} Update`, quiet);
 };
 
 /**
@@ -93,6 +81,6 @@ export const informationPerCountryPlain: (
 export const globalInformationPlain: (
     quiet: boolean
 ) => Promise<string> = async (quiet) => {
-    const info = (await getAllInfo(true)) as PlainData;
+    const info = await globalInfoPlain();
     return generatePlainOutput(info, "Global Update", quiet);
 };

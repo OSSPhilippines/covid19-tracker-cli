@@ -5,8 +5,8 @@ import {
     informationPerCountryPlain,
     historyPerCountryPlain,
     globalHistoryPlain,
-} from "../utils/plainHandlers";
-import { isQuiet } from "./router";
+} from "../utils/routes/plain/plainHandlers";
+import { isQuiet } from "./regularRouter";
 
 /**
  * The plainRouter handles all the plain routes such as /basic, /cmd, and /plain

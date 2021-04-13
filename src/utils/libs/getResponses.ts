@@ -1,4 +1,4 @@
-const { version } = require("../../package.json");
+const { version } = require("../../../package.json");
 
 // This file is a centralized location to get responses to the user
 // Such as the BMC link, the twitter link, github repo page etc.
