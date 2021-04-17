@@ -4,6 +4,11 @@ let countryCodes: { [key: string]: string } = {};
     countryCodes = (await axios.get("http://country.io/names.json")).data;
 })();
 
+/**
+ *
+ * @param country A string that is either an 2 digit ISO country code or a full length countryname
+ * @returns Full version of the country name
+ */
 export const convertCountryCode: (country: string) => Promise<string> = async (
     country
 ) => {

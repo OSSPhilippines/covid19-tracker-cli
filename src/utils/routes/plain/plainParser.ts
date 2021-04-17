@@ -4,6 +4,10 @@ import {
     normalizeNumbers,
 } from "../../libs/numberNormalizers";
 
+/**
+ *
+ * @returns An object containing the data and the unix epoch timestamp of when the data was updated
+ */
 export const globalInfoPlain: () => Promise<{
     timeUpdated: number;
     data: {
@@ -41,6 +45,11 @@ export const globalInfoPlain: () => Promise<{
     };
 };
 
+/**
+ *
+ * @param country A country string
+ * @returns An object containing the data, API countryname, the formal countryname, and the unix epoch timestamp of when the data was updated
+ */
 export const countryInfoPlain: (
     country: string
 ) => Promise<{

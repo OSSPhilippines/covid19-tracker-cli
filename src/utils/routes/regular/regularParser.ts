@@ -4,6 +4,10 @@ import {
     normalizeNumbers,
 } from "../../libs/numberNormalizers";
 
+/**
+ *
+ * @returns Object containing epoch timestamp of when the data was updated, and an array containing the rows for the table
+ */
 export const globalInfo: () => Promise<{
     timeUpdated: number;
     rowsOfData: (string | string[])[];
@@ -35,6 +39,12 @@ export const globalInfo: () => Promise<{
     return { timeUpdated: updated, rowsOfData };
 };
 
+/**
+ *
+ * @param country Country string
+ * @returns An object containing the rows for the table,
+ * API countryname, the formal countryname, and the unix epoch timestamp of when the data was updated
+ */
 export const countryInfo: (
     country: string
 ) => Promise<{

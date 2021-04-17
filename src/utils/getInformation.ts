@@ -4,9 +4,7 @@ import { capitalizeFirstLetter } from "../utils/libs/capitalizeFirstLetter";
 axios.defaults.baseURL = "https://disease.sh/v3/covid-19";
 
 /**
- * @param isPlain Set to true to recieve an object containing the responses instead of the rows
- * @returns an object containing the data and metainfo **if isPlain is set to true**
- * @returns an array in the format of [timestamp, rows] **if isPlain is set to false**
+ * @returns An object containing the epoch timestamp of when the data was updated, and the raw data from the API
  */
 export const getAllInfo: () => Promise<{
     updated: number;
@@ -38,10 +36,8 @@ export const getAllInfo: () => Promise<{
 };
 
 /**
- * @param country the country code or string that the user provides from req.params or CLI
- * @param isPlain Set to true to recieve an object containing the responses instead of the rows
- * @returns an object containing the data and metainfo **if isPlain is set to true**
- * @returns an array in the format of [timestamp, API countryname, formal countryname, rows[]] **if isPlain is false**
+ * @param country Country string
+ * @returns Object containing the time when the data was updated, API countryname, formal countryname, and the raw data from the API
  */
 export const getCountryInfo: (
     country: string
@@ -89,6 +85,9 @@ export const getCountryInfo: (
 
 type getHistoricalMode = "cases" | "deaths" | "recovered" | "all";
 
+// This is a way of setting conditional types depending on what was passed to the mode parameter
+// If the mode parameter receives "all" then the type will be different because instead of only receiving one
+// set of data, it will be receiving everything
 // prettier-ignore
 export async function getHistorical<T extends getHistoricalMode>(
     mode: T,
@@ -107,6 +106,12 @@ export async function getHistorical<T extends getHistoricalMode>(
     }
 >;
 
+/**
+ *
+ * @param mode What data the user wants to receive, if all, then the user will be receiving everything but it can be specified to one type of data
+ * @param country Country string
+ * @returns Object containing date already formatted, and the data which is either a number[] or the raw data in another object *if* mode is set to all
+ */
 export async function getHistorical(
     mode: getHistoricalMode,
     country = "all"
@@ -138,15 +143,11 @@ export async function getHistorical(
 
     const date = `${informationType} from ${dates.shift()} to ${dates.pop()}`;
 
-    if (mode === "all") {
-        return {
-            date,
-            chartData,
-        };
-    } else {
-        return {
-            date,
-            chartData: Object.values(chartData) as number[],
-        };
-    }
+    // If mode is not all then set the chartData to the values of the dates from the API
+    if (mode !== "all") chartData = Object.values(chartData) as number[];
+
+    return {
+        date,
+        chartData,
+    };
 }
