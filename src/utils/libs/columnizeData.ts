@@ -1,6 +1,7 @@
 /**
  *
  * @param data An object containing your keys and values
+ * @param padding Option parameter that controls the amount of padding on the left side
  * @returns A 2 row column containing your keys and values
  */
 export const columnizeData: (

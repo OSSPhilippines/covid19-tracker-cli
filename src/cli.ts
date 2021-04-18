@@ -13,9 +13,13 @@ import {
     historyPerCountryPlain,
     informationPerCountryPlain,
 } from "./utils/routes/plain/plainHandlers";
+import {
+    countryDashboard,
+    globalDashboard,
+} from "./utils/routes/dashboard/dashboardHandlers";
 
 const args = argv(process.argv.slice(2));
-let { history, mode, help, quiet, plain } = args;
+let { dashboard, history, mode, help, quiet, plain, size } = args;
 const country = args._[0];
 
 const helpMessage = `${welcomeMessage}
@@ -26,8 +30,10 @@ Country:    Can be a country name or ISO 3166-1 alpha-2 country code
             Leave empty to show global data
 
 Options:
+    --dashboard Show a dashboard
+	--size      Use with --dashboard to control the size of the output
     --history   Show a chart of country's cases of world's cases
-    --mode      Use with --history to make show a chart of cases, deaths, or recovered
+    --mode      Use with --history to show a chart of cases, deaths, or recovered
     --quiet     Only show necessary information
     --plain     Enable plain mode
     
@@ -36,22 +42,28 @@ Useful Links:
 	${lines.WNrepoLink}
     ${lines.WNDonateLink}`;
 
-let output: string = "";
-const main = async () => {
-    if (help) return console.log(helpMessage);
+const main: () => Promise<string> = async () => {
+    if (help) return helpMessage;
     quiet = quiet === undefined ? false : quiet;
+
+    if (dashboard) {
+        if (size === undefined) size = "sm";
+        if (!["sm", "md", "lg"].includes(size)) size = "sm";
+
+        return country === undefined
+            ? await globalDashboard(size, false)
+            : await countryDashboard(country, size, false);
+    }
 
     if (history === undefined) {
         if (country === undefined) {
-            output =
-                plain === true
-                    ? await globalInformationPlain(quiet)
-                    : await globalInformation(quiet);
+            return plain === true
+                ? await globalInformationPlain(quiet)
+                : await globalInformation(quiet);
         } else {
-            output =
-                plain === true
-                    ? await informationPerCountryPlain(country, quiet)
-                    : await informationPerCountry(country, quiet);
+            return plain === true
+                ? await informationPerCountryPlain(country, quiet)
+                : await informationPerCountry(country, quiet);
         }
     }
 
@@ -60,25 +72,32 @@ const main = async () => {
 
     if (history) {
         if (country === undefined) {
-            output =
-                plain === true
-                    ? await globalHistoryPlain(mode, quiet)
-                    : await globalHistory(mode, quiet);
+            return plain === true
+                ? await globalHistoryPlain(mode, quiet)
+                : await globalHistory(mode, quiet);
         } else {
-            output =
-                plain === true
-                    ? await historyPerCountryPlain(country, mode, quiet)
-                    : await historyPerCountry(country, mode, quiet);
+            return plain === true
+                ? await historyPerCountryPlain(country, mode, quiet)
+                : await historyPerCountry(country, mode, quiet);
         }
     }
 
-    // remove magic? newline
-    let response = output.split("\n");
-    response.pop();
-
-    console.log(response.join("\n"));
+    return "";
 };
 
-main().catch((err) => {
-    console.log(err.message + "\n");
-});
+(async () => {
+    let response = await main().catch((err) => {
+        // Log error and exit out
+        console.log(err.message + "\n");
+        process.exit();
+    });
+
+    //Remove magic new lines
+    let responseArray = response.split("\n");
+    while (!/\S/.test(responseArray[responseArray.length - 1])) {
+        responseArray.pop();
+    }
+    response = responseArray.join("\n") + "\n";
+
+    console.log(response);
+})();

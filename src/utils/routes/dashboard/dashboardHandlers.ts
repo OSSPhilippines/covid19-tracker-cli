@@ -55,6 +55,7 @@ const convertHistoricalDataToChart: (historical: {
  *
  * @param country Country that the user requested
  * @param size Size that the user requested
+ * @param isWeb Boolean that states if the output will be run through the html template
  */
 export const countryDashboard = async (
     country: string,
@@ -155,6 +156,7 @@ export const countryDashboard = async (
 /**
  *
  * @param size Size that the user requested
+ * @param isWeb Boolean that states if the output will be run through the html template
  */
 export const globalDashboard = async (size: DashboardSize, isWeb: boolean) => {
     let { data, updated } = await getAllInfo();
