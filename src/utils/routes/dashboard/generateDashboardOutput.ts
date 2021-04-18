@@ -2,7 +2,6 @@ import blessed from "blessed";
 import contrib from "blessed-contrib";
 import { removeANSI } from "../../libs/generateTable";
 import { lines, welcomeMessage } from "../../libs/getResponses";
-import { getSaying } from "../../libs/getSaying";
 import { blessedConfig } from "./blessedConfig";
 import { DashboardSize } from "./dashboardHandlers";
 
@@ -206,12 +205,8 @@ export const generateDashboardOutput: (
     response = removeUnneededLines(response);
     response += "\n";
 
-    response += getSaying() + "\n";
-    response += lines.WNrepoLink + "\n\n";
     response += lines.BMCLink + "\n";
     response += lines.sponsorMessage + "\n";
-    response += lines.twitterPlug;
-    response += lines.handleHashtag.join(" ") + "\n";
 
     return response;
 };
