@@ -1,6 +1,6 @@
 {
     "name": "covid19trackercli",
-    "version": "4.1.0",
+    "version": "4.1.1",
     "description": "Track global COVID-19 cases from command line interface.",
     "main": "dist/api.js",
     "scripts": {
