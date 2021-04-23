@@ -6,6 +6,12 @@
 
 **COVID-19 Tracker and CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. It Supports terminal for linux and macos, command prompt for windows, and termux for android.
 
+## 😎 Demo
+
+Let's see it in action!
+
+[![asciicast](https://asciinema.org/a/409340.svg)](https://asciinema.org/a/409340)
+
 ## 📖 Documentation
 
 <!-- <!-- markdownlint-disable MD033 -->
