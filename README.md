@@ -4,7 +4,7 @@
 
 [![Banner](.github/wareneutron_covid19_tracker_cli_github_banner.png)](https://docs.wareneutron.com/covid19-tracker-cli)
 
-**COVID-19 Tracker and CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. It Supports terminal for linux and macos, command prompt for windows, and termux for android.
+**COVID-19 Tracker & CLI** is an open-source NodeJS application for command line interface to track COVID-19 cases around the world. An optimized NodeJS application and a simple tracker with real-time updates from reliable data source. It Supports terminal for linux and macos, command prompt for windows, and termux for android.
 
 ## 😎 Demo
 
@@ -26,11 +26,11 @@ Read the project's [contributing guide](./contributing.md) for more info.
 
 ## 🐛 Issues
 
-If you're facing a problem in using COVID-19 Tracker and CLI please let us know by [creating an issue here](https://github.com/wareneutron/covid19-tracker-cli/issues/new). We are happy to help you! Don't forget to provide us some screenshot or errors of it, thank you!
+If you're facing a problem in using COVID-19 Tracker & CLI please let us know by [creating an issue here](https://github.com/wareneutron/covid19-tracker-cli/issues/new). We are happy to help you! Don't forget to provide us some screenshot or errors of it, thank you!
 
 ## 🏆 Sponsors and Supporters
 
-[![Vercel](https://wrngnz.ga/badge-vercel)](https://vercel.com) [![CircleCI](https://wrngnz.ga/badge-circleci)](https://circleci.com) [![GitBook](https://wrngnz.ga/badge-gitbook)](https://gitbook.io) [![Digital Ocean](https://wrngnz.ga/badge-digitalocean)](https://digitalocean.com) [![Netlify](https://wrngnz.ga/badge-netlify)](https://netlify.com)
+[![vercel](https://wrngnz.ga/badge-vercel)](https://vercel.com) [![circleci](https://wrngnz.ga/badge-circleci)](https://circleci.com) [![gitbook](https://wrngnz.ga/badge-gitbook)](https://gitbook.io) [![digital ocean](https://wrngnz.ga/badge-digitalocean)](https://digitalocean.com) [![netlify](https://wrngnz.ga/badge-netlify)](https://netlify.com)
 
 > Love what we do? **[Send us some coffees](https://buymeacoff.ee/wareneutron)**!
 >
@@ -48,11 +48,11 @@ Read the project's [code of conduct](./code_of_conduct.md).
 
 ## 📃 License
 
-COVID-19 Tracker and CLI is licensed under [GNU General Public License v3](https://opensource.org/licenses/GPL-3.0).
+COVID-19 Tracker & CLI is licensed under [GNU General Public License v3.0](https://opensource.org/licenses/GPL-3.0).
 
 ## 📝 Author
 
-COVID-19 Tracker and CLI is created by **[Waren Gonzaga](https://github.com/warengonzaga)**, developed and maintained by [Wareneutron Developers](https://wareneutron.com) with the help of awesome [contributors](https://github.com/wareneutron/covid19-tracker-cli/graphs/contributors).
+COVID-19 Tracker & CLI is created by **[Waren Gonzaga](https://github.com/warengonzaga)**, developed and maintained by [Wareneutron Developers](https://wareneutron.com) with the help of awesome [contributors](https://github.com/wareneutron/covid19-tracker-cli/graphs/contributors).
 
 ---
 
