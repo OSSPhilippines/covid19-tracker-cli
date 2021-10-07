@@ -43,7 +43,7 @@
     },
     "dependencies": {
         "asciichart": "^1.5.25",
-        "axios": "^0.21.1",
+        "axios": "^0.21.2",
         "blessed": "^0.1.81",
         "blessed-contrib": "^4.8.21",
         "colors": "^1.4.0",
