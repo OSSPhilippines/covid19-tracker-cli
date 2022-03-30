@@ -10,7 +10,7 @@ import { lines } from "./utils/libs/getResponses";
 const port = parseInt(process.env.PORT!) || 7070;
 
 const app = express();
-app.use(morgan("common"));
+app.use(morgan("tiny"));
 app.use("/history/web/charts", dashboardRouter);
 
 app.use(userAgentMiddleware);
